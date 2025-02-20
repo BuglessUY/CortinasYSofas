@@ -1,0 +1,773 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:snow;
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+header.solid-bg {
+    background-color: rgba(255, 255, 255, 0.9); /* Color sólido de fondo */
+}
+
+
+
+.sobre-nosotros {
+    margin-bottom: 300px; /* Añade más espacio en la sección sobre nosotros */
+}
+
+/* Logo */
+.logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+}.logo img {
+    max-height: 50px;
+}
+
+/* Navegación */
+
+
+
+
+
+/* Estilo para la sección de imágenes circulares */
+.imagenes-circulares-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en la primera fila */
+    grid-template-rows: 1fr 1fr; /* 2 filas */
+    gap: 20px 10px; /* Espacio entre imágenes: 40px entre filas y 20px entre columnas */
+    justify-items: center; /* Centrar las imágenes horizontalmente */
+    grid-template-areas:
+        "img1 img2 img3"
+        ". img4 img5"; /* Segunda fila con 2 imágenes centradas */
+}
+
+.imagen-circular:nth-child(1) { grid-area: img1; }
+.imagen-circular:nth-child(2) { grid-area: img2; }
+.imagen-circular:nth-child(3) { grid-area: img3; }
+.imagen-circular:nth-child(4) { grid-area: img4; }
+.imagen-circular:nth-child(5) { grid-area: img5; }
+/* Estilos para imágenes circulares */
+
+
+/* Adaptación a pantallas medianas */
+
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 768px) {
+  
+        .hero {
+        height: 95vh; /* Ajusta la altura para pantallas pequeñas */
+        overflow: hidden;
+    }
+
+    .hero img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+
+.imagenes-circulares-container img {
+    animation: subirDesdeAbajo 1.5s ease-out;
+    opacity: 0; /* Para que no se vean antes de la animación */
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s; /* Añadir un pequeño retraso para que la animación se vea más fluida */
+}
+
+
+.imagen-circular {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%; /* Para que las imágenes sean circulares */
+    border: 3px solid #ccc; /* Opcional: borde */
+    transition: transform 0.3s ease;
+}
+/* Efecto hover en las imágenes */
+.imagen-circular:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Añade sombra */
+}
+  
+.imagenes-circulares-container {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+/* Submenú */
+/* Estilo para el submenú principal */
+.submenu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 120%; /* Ajusta esto si necesitas más o menos espacio entre el menú principal y el submenú */
+    left: 0;
+    width: 180px; /* Tamaño fijo para el submenú principal */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo para los elementos del submenú principal */
+.submenu li {
+    position: relative; /* Necesario para el posicionamiento del submenú de categorías */
+}
+
+/* Estilo para el submenú de categorías */
+.submenu-categorias {
+    display: none;
+    position: absolute;
+    top: 0; /* Alinea el submenú de categorías en la parte superior del elemento padre */
+    left: 100%; /* Posiciona el submenú de categorías a la derecha del submenú principal */
+    width: 150px; /* Tamaño fijo para el submenú de categorías, igual al submenú principal */
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    list-style: none; 
+    margin: 0; /* Elimina el margen predeterminado */
+    flex-direction: column;
+}
+
+/* Mostrar el submenú principal al pasar el ratón sobre 'PRODUCTOS' */
+nav > ul > li:hover .submenu {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mostrar el submenú de categorías al pasar el ratón sobre una categoría */
+.submenu > li:hover .submenu-categorias {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu li a {
+    padding: 10px 15px;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.submenu li a:hover {
+    background-color: rgba(200, 200, 200, 0.3);
+}
+.titulo-estatico {
+    position: relative;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 100px; /* Ajusta este valor según sea necesario */
+}
+
+
+/* Títulos y Secciones */
+.titulo-seccion {
+    margin-top: 20px; /* Ajusta este valor según sea necesario */
+    text-align: center; /* Centra el título, si lo deseas */
+    padding:10px;
+       background-color: red; /* Color de fondo rojo */
+    color: white; /* Color del texto en blanco */
+    font-weight: bold; /* Texto en negrita */
+   position: sticky;
+    text-align: center; /* Centra el texto */
+    margin-top: 20px; /* Espacio encima del título */
+}
+
+.titulo-seccion h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #333;
+}
+
+.sobre-nosotros {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  
+    margin-top: 100px; /* Ajusta este valor para crear más espacio antes de la sección */
+
+     /* Ajusta según el espacio que quieras entre el título y la sección */
+}/* Alinea los elementos en la parte superior */
+.sobre-nosotros .texto p {
+    margin-bottom: 0px; /* Añadir un espacio entre párrafos */
+}
+.texto {
+    flex: 1; /* Permite que el texto ocupe el espacio restante */
+    margin-right: 20px; /* Espacio entre texto y galería */
+}
+.sobre-nosotros .texto {
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    line-height: 2; 
+}
+
+/* Hero con imágenes dinámicas */
+.hero {
+    width: 100%;
+    height: 95vh; /* Ajusta si es necesario */
+    overflow: hidden;
+    position: relative;
+}
+.hero img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+/* Slide */
+.slide-trabajosRealizados {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* Slide */
+.slide {
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* Animación de zoom in/zoom out */
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Aumentar el zoom */
+    }
+    100% {
+        transform: scale(1); /* Volver al tamaño original */
+    }
+}
+
+.slide {
+}
+
+
+.slide.active {
+    animation: zoomInOut 15s ease-in-out; /* Asegúrate de que la animación tenga el mismo tiempo */
+}
+
+
+.slide:not(.active) {
+    display: none;
+}
+
+
+/* Trabajos realizados */
+.trabajos-realizados {
+    background-color:white ;
+    text-align: center;
+    padding: 50px 0;
+    
+}
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px; /* Ajusta el tamaño de la fuente */
+    font-weight: bold; /* Ajusta el grosor del texto si lo prefieres */
+    font-family:serif ;
+}
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px; /* Ajusta el tamaño de la fuente */
+    font-weight: bold; /* Ajusta el grosor del texto si lo prefieres */
+    font-family:serif ;
+}
+figcaption{
+    font-family:serif ;}
+h2::before,
+h2::after {
+    content: '';
+    flex-grow: 1; /* Hace que las líneas crezcan automáticamente a ambos lados */
+    border-bottom: 1px solid #000; /* Color y grosor de las líneas */
+    margin: 0 20px; /* Ajusta el espaciado entre las líneas y el texto */
+}
+
+h2::before {
+    margin-right: 20px; /* Espacio adicional a la derecha de la línea izquierda */
+}
+
+h2::after {
+    margin-left: 20px; /* Espacio adicional a la izquierda de la línea derecha */
+}
+/* Animación para el texto cayendo desde arriba */
+@keyframes caerDesdeArriba {
+    0% {
+        transform: translateY(-400px);
+        opacity: 0;
+        
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animación para las imágenes subiendo desde abajo */
+@keyframes subirDesdeAbajo {
+    0% {
+        transform: translateY(300px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.trabajos-realizados h2,
+.trabajos-realizados p {
+    animation: caerDesdeArriba 1.5s ease-out;
+}
+.trabajos-realizados h2 {
+    font-size: 3em;
+    font-weight: bold;
+    font-family: initial;
+    margin-bottom: 20px;
+   
+}
+
+
+
+.galeria img {
+    animation: subirDesdeAbajo 3s ease-in-out ;
+}
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* Redes sociales */
+.redes-sociales {
+    margin-bottom: 30px;
+}
+
+.redes-sociales p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.redes-sociales .icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes-sociales .icons img {
+    width: 5px;
+    height: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.redes-sociales .icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Contacto por WhatsApp */
+.contacto-whatsapp {
+    background-color: #e20000;
+    color: white;
+    padding: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.contacto-whatsapp img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Estilos para el tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    max-width: 200px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    left: -250px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.whatsapp-icon img {
+    width: 60px; /* Ajusta el tamaño a 60px */
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon img:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento al pasar el mouse */
+}.instagram-icon {
+    position: fixed;
+    bottom: 20px;
+    right:100px;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.instagram-icon img {
+    width: 60px; /* Ajusta el tamaño a 60px */
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.instagram-icon img:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento al pasar el mouse */
+}
+.mapa {
+    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+    height: 450px; /* Altura fija que puedes ajustar según necesites */
+    background-color: white; /* Fondo negro */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen externo para asegurar que ocupe todo el ancho */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.ubicacion iframe {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    max-width: 1000px; /* Limita el ancho máximo */
+    height: 450px;
+    border: none;
+    display: block;
+    margin: 0 auto; /* Centrar el iframe */
+    background-color: white;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block; /* Elimina el espacio debajo del iframe */
+}
+.ubicacion {
+    background-color: white;
+    text-align: center;
+    font-family: initial;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1;
+    width: 100%; 
+    margin-bottom: 0;
+    background-color: #fff !important; /* Forzar el fondo blanco */
+    padding: 0; /* Eliminar cualquier relleno que pueda interferir */
+    margin: 0; /* Asegurar que no haya márgenes */
+}.ubicacion h2 {
+    animation: caerDesdeArriba 3s ease-out;
+}.ubicacion .mapa {
+    animation: subirDesdeAbajo 3s ease-out;
+    position: relative;
+    width: 100%;
+    height: 450px; 
+ 
+    
+    margin: 0 auto;
+}/* Ajusta la altura según sea necesario */
+
+
+
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: opacity 2s ease-out, transform 5s ease-out;
+}.ubicacion.fade-in {
+    transition: opacity 3s ease-in-out, transform 3s ease-out; /* Duración más larga: 3 segundos */
+}
+
+/* Estilo para cuando el elemento está visible */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}.fade-in.show {
+    opacity: 1;
+}
+/* Opcional: Añadir sombra para mayor contraste */
+.fade-in h1, .fade-in p {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+}
+.fade-in-background {
+    background: rgba(0, 0, 0, 0); /* Fondo inicial transparente */
+    transition: background 0.6s ease-out;
+}
+
+.fade-in-background.visible {
+    background: rgba(0, 0, 0, 0.1); /* Fondo final, ajusta el color según lo necesites */
+}
+/* Estilo inicial para la animación */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Estilo para cuando la sección está visible */
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.trabajos-realizados {
+    background-color: #FFFFFF; /* O el color que prefieras */
+    padding: 50px 0;
+     margin-bottom: 200px;
+    /* Otros estilos */
+}.text-reveal {
+    opacity: 0;
+    transition: opacity 3s ease;
+}
+
+.text-reveal.visible {
+    opacity: 1;
+}
+
+
+
+footer p {
+    margin: 0;
+  margin-top: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-info {
+    color: #c1c1c1; /* Color gris para detalles */
+    text-align: left;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    
+}
+
+.footer-email {
+    color: #e74c3c; /* Color rojo para el email */
+}
+
+.footer-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-whatsapp img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.footer-whatsapp p {
+    margin: 0;
+    font-size: 15px;
+    font-family:var ;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #888;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+.detalles-producto {
+    padding: 40px 20px;
+    margin-bottom: 30px; /* Espacio debajo de la sección */
+    text-align: center; /* Centra el texto y los elementos dentro de la sección */
+}
+.detalles-producto h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.detalles-producto p, .detalles-producto ul {
+    margin-bottom: 20px;
+    display: inline-block; /* Para centrar los párrafos y listas en el contenedor */
+    text-align: left; /* Para mantener el texto alineado a la izquierda dentro de la caja */
+}
+
+.galeria-imagenes img {
+    width: 200px; /* Ajusta el tamaño de las imágenes según sea necesario */
+    height: auto;
+    border-radius: 5px; /* Opcional: Bordes redondeados para las imágenes */
+}
+
+
+
+.nav-menu {
+    display: none;
+    flex-direction: column;  /* Vertical */
+    background-color: red;   /* Fondo del menú desplegable */
+    position: absolute;      /* Lo mantenemos en posición absoluta, pero revisaremos los márgenes */
+    top: 100%;               /* Asegura que se coloque justo debajo del nav */
+    right: 0;
+    width: auto;             /* Ajusta el ancho automáticamente */
+    z-index: 10;
+    padding: 10px 0;         /* Espaciado entre los enlaces */
+    margin: 0;               /* Elimina márgenes que puedan interferir */
+    box-sizing: border-box;  /* Asegura que los márgenes y padding no afecten el ancho total */
+}.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Estilo específico para pantallas pequeñas (por ejemplo, móviles) */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;  /* Para hacer que los elementos estén en fila */
+        flex-direction: column; /* Para apilar los elementos verticalmente */
+    }
+   .hamburger {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    display: block;
+    position: relative;
+    margin-right: 30px;
+    
+}.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+
+}
+/* Estilo específico para pantallas grandes */
+@media (min-width: 769px) {
+    nav ul {
+        display: flex;  /* Deja los elementos en fila */
+        flex-direction: row; /* Para el menú en línea horizontal */
+          #hamburger{
+      
+        display: block;  /* Se muestra como bloque en pantallas pequeñas */
+    
+    }
+    }
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
+    .nav-menu a {
+        color: black;
+        border: none;
+    }  nav ul li {
+        display: inline-block;  /* Los elementos se muestran en línea */
+    }
+}

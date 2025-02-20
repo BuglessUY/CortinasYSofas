@@ -1,0 +1,395 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cortinas Personalizadas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin-top:  60px;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color:beige;
+        }
+       header {
+    padding: 20px 0;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent 50%);
+    transition: background-color 2.5s ease; /* Solo la transición de color de fondo */
+}.logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+}.logo img {
+    max-height: 50px;
+}
+
+nav {
+    flex: 2;
+    display: flex;
+    
+    padding: 0 20px;
+    background: transparent;
+    margin-right: 50%;
+    margin-top: 10px;
+    margin-bottom: 20px; /* Espacio debajo del nav */
+
+} 
+.nav-menu {
+    display: none;
+    justify-content: center;
+    flex-direction: column;  /* Vertical */
+    background-color: white;   /* Fondo del menú desplegable */
+    position: absolute;      /* Lo mantenemos en posición absoluta, pero revisaremos los márgenes */
+    top: 100%;               /* Asegura que se coloque justo debajo del nav */
+    right: 0;
+    width: auto;             /* Ajusta el ancho automáticamente */
+    z-index: 10;
+    padding: 10px 0;         /* Espaciado entre los enlaces */
+    margin: 0;               /* Elimina márgenes que puedan interferir */
+    box-sizing: border-box;  /* Asegura que los márgenes y padding no afecten el ancho total */   
+    background-color: rgba(255, 255, 255, 0.8);
+
+}.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    display: block;
+    
+    padding:  10px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+
+
+nav li {
+    position: relative;
+    margin: 0 10px; /* Espacio entre los elementos */
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    padding: 15px 20px;
+    display: block;
+    position: relative; /* Para el pseudo-elemento */
+    overflow: hidden; /* Para ocultar la línea animada fuera del enlace */
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e20000; /* Color de la línea */
+    transform: scaleX(0); /* Inicialmente oculta */
+    transform-origin: bottom left; /* Cambia el origen de la transformación */
+    transition: transform 1s ease; /* Transición suave */
+}
+nav a:hover::after {
+    transform: scaleX(1); /* Línea completa en hover */
+}
+
+nav a:hover {
+    color: #e20000; /* Cambia el color del texto en hover si lo deseas */
+} .nav-menu.active {
+    display: flex;
+   
+}
+
+/* Estilo específico para pantallas pequeñas (por ejemplo, móviles) */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;  /* Para hacer que los elementos estén en fila */
+        flex-direction: column; /* Para apilar los elementos verticalmente */
+    }  .nav-menu {
+        
+        background-color: white;
+    }
+   .hamburger {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    display: block;
+    position: relative;
+    margin-right: 30px;
+    
+}.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}/* Ocultar submenús por defecto */
+
+
+.submenu{
+    left:-20% ;
+    position: absolute;
+        background-color: white;
+
+}
+.submenu-categorias{
+    left:-100% ;
+    position: absolute;
+    background-color: white;
+}
+.instagram-icon img {
+    width: 40px; /* Ajusta el tamaño a 60px */
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.whatsapp-icon img {
+    width: 40px; /* Ajusta el tamaño a 60px */
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+}
+
+/* Estilo específico para pantallas grandes */
+@media (min-width: 769px) {
+    nav ul {
+        display: flex;  /* Deja los elementos en fila */
+        flex-direction: row; /* Para el menú en línea horizontal */
+          #hamburger{
+      
+        display: block;  /* Se muestra como bloque en pantallas pequeñas */
+    
+    }
+    }
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
+    .nav-menu a {
+        color: black;
+        border: none;
+    }  nav ul li {
+        display: inline-block;  /* Los elementos se muestran en línea */
+    }
+}
+
+        section {
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+        section h1 {
+            color: red;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        section p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+ .texto-centrado {
+    
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.6;
+    padding-top: 90px;
+}
+
+.galeria {
+    display: flex;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    gap: 20px; /* Espaciado entre las imágenes */
+    flex-wrap: wrap; /* Asegura que las imágenes se ajusten en pantallas pequeñas */
+}
+#detalle1, #detalle2, #detalle3,#detalle4, #detalle5, #detalle6 {
+    margin-bottom: 240px; /* Agrega más espacio entre las secciones */
+}
+.galeria img {
+    max-width: 200px; /* Ajusta el tamaño máximo de las imágenes */
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #222;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+    </style>
+<body>
+      <header>
+  <div class="logo" >
+            <img src="images/n (1).png" alt="Logo">
+        </div>
+      
+
+  <button class="menu-toggle" aria-label="Abrir menú">
+    <span class="hamburger"></span>
+  </button>
+         
+  <nav class="nav-menu">
+ 
+    <ul>
+        
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="sobre_Nosotros.html">SOBRE NOSOTROS</a></li>
+          <li>
+        <a href="#products">PRODUCTOS</a>
+        <ul class="submenu">
+          <li>
+            <a href="#products">CORTINAS</a>
+            <ul class="submenu-categorias">
+              <li><a href="cortinas.html#detalle10">TRADICIONALES</a></li>
+              <li><a href="cortinas.html#detalle11">ROLLERS</a></li>
+            </ul>
+          </li>
+           <li>
+            <a href="#products">SOFÁS</a>
+            <ul class="submenu-categorias">
+              <li><a href="sofas.html#detalle19">CHASELONGUE</a></li>
+              <li><a href="sofas.html#detalle18">ESQUINEROS</a></li>
+            </ul>
+          </li>
+            <li><a href="tapizados.html">TAPIZADOS</a></li>
+            <li><a href="persianas.html">PERSIANAS</a></li>
+            <li><a href="Alfombras.html">ALFOMBRAS /
+                     MOQUETTES</a></li>
+           <li>
+            <a href="#products">PISOS</a>
+            <ul class="submenu-categorias">
+              <li><a href="Pisos.html#detalle15">FLOTANTES</a></li>
+              <li><a href="Pisos.html#detalle16">VILINICOS</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </li>
+    </ul>
+  </nav>
+         
+</header>
+
+ <div class="titulo-estatico">
+        <h1>CORTINAS & SOFAS</h1>
+    </div>
+    <div class="texto-centrado fade-in">
+          <div class="texto">
+            <h1>ACERCA DE NOSOTROS</h1>
+            <p>
+                Bienvenidos a <strong>Cortinas y Sofás</strong>, su aliado de confianza en la confección y suministro de cortinas y muebles desde 1982.
+                Con más de 40 años de experiencia en el sector, nos especializamos en ofrecer soluciones decorativas a medida que se adaptan a su estilo y necesidades.
+            </p>
+            <p>
+                Nuestra Misión En <strong>Cortinas y Sofás</strong>, nuestra misión es brindar productos de la más alta calidad, combinando estética y funcionalidad.
+                Nos comprometemos a garantizar la satisfacción total de nuestros clientes a través de un servicio excepcional y atención al detalle.
+            </p>
+            <p>
+                <strong>Nuestros Productos</strong><br>
+                - <em>Cortinas Tradicionales</em>: Ofrecemos una variada gama de telas, incluyendo Voiles, Rústicos, Linos, gasas y Blackout.<br>
+                - <em>Cortinas Roller</em>: Fabricamos cortinas Sunscreen, Blackout y de fibras naturales.<br>
+                - <em>Sofás y Juegos de Living</em>: Fabricación personalizada en géneros, cueros y telas de tapicería.<br>
+                - <em>Telas Easy Clean</em>: Telas antimanchas para facilitar el mantenimiento.<br>
+                - <em>Retapizados Artesanales</em>: Adaptación a todos los estilos para sillas y sillones.<br>
+                - <em>Accesorios de Rieles y Barrales</em>: Disponibles en madera, hierro y acero inoxidable.<br>
+                - <em>Pisos Vinílicos y Flotantes</em>: Más de 40 diseños para complementar su decoración.
+            </p>
+            
+        </div>
+  
+
+  
+
+  <!-- Ubicación Google Maps -->
+  <section class="ubicacion fade-in">
+    <div class="decorative-divider-left"></div>
+    <div class="decorative-divider-right"></div>
+    <h2>UBICACIÓN</h2>
+    <div class="mapa">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2425.491627166748!2d-8.5934646!3d41.1262825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2466c645209ded%3A0x46bafc6a8cc4cf9!2sYour%20Company%20Address!5e0!3m2!1ses!2ses!4v1630443473190!5m2!1ses!2ses"
+            width="100"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+        ></iframe>
+    </div>
+</section>
+
+   <!-- Icono de WhatsApp con Tooltip -->
+    <div class="tooltip">
+        <a href="https://wa.me/598099696563" target="_blank" class="whatsapp-icon">
+            <img src="2.png" alt="WhatsApp">
+            <span class="tooltiptext">¡Contáctanos por WhatsApp!</span>
+        </a>
+    </div>   <div class="tooltip">
+        <a href="https://wa.me/598099696563" target="_blank" class="instagram-icon">
+            <img src="instagram.png" alt="Instagram">
+            <span class="tooltiptext">¡Contáctanos por Instagram!</span>
+        </a>
+    </div>
+     <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><strong>Maldonado:</strong> Calle Joaquin De Viana Esq Dr Edye - Cel: 099 696 610</p>
+                <p><a href="mailto:Cortinas&Sofas@gmail.com" class="footer-email">Cortinas&Sofas@gmail.com</a></p>
+            </div>
+            <div class="footer-whatsapp">
+                <img src="2.png" alt="WhatsApp">
+                <div>
+                    <p>SOLICITA PRESUPUESTO VIA WHATSAPP</p>
+                    <p>099 696 610</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-sobrenosotros">
+            <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+       <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Cortinas Personalizadas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+  <style>
+  
+       header {
+    padding: 20px 0;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent 50%);
+    transition: background-color 2.5s ease; /* Solo la transición de color de fondo */
+}.logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+}.logo img {
+    max-height: 50px;
+}
+
+nav {
+    flex: 2;
+    display: flex;
+    
+    padding: 0 20px;
+    background: transparent;
+    margin-right: 50%;
+    margin-top: 10px;
+    margin-bottom: 20px; /* Espacio debajo del nav */
+
+}  
+.nav-menu {
+    display: none;
+    justify-content: center;
+    flex-direction: column;  /* Vertical */
+    background-color: white;   /* Fondo del menú desplegable */
+    position: absolute;      /* Lo mantenemos en posición absoluta, pero revisaremos los márgenes */
+    top: 100%;               /* Asegura que se coloque justo debajo del nav */
+    right: 0;
+    width: auto;             /* Ajusta el ancho automáticamente */
+    z-index: 10;
+    padding: 10px 0;         /* Espaciado entre los enlaces */
+    margin: 0;               /* Elimina márgenes que puedan interferir */
+    box-sizing: border-box;  /* Asegura que los márgenes y padding no afecten el ancho total */   
+    background-color: rgba(255, 255, 255, 0.8);
+
+}.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+
+
+nav li {
+    position: relative;
+    margin: 0 10px; /* Espacio entre los elementos */
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    padding: 15px 20px;
+    display: block;
+    position: relative; /* Para el pseudo-elemento */
+    overflow: hidden; /* Para ocultar la línea animada fuera del enlace */
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e20000; /* Color de la línea */
+    transform: scaleX(0); /* Inicialmente oculta */
+    transform-origin: bottom left; /* Cambia el origen de la transformación */
+    transition: transform 1s ease; /* Transición suave */
+}
+nav a:hover::after {
+    transform: scaleX(1); /* Línea completa en hover */
+}
+
+nav a:hover {
+    color: #e20000; /* Cambia el color del texto en hover si lo deseas */
+} .nav-menu.active {
+    display: flex;
+   
+}
+
+/* Estilo específico para pantallas pequeñas (por ejemplo, móviles) */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;  /* Para hacer que los elementos estén en fila */
+        flex-direction: column; /* Para apilar los elementos verticalmente */
+    }  .nav-menu {
+        
+        background-color: white;
+    }
+   .hamburger {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    display: block;
+    position: relative;
+    margin-right: 30px;
+    
+}.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}/* Ocultar submenús por defecto */
+
+
+.submenu{
+    left:-20% ;
+    position: absolute;
+        background-color: white;
+
+}
+.submenu-categorias{
+    left:-100% ;
+    position: absolute;
+    background-color: white;
+}
+.instagram-icon img {
+    width: 40px; /* Ajusta el tamaño a 60px */
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.whatsapp-icon img {
+    width: 40px; /* Ajusta el tamaño a 60px */
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+}
+
+@media (min-width: 769px) {
+    nav ul {
+        display: flex;  /* Deja los elementos en fila */
+        flex-direction: row; /* Para el menú en línea horizontal */
+          #hamburger{
+      
+        display: block;  /* Se muestra como bloque en pantallas pequeñas */
+    
+    }
+    }
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
+    .nav-menu a {
+        color: black;
+        border: none;
+    }  nav ul li {
+        display: inline-block;  /* Los elementos se muestran en línea */
+    }
+}
+
+        section {
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+        section h1 {
+            color: red;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        section p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+ .texto-centrado {
+    
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.6;
+    padding-top: 90px;
+}
+
+.galeria {
+    display: flex;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    gap: 20px; /* Espaciado entre las imágenes */
+    flex-wrap: wrap; /* Asegura que las imágenes se ajusten en pantallas pequeñas */
+}
+#detalle1, #detalle2, #detalle3,#detalle4, #detalle5, #detalle6 {
+    margin-bottom: 240px; /* Agrega más espacio entre las secciones */
+}
+.galeria img {
+    max-width: 200px; /* Ajusta el tamaño máximo de las imágenes */
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px; /* Ajusta el tamaño de la fuente */
+    font-weight: bold; /* Ajusta el grosor del texto si lo prefieres */
+    font-family:serif ;
+}@keyframes aparecerDerecha {
+    from {
+        opacity: 0;
+        transform: translateX(180px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+ h3 {
+ 
+    animation: aparecerDerecha 3s ease-out forwards; 
+} 
+
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #222;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+    </style>
+<body>
+     <header>
+  <div class="logo" >
+            <img src="images/n (1).png" alt="Logo">
+        </div>
+      
+
+  <button class="menu-toggle" aria-label="Abrir menú">
+    <span class="hamburger"></span>
+  </button>
+         
+  <nav class="nav-menu">
+ 
+    <ul>
+        
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="sobre_Nosotros.html">SOBRE NOSOTROS</a></li>
+          <li>
+        <a href="#products">PRODUCTOS</a>
+        <ul class="submenu">
+          <li>
+            <a href="#products">CORTINAS</a>
+            <ul class="submenu-categorias">
+              <li><a href="cortinas.html#detalle10">TRADICIONALES</a></li>
+              <li><a href="cortinas.html#detalle11">ROLLERS</a></li>
+            </ul>
+          </li>
+           <li>
+            <a href="#products">SOFÁS</a>
+            <ul class="submenu-categorias">
+              <li><a href="sofas.html#detalle19">CHASELONGUE</a></li>
+              <li><a href="sofas.html#detalle18">ESQUINEROS</a></li>
+            </ul>
+          </li>
+            <li><a href="tapizados.html">TAPIZADOS</a></li>
+            <li><a href="persianas.html">PERSIANAS</a></li>
+            <li><a href="Alfombras.html">ALFOMBRAS /
+                     MOQUETTES</a></li>
+           <li>
+            <a href="#products">PISOS</a>
+            <ul class="submenu-categorias">
+              <li><a href="Pisos.html#detalle15">FLOTANTES</a></li>
+              <li><a href="Pisos.html#detalle16">VILINICOS</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </li>
+    </ul>
+  </nav>
+         
+</header>
+
+    <div class="hero">
+<img src="images\cortina1.jpg" alt="Cortina 1" class="slide active">
+
+    </div>
+
+    <!-- Trabajos Realizados -->
+<!-- Trabajos Realizados -->
+<!-- Trabajos Realizados -->
+<section id="trabajos" class="trabajos-realizados fade-in ">
+   
+    <h2>Cortinas </h2>
+<div class="galeria ">
+    <figure>
+        <a href="cortinas.html#detalle10">
+ <img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" alt="Trabajo realizado 1">        </a>
+        </a>
+       
+         
+    </figure>
+    <figure>
+        <a href="cortinas.html#detalle11">
+ <img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" alt="Trabajo realizado 1">      </a>
+        </a>
+    </figure>
+   <figure>
+        <a href="cortinas.html#detalle11">
+ <img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" alt="Trabajo realizado 1">      </a>
+        </a>
+    </figure>
+</div>
+
+   <h3>Algunos de nuestros trabajos </h3>
+
+ 
+</section>
+<section id="trabajos" class="trabajos-realizados fade-in ">
+   
+    <h2>Sofás </h2>
+<div class="galeria ">
+    <figure>
+        <a href="sofas.html#detalle15">
+  <img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" alt="Trabajo realizado 1">           </a>
+        </a>
+    </figure>
+    <figure>
+        <a href="sofas.html#detalle16">
+  <img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" alt="Trabajo realizado 1">          </a>
+        </a>
+    </figure>
+    <figure>
+        <a href="sofas.html#detalle16">
+  <img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" alt="Trabajo realizado 1">          </a>
+    </figure>
+
+</div>
+  
+
+   <h3>Algunos de nuestros trabajos </h3>
+
+  
+</section>
+<section id="trabajos" class="trabajos-realizados fade-in ">
+   
+        <h2>Alfombras Y Moquettes </h2>
+<div class="galeria ">
+    <figure>
+        <a href="Alfombras.html#detalle20">
+  <img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" alt="Trabajo realizado 1">           </a>
+        </a>
+    </figure>
+    <figure>
+        <a href="Alfombras.html#detalle21">
+  <img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" alt="Trabajo realizado 1">          </a>
+        </a>
+    </figure>
+    <figure>
+        <a href="Alfombras.html#detalle21">
+  <img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" alt="Trabajo realizado 1">          </a>
+    </figure>
+
+</div>
+  
+   <h3>Algunos de nuestros trabajos </h3>
+
+
+  
+</section>
+<section id="trabajos" class="trabajos-realizados fade-in ">
+   
+        <h2>Pisos  </h2>
+<div class="galeria ">
+    <figure>
+        <a href="Pisos.html#detalle15">
+  <img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" alt="Trabajo realizado 1">           </a>
+        </a>
+    </figure>
+    <figure>
+        <a href="Pisos.html#detalle16">
+  <img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" alt="Trabajo realizado 1">          </a>
+        </a>
+    </figure>
+    <figure>
+        <a href="Pisos.html#detalle16">
+  <img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" alt="Trabajo realizado 1">          </a>
+    </figure>
+
+</div>
+  
+   <h3>Algunos de nuestros trabajos </h3>
+
+
+  
+</section>
+    <!-- Ubicación Google Maps -->
+  <section class="ubicacion fade-in">
+    <div class="decorative-divider-left"></div>
+    <div class="decorative-divider-right"></div>
+    <h2>UBICACIÓN</h2>
+    <div class="mapa">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2425.491627166748!2d-8.5934646!3d41.1262825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2466c645209ded%3A0x46bafc6a8cc4cf9!2sYour%20Company%20Address!5e0!3m2!1ses!2ses!4v1630443473190!5m2!1ses!2ses"
+            width="100"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+        ></iframe>
+    </div>
+</section>
+
+
+    <div class="tooltip">
+        <a href="https://wa.me/598099696563" target="_blank" class="whatsapp-icon">
+            <img src="2.png" alt="WhatsApp">
+            <span class="tooltiptext">¡Contáctanos por WhatsApp!</span>
+        </a>
+    </div>
+ <div class="tooltip">
+        <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank" class="instagram-icon">
+            <img src="instagram.png" alt="Instagram">
+            <span class="tooltiptext">¡Contáctanos por Instagram!</span>
+        </a>
+    </div>
+   <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><strong>Ubicación: </strong> Maldonado/Calle Joaquin De Viana Esq Dr Edye - Cel: 099 696 610</p>
+                <p><a href="mailto:Cortinas&Sofas@gmail.com" class="footer-email">Cortinas&Sofas@gmail.com</a></p>
+            </div>
+          
+                  <div class="footer-whatsapp">
+                <img src="2.png" alt="WhatsApp">
+                <div>
+                    <p>SOLICITA PRESUPUESTO VIA WHATSAPP</p>
+                    <p>099 696 610</p>
+                </div>
+            </div>
+        </div>
+        
+            <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
+    
+    </footer>
+
+    <script src="script.js"></script>
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuItems = document.querySelectorAll(".nav-menu > ul > li > a");
+  let lastClickedItem = null;
+  let lastClickTime = 0;
+  const doubleClickDelay = 300; // Tiempo en milisegundos para detectar doble clic
+
+  // Función para detectar si es un dispositivo móvil
+  function isMobile() {
+    return window.matchMedia("only screen and (max-width: 768px)").matches;
+  }
+
+  menuItems.forEach((item) => {
+    item.addEventListener("click", function (event) {
+      if (!isMobile()) return; // Solo se ejecuta en dispositivos móviles
+      
+      const parentLi = this.parentElement;
+      const hasSubmenu = parentLi.querySelector(".submenu");
+      const currentTime = new Date().getTime();
+
+      if (hasSubmenu) {
+        event.preventDefault(); // Evita la redirección inmediata
+
+        // Si el mismo elemento se toca dos veces dentro del tiempo límite, redirigir
+        if (lastClickedItem === this && currentTime - lastClickTime < doubleClickDelay) {
+          window.location.href = this.href; // Redirige a la categoría principal
+          return;
+        }
+
+        // Cerrar todos los submenús antes de abrir uno nuevo
+        document.querySelectorAll(".nav-menu > ul > li").forEach((li) => {
+          li.classList.remove("active");
+        });
+
+        // Abrir el submenú del elemento actual
+        parentLi.classList.add("active");
+
+        lastClickedItem = this;
+        lastClickTime = currentTime;
+      }
+    });
+  });
+
+  // Mantener el submenú abierto si la URL coincide con una subcategoría
+  const currentURL = window.location.href;
+
+  document.querySelectorAll(".submenu a, .submenu-categorias a").forEach((subItem) => {
+    if (currentURL.includes(subItem.href)) {
+      const parentLi = subItem.closest("li");
+      if (parentLi) {
+        parentLi.classList.add("active");
+
+        // También abrir el menú padre si es una subcategoría
+        const grandParentLi = parentLi.closest(".submenu");
+        if (grandParentLi) {
+          grandParentLi.parentElement.classList.add("active");
+        }
+      }
+    }
+
+    // Cerrar el menú cuando se selecciona una opción
+    subItem.addEventListener("click", function () {
+      document.querySelectorAll(".nav-menu > ul > li").forEach((li) => {
+        li.classList.remove("active");
+      });
+    });
+  });
+});
+
+</script>
+</body>
+
+</html>
