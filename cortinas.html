@@ -5,14 +5,14 @@
     <title>Cortinas Personalizadas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-  <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
             margin-top:  60px;
             padding: 0;
             line-height: 1.6;
             color: #333;
-            background-color:beige;
+            background-color:whitesmoke;
         }
        header {
     padding: 20px 0;
@@ -173,7 +173,77 @@ nav a:hover {
     position: absolute;
     background-color: white;
 }
+.instagram-icon img {
+    width: 40px; /* Ajusta el tamaño a 60px */
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.whatsapp-icon img {
+    width: 40px; /* Ajusta el tamaño a 60px */
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+}@media (max-width: 768px) {
+    nav ul {
+        display: flex;  /* Para hacer que los elementos estén en fila */
+        flex-direction: column; /* Para apilar los elementos verticalmente */
+    }  .nav-menu {
+        
+        background-color: white;
+    }
+   .hamburger {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    display: block;
+    position: relative;
+    margin-right: 30px;
+    
+}.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    left: 0;
+    transition: transform 0.3s ease;
+}
 
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}/* Ocultar submenús por defecto */
+
+
+.submenu{
+    left:-20% ;
+    position: absolute;
+        background-color: white;
+
+}
+.submenu-categorias{
+    left:-100% ;
+    position: absolute;
+    background-color: white;
+}
+.instagram-icon img {
+    width: 40px; /* Ajusta el tamaño a 60px */
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.whatsapp-icon img {
+    width: 40px; /* Ajusta el tamaño a 60px */
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
 }
 
 /* Estilo específico para pantallas grandes */
@@ -303,7 +373,7 @@ img{
 .container-productos .card{
     width: 260px;
     height: 390px;
-    background: beige;
+    background: whitesmoke;
     color:#black;
     border-radius: 8px;
     border:1px solid  white;
@@ -435,7 +505,7 @@ input#search-bar{
     </style>
 <body>
     
-     <header>
+           <header>
   <div class="logo" >
             <img src="images/n (1).png" alt="Logo">
         </div>
@@ -458,14 +528,22 @@ input#search-bar{
             <a href="#products">CORTINAS</a>
             <ul class="submenu-categorias">
               <li><a href="cortinas.html#detalle10">TRADICIONALES</a></li>
-              <li><a href="cortinas.html#detalle11">ROLLERS</a></li>
-            </ul>
+              <li><a href="#products">ROLLERS
+                      SUNSCREEN</a></li>
+                    <li><a href="cortinas.html#detalle10">ROLLERS
+                            BLACKOUT</a></li>
+              
+            </ul> 
           </li>
            <li>
             <a href="#products">SOFÁS</a>
             <ul class="submenu-categorias">
-              <li><a href="sofas.html#detalle19">CHASELONGUE</a></li>
-              <li><a href="sofas.html#detalle18">ESQUINEROS</a></li>
+              <li><a href="sofas.html#detalle15">CHASELONGUE/
+                      ESQUINEROS</a></li>
+               <li><a href="sofas.html#detalle16">SOFÁ DE UN CUERPO</a></li>
+                 <li><a href="sofas.html#detalle16">SOFÁ DE DOS CUERPOS</a></li>
+                   <li><a href="sofas.html#detalle16">SOFÁ DE TRES CUERPOS</a></li>
+                <li><a href="sofas.html#detalle16">SOFÁ CAMA</a></li>
             </ul>
           </li>
             <li><a href="tapizados.html">TAPIZADOS</a></li>
@@ -479,7 +557,11 @@ input#search-bar{
               <li><a href="Pisos.html#detalle16">VILINICOS</a></li>
             </ul>
           </li>
-
+<li>
+            <a href="MotorizacionesYAutomatizmos.html">MOTORIZACIONES /
+              AUTOMATIZMOS</a>
+           
+          </li>
         </ul>
       </li>
     </ul>
