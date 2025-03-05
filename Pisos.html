@@ -4,6 +4,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cortinas Personalizadas</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </head>
     <style>
         body {
@@ -407,9 +411,24 @@ img{
     margin: 0 auto;
 }
 
+.swiper {
+    width: 100%;
+    height: 290px;
+    position: relative;
+}
 
-
-
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow:hidden;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    color: whitesmoke; /* Asegúrate de que sean visibles */
+  font-size: 40px !important;
+                    
+}
 
 
 
@@ -505,7 +524,7 @@ input#search-bar{
     </style>
 <body>
     
-       <header>
+          <header>
   <div class="logo" >
             <img src="images/n (1).png" alt="Logo">
         </div>
@@ -538,8 +557,12 @@ input#search-bar{
            <li>
             <a href="#products">SOFÁS</a>
             <ul class="submenu-categorias">
-              <li><a href="sofas.html#detalle15">CHASELONGUE</a></li>
-              <li><a href="sofas.html#detalle16">ESQUINEROS</a></li>
+              <li><a href="sofas.html#detalle15">CHASELONGUE/
+                      ESQUINEROS</a></li>
+               <li><a href="sofas.html#detalle16">SOFÁ DE UN CUERPO</a></li>
+                 <li><a href="sofas.html#detalle16">SOFÁ DE DOS CUERPOS</a></li>
+                   <li><a href="sofas.html#detalle16">SOFÁ DE TRES CUERPOS</a></li>
+                <li><a href="sofas.html#detalle16">SOFÁ CAMA</a></li>
             </ul>
           </li>
             <li><a href="tapizados.html">TAPIZADOS</a></li>
@@ -584,51 +607,105 @@ input#search-bar{
 <main>
 
       
-
-   <div class="container-productos fade-in" id="lista-productos">
-
-<div class="card">
-    <img src="https://i.postimg.cc/P5F8HN5R/fondos-de-cortina-aq8w0qfpmll48ls1.jpg" class="producto-imagen">
-    <h5 class="producto-nombre">CORTINA ROJA</h5>
-           
-            <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-      
-          </div><div class="card">
-    <img src="https://i.postimg.cc/P5F8HN5R/fondos-de-cortina-aq8w0qfpmll48ls1.jpg" class="producto-imagen">
-    <h5 class="producto-nombre">CORTINA ROJA</h5>
-           
-            <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-      
-          </div>
+<div class="container-productos fade-in" id="lista-productos">
+    <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+    
      <div class="card">
-    <img src="https://i.postimg.cc/P5F8HN5R/fondos-de-cortina-aq8w0qfpmll48ls1.jpg" class="producto-imagen">
-    <h5 class="producto-nombre">CORTINA ROJA</h5>
-           
-            <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-      
-          </div>
-            <div class="card">
-    <img src="https://i.postimg.cc/P5F8HN5R/fondos-de-cortina-aq8w0qfpmll48ls1.jpg" class="producto-imagen">
-    <h5 class="producto-nombre">CORTINA ROJA</h5>
-           
-            <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-      
-          </div>
-
-            <div class="card">
-    <img src="https://i.postimg.cc/P5F8HN5R/fondos-de-cortina-aq8w0qfpmll48ls1.jpg" class="producto-imagen">
-    <h5 class="producto-nombre">CORTINA ROJA</h5>
-           
-            <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-      
-          </div>
-              <div class="card">
-    <img src="https://i.postimg.cc/P5F8HN5R/fondos-de-cortina-aq8w0qfpmll48ls1.jpg" class="producto-imagen">
-    <h5 class="producto-nombre">CORTINA ROJA</h5>
-           
-            <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-      
-          </div>
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+      <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+             <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+             <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+               <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+    
           
           </div>
 
@@ -643,54 +720,110 @@ input#search-bar{
          
 
 </div>
-                    </div>
+                    </div>                    </div>
+
 
 <h2>VINILICOS </h2>
 
-           <div class="container-productos fade-in" id="lista-productos">
-
-<div class="card">
-    <img src="https://i.postimg.cc/P5F8HN5R/fondos-de-cortina-aq8w0qfpmll48ls1.jpg" class="producto-imagen">
-    <h5 class="producto-nombre">CORTINA ROJA</h5>
-           
-            <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-      
-          </div><div class="card">
-    <img src="https://i.postimg.cc/P5F8HN5R/fondos-de-cortina-aq8w0qfpmll48ls1.jpg" class="producto-imagen">
-    <h5 class="producto-nombre">CORTINA ROJA</h5>
-           
-            <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-      
-          </div>
+         <div class="container-productos fade-in" id="lista-productos">
+    <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+    
      <div class="card">
-    <img src="https://i.postimg.cc/P5F8HN5R/fondos-de-cortina-aq8w0qfpmll48ls1.jpg" class="producto-imagen">
-    <h5 class="producto-nombre">CORTINA ROJA</h5>
-           
-            <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-      
-          </div>
-            <div class="card">
-    <img src="https://i.postimg.cc/P5F8HN5R/fondos-de-cortina-aq8w0qfpmll48ls1.jpg" class="producto-imagen">
-    <h5 class="producto-nombre">CORTINA ROJA</h5>
-           
-            <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-      
-          </div>
-
-            <div class="card">
-    <img src="https://i.postimg.cc/P5F8HN5R/fondos-de-cortina-aq8w0qfpmll48ls1.jpg" class="producto-imagen">
-    <h5 class="producto-nombre">CORTINA ROJA</h5>
-           
-            <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-      
-          </div>
-              <div class="card">
-    <img src="https://i.postimg.cc/P5F8HN5R/fondos-de-cortina-aq8w0qfpmll48ls1.jpg" class="producto-imagen">
-    <h5 class="producto-nombre">CORTINA ROJA</h5>
-           
-            <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-      
-          </div>
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+      <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+             <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+             <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+               <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+    
           
           </div>
 </main>
@@ -819,7 +952,20 @@ document.querySelectorAll(".agregar-carrito").forEach(boton => {
         window.location.href = url;
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    var swipers = document.querySelectorAll('.mySwiper');
 
+    swipers.forEach(function(swiperElement) {
+        new Swiper(swiperElement, {
+            loop: true, // Hace que el slider sea infinito
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+         
+        });
+    });
+});
 </script>
 </body>
 </html>
