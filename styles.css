@@ -285,7 +285,7 @@ nav ul li:hover .submenu {
 
 
 .slide.active {
-    animation: zoomInOut 15s ease-in-out; /* Asegúrate de que la animación tenga el mismo tiempo */
+    animation: zoomInOut 15s ease-in-out infinite; /* Asegúrate de que la animación tenga el mismo tiempo */
 }
 
 
