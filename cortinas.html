@@ -1062,27 +1062,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-document.querySelectorAll(".agregar-carrito").forEach(boton => {
-    boton.addEventListener("click", function(event) {
-        event.preventDefault();
 
-        let card = this.closest(".card");
-        let nombre = card.querySelector(".producto-nombre").innerText.trim();
-        let imagen = card.querySelector(".producto-imagen").src;
-
-        if (!nombre || !imagen) {
-            alert("Error: No se encontró el nombre o la imagen del producto.");
-            return;
-        }
-
-        // Mensaje con imagen (se envía solo como un enlace)
-        let mensaje = `Hola, me interesa el producto: *${nombre}*.%0A🔹 Imagen: ${imagen}`;
-        let telefono = "598099696563";
-        let url = `https://wa.me/${telefono}?text=${mensaje}`;
-
-        window.location.href = url;
-    });
-});
 document.addEventListener("DOMContentLoaded", function() {
     var swipers = document.querySelectorAll('.mySwiper');
 
@@ -1094,6 +1074,28 @@ document.addEventListener("DOMContentLoaded", function() {
                 prevEl: '.swiper-button-prev',
             }
          
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll(".agregar-carrito").forEach(boton => { 
+        boton.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            let card = this.closest(".card");
+            let nombre = card.querySelector(".producto-nombre")?.innerText.trim();
+            let imagen = card.querySelector(".swiper-slide img")?.src;
+
+            if (!nombre || !imagen) {
+                alert("Error: No se encontró el nombre o la imagen del producto.");
+                return;
+            }
+
+            let mensaje = `Hola, me interesa el producto: *${nombre}*.%0A🔹 Imagen: ${imagen}`;
+            let telefono = "598099696563";
+            let url = `https://wa.me/${telefono}?text=${mensaje}`;
+
+            window.location.href = url;
         });
     });
 });
