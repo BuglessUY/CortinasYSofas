@@ -4,16 +4,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cortinas Personalizadas</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
-<style>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</head>
+    <style>
         body {
             font-family: Arial, sans-serif;
             margin-top:  60px;
             padding: 0;
             line-height: 1.6;
             color: #333;
-            background-color:beige;
+            background-color:whitesmoke;
         }
        header {
     padding: 20px 0;
@@ -46,10 +49,10 @@ nav {
     margin-top: 10px;
     margin-bottom: 20px; /* Espacio debajo del nav */
 
-}  
+} 
 .nav-menu {
     display: none;
-    
+    justify-content: center;
     flex-direction: column;  /* Vertical */
     background-color: white;   /* Fondo del menú desplegable */
     position: absolute;      /* Lo mantenemos en posición absoluta, pero revisaremos los márgenes */
@@ -131,6 +134,9 @@ nav a:hover {
     nav ul {
         display: flex;  /* Para hacer que los elementos estén en fila */
         flex-direction: column; /* Para apilar los elementos verticalmente */
+    }  .nav-menu {
+        
+        background-color: white;
     }
    .hamburger {
     width: 25px;
@@ -157,6 +163,90 @@ nav a:hover {
 
 .hamburger::after {
     top: 8px;
+}/* Ocultar submenús por defecto */
+
+
+.submenu{
+    left:-20% ;
+    position: absolute;
+        background-color: white;
+
+}
+.submenu-categorias{
+    left:-100% ;
+    position: absolute;
+    background-color: white;
+}
+.instagram-icon img {
+    width: 40px; /* Ajusta el tamaño a 60px */
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.whatsapp-icon img {
+    width: 40px; /* Ajusta el tamaño a 60px */
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+}@media (max-width: 768px) {
+    nav ul {
+        display: flex;  /* Para hacer que los elementos estén en fila */
+        flex-direction: column; /* Para apilar los elementos verticalmente */
+    }  .nav-menu {
+        
+        background-color: white;
+    }
+   .hamburger {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    display: block;
+    position: relative;
+    margin-right: 30px;
+    
+}.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}/* Ocultar submenús por defecto */
+
+
+.submenu{
+    left:-20% ;
+    position: absolute;
+        background-color: white;
+
+}
+.submenu-categorias{
+    left:-100% ;
+    position: absolute;
+    background-color: white;
+}
+.instagram-icon img {
+    width: 40px; /* Ajusta el tamaño a 60px */
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.whatsapp-icon img {
+    width: 40px; /* Ajusta el tamaño a 60px */
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 }
 
@@ -231,9 +321,210 @@ nav a:hover {
             color: #fff;
             margin-top: 20px;
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    letter-spacing: 0.03em;
+    line-height: 1.3;
+}
+
+p{
+    padding: 5px;
+}
+
+img{
+    border-radius: 4px;
+}
+
+.button{
+    background:#009900;
+    text-decoration: none;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    color:  #f2f2f2;
+    font-weight: 700;
+}
+.button:hover{
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #00cc00;
+    color: white;
+}
+
+/*productos-card*/
+.container-productos{
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+.container-productos .card{
+    width: 260px;
+    height: 390px;
+    background: whitesmoke;
+    color:#black;
+    border-radius: 8px;
+    border:1px solid  white;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin: 50px;
+    text-align: center;
+    align-items: center;
+    transition: all 0.25s;
+}
+.container-productos .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+}
+.container-productos .card img{
+    width: 300px;
+    height: 290px;
+    cursor: pointer;
+}
+.container-productos .card h5{
+    font-weight: 600;
+    padding: 5px;
+}
+.container-productos .card p{
+    padding-top: 5px;
+}
+.container-productos .card a{
+    padding:10px;
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.swiper {
+    width: 100%;
+    height: 290px;
+    position: relative;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow:hidden;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    color: whitesmoke; /* Asegúrate de que sean visibles */
+  font-size: 40px !important;
+                    
+}
+
+
+
+@media (max-width: 769px) {
+
+    /*menu*/
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+    }
+    .navigation{
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .navigation ul{
+        display: none;
+    }
+    .navigation ul.show{
+        display: block;
+    }
+    .navigation ul li{
+        display: block;
+    }
+    .navigation ul li a{
+        display: block;
+        padding: 0.5rem 0;
+    }
+    .navigation ul li a:hover{
+        color: #f2f2f2;
+    }
+
+   
+
+
+ 
+
+
+
+
+
+
+  
+}
+
+.search-container{
+  width: 10%;
+  display: block;
+  margin: 0 auto;
+  
+}
+
+input#search-bar{
+  margin: 0 auto;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border: 1px solid aqua;
+  outline: none;
+  &:focus{
+    border: 1px solid aqua;
+    transition: 0.35s ease;
+    color: #008ABF;
+    &::-webkit-input-placeholder{
+      transition: opacity 0.45s ease; 
+  	  opacity: 0;
+     }
+    &::-moz-placeholder {
+      transition: opacity 0.45s ease; 
+  	  opacity: 0;
+     }
+    &:-ms-placeholder {
+     transition: opacity 0.45s ease; 
+  	 opacity: 0;
+     }    
+   }
+ }
+
+.search-icon{
+  position: relative;
+  float: right;
+  width: 75px;
+  height: 75px;
+  top: -62px;
+  right: -45px;
+}
+
+
+
+
+
     </style>
 <body>
-            <header>
+    
+                 <header>
   <div class="logo" >
             <img src="images/n (1).png" alt="Logo">
         </div>
@@ -296,48 +587,263 @@ nav a:hover {
   </nav>
          
 </header>
+ 
  <div class="titulo-estatico">
-        <h1>PERSIANAS</h1>
+        <h1>CORTINAS</h1>
     </div>
     <div class="texto-centrado fade-in">
-         <div id="detalle7">
-        <h1>PERSIANAS A</h1>
+         <div id="detalle15">
+        <h1>FLOTANTES </h1>
     <p>Contamos con la mejor calidad y variedad en cortinas y persianas para el exterior de su casa o empresa.</p>
     <p><strong>Conozca nuestras opciones más populares:</strong></p>
-    <h2>PERSIANAS A</h2>
+    <h2>NUESTROS PRODUCTOS</h2>
     <p>Las persianas tradicionales enrollables en PVC se colocan donde ya ha sido previsto un hueco para la instalación de cortinas exteriores en la arquitectura del ambiente.</p>
     <p>Al ser realizada con lamas de PVC, estas cortinas no sólo permiten regular el ingreso de luz al ambiente sino que resultan más livianas y resistentes en su uso diario. Si Ud. aún cuenta con una persiana de madera antigua, no dude en optar por esta solución más práctica y de fácil mantenimiento.</p>
-<div class="galeria">
-<img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" >       
-<img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" > 
-<img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" > </div> </div>
-   <div id="detalle8">  <h1 >PERSIANAS B</h1>
-    <p>Contamos con la mejor calidad y variedad en cortinas y persianas para el exterior de su casa o empresa.</p>
-    <p><strong>Conozca nuestras opciones más populares:</strong></p>
-    <h2>PERSIANAS B</h2>
-    <p>Las persianas tradicionales enrollables en PVC se colocan donde ya ha sido previsto un hueco para la instalación de cortinas exteriores en la arquitectura del ambiente.</p>
-    <p>Al ser realizada con lamas de PVC, estas cortinas no sólo permiten regular el ingreso de luz al ambiente sino que resultan más livianas y resistentes en su uso diario. Si Ud. aún cuenta con una persiana de madera antigua, no dude en optar por esta solución más práctica y de fácil mantenimiento.</p>
-<div class="galeria">
-<img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" >       
-<img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" > 
-<img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" > </div></div>
-     <div id="detalle9">  <h1>PERSIANAS C </h1>
-    <p>Contamos con la mejor calidad y variedad en cortinas y persianas para el exterior de su casa o empresa.</p>
-    <p><strong>Conozca nuestras opciones más populares:</strong></p>
-    <h2>PERSIANAS C  </h2>
-    <p>Las persianas tradicionales enrollables en PVC se colocan donde ya ha sido previsto un hueco para la instalación de cortinas exteriores en la arquitectura del ambiente.</p>
-    <p>Al ser realizada con lamas de PVC, estas cortinas no sólo permiten regular el ingreso de luz al ambiente sino que resultan más livianas y resistentes en su uso diario. Si Ud. aún cuenta con una persiana de madera antigua, no dude en optar por esta solución más práctica y de fácil mantenimiento.</p>
-<div class="galeria">
-<img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" >       
-<img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" > 
-<img src="fondos-de-cortina-aq8w0qfpmll48ls1.jpg" > </div></div>
-    
-</div>
+         
 
+</div>
+        </div>
+<h2>FLOTANTESS </h2>
+<main>
+
+      
+<div class="container-productos fade-in" id="lista-productos">
+    <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+    
+     <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+      <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+             <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+             <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+               <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+    
+          
+          </div>
+
+    <div class="texto-centrado fade-in">
+         <div id="detalle16">
+        <h1>VINILICOS </h1>
+    <p>Contamos con la mejor calidad y variedad en cortinas y persianas para el exterior de su casa o empresa.</p>
+    <p><strong>Conozca nuestras opciones más populares:</strong></p>
+    <h2>NUESTROS PRODUCTOS</h2>
+    <p>Las persianas tradicionales enrollables en PVC se colocan donde ya ha sido previsto un hueco para la instalación de cortinas exteriores en la arquitectura del ambiente.</p>
+    <p>Al ser realizada con lamas de PVC, estas cortinas no sólo permiten regular el ingreso de luz al ambiente sino que resultan más livianas y resistentes en su uso diario. Si Ud. aún cuenta con una persiana de madera antigua, no dude en optar por esta solución más práctica y de fácil mantenimiento.</p>
+         
+
+</div>
+                    </div>                    </div>
+
+
+<h2>VINILICOS </h2>
+
+         <div class="container-productos fade-in" id="lista-productos">
+    <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+    
+     <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+      <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+             <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+             <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+               <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortina1.jpg"></div>
+                <div class="swiper-slide"><img src="images/81IbmvmOTdL.jpg"></div>
+                <div class="swiper-slide"><img src="images/top.jpg"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+    
+          
+          </div>
+</main>
   
 
     <!-- Sección de Ubicación -->
 
+ <h2>UBICACIÓN</h2>
+  <!-- Ubicación Google Maps -->
+  <section class="ubicacion fade-in">
+
+   
+   
+    
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.025703262303!2d-54.96562992370957!3d-34.90580447351586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x957511920fbb2a45%3A0x214855002a65043!2sCortinas%20%26%20Sofas!5e0!3m2!1ses-419!2suy!4v1740417685035!5m2!1ses-419!2suy" 
+         width="100%" height="100" style="border:0;" allowfullscreen="" loading="lazy">
+</iframe>
+
+
+</section>
 
    <!-- Icono de WhatsApp con Tooltip -->
     <div class="tooltip">
@@ -365,11 +871,114 @@ nav a:hover {
                 </div>
             </div>
         </div>
-        <div class="footer-sobrenosotros">
+       
             <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
-        </div>
+       
     </footer>
        <script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuItems = document.querySelectorAll(".nav-menu > ul > li > a");
+  let lastClickedItem = null;
+  let lastClickTime = 0;
+  const doubleClickDelay = 300; // Tiempo en milisegundos para detectar doble clic
 
+  // Función para detectar si es un dispositivo móvil
+  function isMobile() {
+    return window.matchMedia("only screen and (max-width: 768px)").matches;
+  }
+
+  menuItems.forEach((item) => {
+    item.addEventListener("click", function (event) {
+      if (!isMobile()) return; // Solo se ejecuta en dispositivos móviles
+      
+      const parentLi = this.parentElement;
+      const hasSubmenu = parentLi.querySelector(".submenu");
+      const currentTime = new Date().getTime();
+
+      if (hasSubmenu) {
+        event.preventDefault(); // Evita la redirección inmediata
+
+        // Si el mismo elemento se toca dos veces dentro del tiempo límite, redirigir
+        if (lastClickedItem === this && currentTime - lastClickTime < doubleClickDelay) {
+          window.location.href = this.href; // Redirige a la categoría principal
+          return;
+        }
+
+        // Cerrar todos los submenús antes de abrir uno nuevo
+        document.querySelectorAll(".nav-menu > ul > li").forEach((li) => {
+          li.classList.remove("active");
+        });
+
+        // Abrir el submenú del elemento actual
+        parentLi.classList.add("active");
+
+        lastClickedItem = this;
+        lastClickTime = currentTime;
+      }
+    });
+  });
+
+  // Mantener el submenú abierto si la URL coincide con una subcategoría
+  const currentURL = window.location.href;
+
+  document.querySelectorAll(".submenu a, .submenu-categorias a").forEach((subItem) => {
+    if (currentURL.includes(subItem.href)) {
+      const parentLi = subItem.closest("li");
+      if (parentLi) {
+        parentLi.classList.add("active");
+
+        // También abrir el menú padre si es una subcategoría
+        const grandParentLi = parentLi.closest(".submenu");
+        if (grandParentLi) {
+          grandParentLi.parentElement.classList.add("active");
+        }
+      }
+    }
+
+    // Cerrar el menú cuando se selecciona una opción
+    subItem.addEventListener("click", function () {
+      document.querySelectorAll(".nav-menu > ul > li").forEach((li) => {
+        li.classList.remove("active");
+      });
+    });
+  });
+});
+document.querySelectorAll(".agregar-carrito").forEach(boton => {
+    boton.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        let card = this.closest(".card");
+        let nombre = card.querySelector(".producto-nombre").innerText.trim();
+        let imagen = card.querySelector(".producto-imagen").src;
+
+        if (!nombre || !imagen) {
+            alert("Error: No se encontró el nombre o la imagen del producto.");
+            return;
+        }
+
+        // Mensaje con imagen (se envía solo como un enlace)
+        let mensaje = `Hola, me interesa el producto: *${nombre}*.%0A🔹 Imagen: ${imagen}`;
+        let telefono = "598099696563";
+        let url = `https://wa.me/${telefono}?text=${mensaje}`;
+
+        window.location.href = url;
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    var swipers = document.querySelectorAll('.mySwiper');
+
+    swipers.forEach(function(swiperElement) {
+        new Swiper(swiperElement, {
+            loop: true, // Hace que el slider sea infinito
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+         
+        });
+    });
+});
+</script>
 </body>
 </html>
