@@ -238,7 +238,7 @@ nav ul li:hover .submenu {
 /* Hero con imágenes dinámicas */
 .hero {
     width: 100%;
-    height: 95vh; /* Ajusta si es necesario */
+    height: auto; /* Ajusta si es necesario */
     overflow: hidden;
     position: relative;
 }
