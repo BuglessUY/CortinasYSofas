@@ -12,6 +12,35 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </head>
     <style>
+        .visor {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.visor img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.visor .cerrar {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
         body {
             font-family: Arial, sans-serif;
             margin-top:  60px;
@@ -926,7 +955,8 @@ Los sofás de tres cuerpos son la opción ideal para quienes buscan amplitud, co
         <!-- Swiper Slider dentro de la tarjeta -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="images/3cuerposx.jpg"></div>
+                <div class="swiper-slide"><img src="images/Ibérico.jpg"></div>
+                <div class="swiper-slide"><img src="images/Ibérico1.jpg"></div>
             
 s            </div>
             <!-- Flechas de navegación -->
@@ -1265,8 +1295,35 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+    <script>
+  document.querySelectorAll('.swiper-slide img').forEach(img => {
+    img.addEventListener('click', () => {
+      const visor = document.getElementById('visor-imagen');
+      const imgAmpliada = document.getElementById('imagen-ampliada');
+      imgAmpliada.src = img.src;
+      visor.style.display = 'flex';
+    });
+  });
+
+  document.querySelector('.visor .cerrar').addEventListener('click', () => {
+    document.getElementById('visor-imagen').style.display = 'none';
+  });
+
+  // Opcional: cerrar al hacer clic fuera de la imagen
+  document.getElementById('visor-imagen').addEventListener('click', e => {
+    if (e.target.id === 'visor-imagen') {
+      e.target.style.display = 'none';
+    }
+  });
+</script>
+
 </script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<!-- Contenedor del visor -->
+<div id="visor-imagen" class="visor">
+  <span class="cerrar">&times;</span>
+  <img class="imagen-grande" id="imagen-ampliada">
+</div>
 
 </body>
 </html>
