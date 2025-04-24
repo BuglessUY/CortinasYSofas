@@ -1191,6 +1191,25 @@ s            </div>
     </footer>
        <script src="script.js"></script>
 <script>
+      document.querySelectorAll('.swiper-slide img').forEach(img => {
+    img.addEventListener('click', () => {
+      const visor = document.getElementById('visor-imagen');
+      const imgAmpliada = document.getElementById('imagen-ampliada');
+      imgAmpliada.src = img.src;
+      visor.style.display = 'flex';
+    });
+  });
+
+  document.querySelector('.visor .cerrar').addEventListener('click', () => {
+    document.getElementById('visor-imagen').style.display = 'none';
+  });
+
+  // Opcional: cerrar al hacer clic fuera de la imagen
+  document.getElementById('visor-imagen').addEventListener('click', e => {
+    if (e.target.id === 'visor-imagen') {
+      e.target.style.display = 'none';
+    }
+  });
 document.addEventListener("DOMContentLoaded", function () {
   const menuItems = document.querySelectorAll(".nav-menu > ul > li > a");
   let lastClickedItem = null;
