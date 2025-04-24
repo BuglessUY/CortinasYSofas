@@ -1296,30 +1296,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
  
-  document.querySelectorAll('.swiper-slide img').forEach(img => {
-    img.addEventListener('click', () => {
-      const visor = document.getElementById('visor-imagen');
-      const imgAmpliada = document.getElementById('imagen-ampliada');
-      imgAmpliada.src = img.src;
-      visor.style.display = 'flex';
-    });
-  });
-
-  document.querySelector('.visor .cerrar').addEventListener('click', () => {
-    document.getElementById('visor-imagen').style.display = 'none';
-  });
-
-  // Opcional: cerrar al hacer clic fuera de la imagen
-  document.getElementById('visor-imagen').addEventListener('click', e => {
-    if (e.target.id === 'visor-imagen') {
-      e.target.style.display = 'none';
-    }
-  });
-
 
 </script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-<!-- Contenedor del visor -->
+
 <div id="visor-imagen" class="visor">
   <span class="cerrar">&times;</span>
   <img class="imagen-grande" id="imagen-ampliada">
