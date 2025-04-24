@@ -955,8 +955,8 @@ Los sofás de tres cuerpos son la opción ideal para quienes buscan amplitud, co
         <!-- Swiper Slider dentro de la tarjeta -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="images/Ibérico.jpg"></div>
-                <div class="swiper-slide"><img src="images/Ibérico1.jpg"></div>
+                <div class="swiper-slide"><img src="images/Ibérico.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="images/Ibérico1.jpg" class="imagen-swiper"></div>
             
 s            </div>
             <!-- Flechas de navegación -->
@@ -1191,14 +1191,12 @@ s            </div>
     </footer>
        <script src="script.js"></script>
 <script>
-  // Esto imprimirá en consola todas las imágenes detectadas
-  document.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('load', () => {
     const imagenes = document.querySelectorAll('.imagen-swiper');
     console.log("Imágenes encontradas:", imagenes.length);
 
     imagenes.forEach(img => {
       img.addEventListener('click', () => {
-        console.log("Imagen clickeada:", img.src);
         document.getElementById('imagen-ampliada').src = img.src;
         document.getElementById('visor-imagen').style.display = 'flex';
       });
