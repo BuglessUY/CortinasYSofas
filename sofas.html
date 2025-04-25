@@ -12,6 +12,39 @@
 </head>
     <style>
       
+.visor {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.visor img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.visor .cerrar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 
         body {
