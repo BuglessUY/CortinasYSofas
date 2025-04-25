@@ -246,6 +246,18 @@ nav a:hover {
     line-height: 1.6;
     padding-top: 90px;
 }
+.galeria img {
+  width: 300px;           /* tamaño fijo horizontal */
+  height: 200px;          /* tamaño fijo vertical */
+  object-fit: cover;      /* recorta sin deformar */
+  border-radius: 10px;    /* opcional, para bordes redondeados */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* opcional, sombra */
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.05); /* efecto al pasar el mouse */
+}
 
 .galeria {
     display: flex;
