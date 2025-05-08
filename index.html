@@ -247,23 +247,29 @@ nav a:hover {
     padding-top: 90px;
 }
 .galeria img {
-  width: 300px;           /* tamaño fijo horizontal */
-  height: 200px;          /* tamaño fijo vertical */
-  object-fit: cover;      /* recorta sin deformar */
+  width: 100%;
+  height: 100%;         /* tamaño fijo vertical */
+  object-fit: cover; 
+      display: block;/* recorta sin deformar */
   border-radius: 10px;    /* opcional, para bordes redondeados */
   box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* opcional, sombra */
   transition: transform 0.3s ease;
 }
-
+.galeria figure {
+  width: 250px; /* Puedes ajustar este ancho */
+  height: 200px; /* Puedes ajustar esta altura */
+  overflow: hidden;
+  margin: 0;
+}
 .galeria img:hover {
   transform: scale(1.05); /* efecto al pasar el mouse */
 }
 
 .galeria {
-    display: flex;
-    justify-content: center; /* Centra las imágenes horizontalmente */
-    gap: 20px; /* Espaciado entre las imágenes */
-    flex-wrap: wrap; /* Asegura que las imágenes se ajusten en pantallas pequeñas */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
 }
 #detalle1, #detalle2, #detalle3,#detalle4, #detalle5, #detalle6 {
     margin-bottom: 240px; /* Agrega más espacio entre las secciones */
