@@ -9,7 +9,43 @@
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </head>
-    <style>
+ <style>
+         
+.visor {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.visor img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.visor .cerrar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
         body {
             font-family: Arial, sans-serif;
             margin-top:  60px;
@@ -88,7 +124,17 @@ nav ul {
     padding: 0;
     display: flex;
 }
+.swiper-slide a {
+  display: block;
+}
 
+.swiper-slide a img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border: none;
+}
 
 
 nav li {
@@ -351,7 +397,8 @@ img{
 .button{
     background:#009900;
     text-decoration: none;
-    margin:50px;
+    padding: 15px;
+    margin-top: 15px;
     border-radius: 5px;
     color:  #f2f2f2;
     font-weight: 700;
@@ -519,11 +566,11 @@ input#search-bar{
 
 
 
-
     </style>
 <body>
     
-             <header>
+                     <header>
+ 
 <div class="logo">
     <a href="index.html">
         <img src="images/WhatsApp-Image-2025-05-26-at-2.05.50-PM.png" alt="Logo">
@@ -568,7 +615,6 @@ input#search-bar{
           </li>
             <li><a href="tapizados.html">TAPIZADOS</a></li>
             <li><a href="persianas.html">PERSIANAS</a></li>
-            <li><a href="sillasybutacas.html">SILLAS / BUTACAS</a></li>
             <li><a href="Alfombras.html">ALFOMBRAS /
                      MOQUETTES</a></li>
            <li>
@@ -586,7 +632,7 @@ input#search-bar{
         </ul>
       </li>
     </ul>
-  </nav> 
+  </nav>
          
 </header>
  
@@ -594,14 +640,19 @@ input#search-bar{
         <h1>CORTINAS</h1>
     </div>
     <div class="texto-centrado fade-in">
-         <div id="detalle30">
-        <h1>SILLAS </h1>
-Las sillas y butacas son el equilibrio ideal entre confort, estilo y funcionalidad, perfectas para realzar cualquier ambiente con un toque distintivo y acogedor. Diseñadas con atención al detalle, se adaptan a diferentes necesidades y estilos, brindando una solución estética y ergonómica para el hogar o espacios profesionales. Su estructura sólida y materiales de alta calidad aseguran una gran durabilidad, mientras que sus formas envolventes y acolchados ofrecen una experiencia de uso sumamente confortable. Disponibles en una amplia gama de colores, tapizados y diseños, se integran armoniosamente con cualquier tipo de decoración, desde la más clásica hasta la más contemporánea. Fáciles de combinar y mantener, las sillas y butacas son mucho más que un asiento: son una expresión de buen gusto y comodidad duradera.             <p><strong>Conozca nuestras opciones más populares:</strong></p>
-    <h2>NUESTRAS SILLAS Y BUTACAS</h2>
+         <div id="detalle15">
+        <h1>TRADICIONALES </h1>
+    <p>Las cortinas tradicionales ofrecen elegancia, funcionalidad y un toque distintivo para cualquier espacio. Diseñadas a medida, se adaptan perfectamente a las necesidades de cada cliente, garantizando un ajuste preciso y un acabado impecable. Disponibles en una amplia variedad de telas, colores y estilos, proporcionan control de luz, privacidad y un ambiente acogedor en hogares y oficinasContamos con la mejor calidad y variedad en cortinas y persianas para el exterior de su casa o empresa.</p>
+    <p><strong>Conozca nuestras opciones más populares:</strong></p>
+    <h2>NUESTRAS CORTINAS TRADICIONALES
+    </h2>
+
+
          
 
 </div>
         </div>
+
 <main>
 
       
@@ -610,15 +661,15 @@ Las sillas y butacas son el equilibrio ideal entre confort, estilo y funcionalid
         <!-- Swiper Slider dentro de la tarjeta -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="images/butacaflor.jpg"></div>
-                
-      </div>
+                <div class="swiper-slide"><img src="images/tradicional1.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="images/tradicional1.1.jpg" class="imagen-swiper"></div>
+s            </div>
             <!-- Flechas de navegación -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
-        <div style="margin-top: 15px;"></div>
-    
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
         <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
     </div>
     
@@ -626,55 +677,309 @@ Las sillas y butacas son el equilibrio ideal entre confort, estilo y funcionalid
         <!-- Swiper Slider dentro de la tarjeta -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="images/butaca2.jpg"></div>
-            
+                <div class="swiper-slide"><img src="images/BullenPiznaAmericana.jpg" class="imagen-swiper"></div>
+           
 s            </div>
             <!-- Flechas de navegación -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
         
-   <div style="margin-top: 15px;"></div>
+        <h5 class="producto-nombre">BULL PINZA AMERICANA</h5>
         <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
     </div>
       <div class="card">
         <!-- Swiper Slider dentro de la tarjeta -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="images/butacaspequeñas1.jpg"></div>
-            <div class="swiper-slide"><img src="images/butacaspequeñas.jpg"></div>
+                <div class="swiper-slide"><img src="images/CortinaGasayCenefatapizada.jpg" class="imagen-swiper"></div>
             
-
-               
-s            </div>
+           </div>
             <!-- Flechas de navegación -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
-         <div style="margin-top: 15px;"></div>
-
+        
+        <h5 class="producto-nombre">CORTINA GASA</h5>
         <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
     </div>
              <div class="card">
         <!-- Swiper Slider dentro de la tarjeta -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="images/butacatop.jpg"></div>
-          
+                <div class="swiper-slide"><img src="images/cortinadosydeco1.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="images/cortinadosydeco1.1.jpg" class="imagen-swiper"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+             <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/LinoPinzaEscondida.jpg" class="imagen-swiper"></div>
+               
+           </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">LINO PINZA ESCONDIDA</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+               <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/PENT1.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="images/PENT2.jpg" class="imagen-swiper"></div>
           </div>
             <!-- Flechas de navegación -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
         
-    <div style="margin-top: 15px;"></div>
+        <h5 class="producto-nombre">CORTINA ROJA</h5>
         <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
     </div>
-       
+    
+          
+          </div>
+
+    <div class="texto-centrado fade-in">
+         <div id="detalle16">
+        <h1>ROLLERS SUNSCREEN </h1>
+    <p>Las roller sunscreen combinan diseño moderno y funcionalidad, permitiendo el paso de luz natural mientras reducen el deslumbramiento y protegen contra los rayos UV. Fabricados a medida, se ajustan perfectamente a cada espacio, brindando confort y eficiencia en hogares y oficinas. Disponibles en diversos niveles de apertura y colores, son la opción ideal para lograr un ambiente luminoso y elegante sin perder privacidad</p>
+    <p><strong>Conozca nuestras opciones más populares:</strong></p>
+    <h2>NUESTRAS ROLLERS SUNSCREEN</h2>
+
+
+         
+
+</div>
+                    </div>                    </div>
+
+
+
+
+         <div class="container-productos fade-in" id="lista-productos">
+    <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/RollerM.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="images/RollerMA.jpg" class="imagen-swiper"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">SUNSCREEN</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+    
+     <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/SUNSCREEN1.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="images/SUNSCREEN1.1.jpg" class="imagen-swiper"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">SUNSCREEN</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+      <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/SUNSCREEN2.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="images/SUNSCREEN2.1.jpg" class="imagen-swiper"></div>
+               
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">SUNSCREEN</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+             <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/SUNSCREEN3.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="images/SUNSCREEN3.1.jpg" class="imagen-swiper"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">SUNSCREEN</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+             <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/Roller 405.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="images/Roller 406.jpg" class="imagen-swiper"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">SUNSCREEN</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+               <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/SUNSCREEN4.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="images/SUNSCREEN4.1.jpg" class="imagen-swiper"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">SUNSCREEN</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+    
+          
+          </div>
+
+  <div class="texto-centrado fade-in">
+         <div id="detalle17">
+        <h1>ROLLERS BLACKOUT </h1>
+    <p>Los rollers blackout son la opción ideal para lograr ambientes con total oscuridad y máxima privacidad. Fabricados a medida, se adaptan perfectamente a cualquier espacio, garantizando un ajuste preciso y un acabado de alta calidad. Su tecnología de bloqueo total de la luz los hace perfectos para dormitorios, salas de cine en casa o áreas de trabajo, donde se busca optimizar el confort y la eficiencia energética.</p>
+    <p><strong>Conozca nuestras opciones más populares:</strong></p>
+    <h2>NUESTRAS ROLLERS EN BLACKOUT</h2>
+
+
+         
+
+</div>
+                    </div>                    </div>
+
+
+
+
+         <div class="container-productos fade-in" id="lista-productos">
+    <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="1-_1_.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="1-_2_.jpg" class="imagen-swiper"></div>
+          </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">BLACKOUT</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+    
+     <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/Juliettepinzaamericanadoble1.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="images/Juliettepinzaamericanadoble2.jpg" class="imagen-swiper"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">Juliette pinza doble americana</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+      <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/BlackoutpinzaSimple1.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="images/BlackoutpinzaSimple2.jpg" class="imagen-swiper"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">Blackout pinza simple</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+             <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/Blackoutrielcurvo1.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="images/Blackoutrielcurvo1.1.jpg" class="imagen-swiper"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">Blackout en riel curvo</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+             <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/JulietteyLIno1.jpg" class="imagen-swiper"></div>
+                <div class="swiper-slide"><img src="images/JulietteyLIno2.jpg" class="imagen-swiper"></div>
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">Juliette Y Lino</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+               <div class="card">
+        <!-- Swiper Slider dentro de la tarjeta -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/Blackoutpinzamericana.jpg" class="imagen-swiper"></div>
+               
+s            </div>
+            <!-- Flechas de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <h5 class="producto-nombre">Pinza Doble Americana</h5>
+        <a href="https://wa.me/598099696563" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
+    </div>
+    
+          
+          </div>
 </main>
   
 
- <h2>UBICACIÓN</h2>
+    <!-- Sección <h2>UBICACIÓN</h2>
   <!-- Ubicación Google Maps -->
   <section class="ubicacion fade-in">
 
@@ -789,27 +1094,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-document.querySelectorAll(".agregar-carrito").forEach(boton => {
-    boton.addEventListener("click", function(event) {
-        event.preventDefault();
 
-        let card = this.closest(".card");
-        let nombre = card.querySelector(".producto-nombre").innerText.trim();
-        let imagen = card.querySelector(".producto-imagen").src;
-
-        if (!nombre || !imagen) {
-            alert("Error: No se encontró el nombre o la imagen del producto.");
-            return;
-        }
-
-        // Mensaje con imagen (se envía solo como un enlace)
-        let mensaje = `Hola, me interesa el producto: *${nombre}*.%0A🔹 Imagen: ${imagen}`;
-        let telefono = "598099696563";
-        let url = `https://wa.me/${telefono}?text=${mensaje}`;
-
-        window.location.href = url;
-    });
-});
 document.addEventListener("DOMContentLoaded", function() {
     var swipers = document.querySelectorAll('.mySwiper');
 
@@ -824,6 +1109,59 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll(".agregar-carrito").forEach(boton => { 
+        boton.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            let card = this.closest(".card");
+            let nombre = card.querySelector(".producto-nombre")?.innerText.trim();
+            let imagen = card.querySelector(".swiper-slide img")?.src;
+
+            
+
+            if (!nombre || !imagen) {
+                alert("Error: No se encontró el nombre o la imagen del producto.");
+                return;
+            }
+
+            let mensaje = `Hola, me interesa el producto: *${nombre}*.%0A🔹 Imagen: ${imagen}`;
+            let telefono = "598099696563";
+            let url = `https://wa.me/${telefono}?text=${mensaje}`;
+
+            window.location.href = url;
+        });
+    });
+});
+  window.addEventListener('load', () => {
+    const imagenes = document.querySelectorAll('.imagen-swiper');
+    const visor = document.getElementById('visor-imagen');
+    const imagenAmpliada = document.getElementById('imagen-ampliada');
+    const cerrar = document.querySelector('.cerrar');
+
+    imagenes.forEach(img => {
+      img.style.cursor = 'pointer'; // para que se note que es clickeable
+      img.addEventListener('click', () => {
+        imagenAmpliada.src = img.src;
+        visor.style.display = 'flex';
+      });
+    });
+
+    cerrar.addEventListener('click', () => {
+      visor.style.display = 'none';
+    });
+
+    visor.addEventListener('click', (e) => {
+      if (e.target === visor) {
+        visor.style.display = 'none';
+      }
+    });
+  });
+
 </script>
+    <div id="visor-imagen" class="visor" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;">
+  <span class="cerrar" style="position:absolute; top:20px; right:30px; font-size:30px; color:white; cursor:pointer;">&times;</span>
+  <img id="imagen-ampliada" style="max-width:90%; max-height:90%; box-shadow:0 0 15px black;">
+</div>
 </body>
 </html>
