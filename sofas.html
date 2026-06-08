@@ -1,1323 +1,755 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cortinas Personalizadas</title>
+    <title>Cortinas Personalizadas - Sofás</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-<!-- Swiper JS -->
-    
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-</head>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
     <style>
-      
-.visor {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
-  justify-content: center;
-  align-items: center;
-}
-
-.visor img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-}
-
-.visor .cerrar {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-
+        /* ESTILOS GLOBALES Y VISOR */
         body {
             font-family: Arial, sans-serif;
-            margin-top:  60px;
+            margin-top: 60px;
             padding: 0;
             line-height: 1.6;
             color: #333;
-            background-color:whitesmoke;
+            background-color: whitesmoke;
         }
-       header {
-    padding: 20px 0;
-    box-shadow: none;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent 50%);
-    transition: background-color 2.5s ease; /* Solo la transición de color de fondo */
-}.logo {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding: 20px 20px 20px 20px;
-}.logo img {
-    max-height: 50px;
-}
-
-nav {
-    flex: 2;
-    display: flex;
-    
-    padding: 0 20px;
-    background: transparent;
-    margin-right: 50%;
-    margin-top: 10px;
-    margin-bottom: 20px; /* Espacio debajo del nav */
-
-} 
-.nav-menu {
-    display: none;
-    justify-content: center;
-    flex-direction: column;  /* Vertical */
-    background-color: white;   /* Fondo del menú desplegable */
-    position: absolute;      /* Lo mantenemos en posición absoluta, pero revisaremos los márgenes */
-    top: 100%;               /* Asegura que se coloque justo debajo del nav */
-    right: 0;
-    width: auto;             /* Ajusta el ancho automáticamente */
-    z-index: 10;
-    padding: 10px 0;         /* Espaciado entre los enlaces */
-    margin: 0;               /* Elimina márgenes que puedan interferir */
-    box-sizing: border-box;  /* Asegura que los márgenes y padding no afecten el ancho total */   
-    background-color: rgba(255, 255, 255, 0.8);
-
-}.nav-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-menu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}.menu-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-.swiper-slide a {
-  display: block;
-}
-
-.swiper-slide a img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  border: none;
-}
-
-
-nav li {
-    position: relative;
-    margin: 0 10px; /* Espacio entre los elementos */
-}
-
-nav a {
-    text-decoration: none;
-    color: #000;
-    font-size: 13px;
-    padding: 15px 20px;
-    display: block;
-    position: relative; /* Para el pseudo-elemento */
-    overflow: hidden; /* Para ocultar la línea animada fuera del enlace */
-}
-
-nav a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #e20000; /* Color de la línea */
-    transform: scaleX(0); /* Inicialmente oculta */
-    transform-origin: bottom left; /* Cambia el origen de la transformación */
-    transition: transform 1s ease; /* Transición suave */
-}
-nav a:hover::after {
-    transform: scaleX(1); /* Línea completa en hover */
-}
-
-nav a:hover {
-    color: #e20000; /* Cambia el color del texto en hover si lo deseas */
-} .nav-menu.active {
-    display: flex;
-   
-}
-
-/* Estilo específico para pantallas pequeñas (por ejemplo, móviles) */
-@media (max-width: 768px) {
-    nav ul {
-        display: flex;  /* Para hacer que los elementos estén en fila */
-        flex-direction: column; /* Para apilar los elementos verticalmente */
-    }  .nav-menu {
-        
-        background-color: white;
-    }
-   .hamburger {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    display: block;
-    position: relative;
-    margin-right: 30px;
-    
-}.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    left: 0;
-    transition: transform 0.3s ease;
-}
-
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    top: 8px;
-}/* Ocultar submenús por defecto */
-
-
-.submenu{
-    left:-20% ;
-    position: absolute;
-        background-color: white;
-
-}
-.submenu-categorias{
-    left:-100% ;
-    position: absolute;
-    background-color: white;
-}
-.instagram-icon img {
-    width: 40px; /* Ajusta el tamaño a 60px */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.whatsapp-icon img {
-    width: 40px; /* Ajusta el tamaño a 60px */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-}@media (max-width: 768px) {
-    nav ul {
-        display: flex;  /* Para hacer que los elementos estén en fila */
-        flex-direction: column; /* Para apilar los elementos verticalmente */
-    }  .nav-menu {
-        
-        background-color: white;
-    }
-   .hamburger {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    display: block;
-    position: relative;
-    margin-right: 30px;
-    
-}.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    left: 0;
-    transition: transform 0.3s ease;
-}
-
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    top: 8px;
-}/* Ocultar submenús por defecto */
-
-
-.submenu{
-    left:-20% ;
-    position: absolute;
-        background-color: white;
-
-}
-.submenu-categorias{
-    left:-100% ;
-    position: absolute;
-    background-color: white;
-}
-.instagram-icon img {
-    width: 40px; /* Ajusta el tamaño a 60px */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.whatsapp-icon img {
-    width: 40px; /* Ajusta el tamaño a 60px */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-}
-
-/* Estilo específico para pantallas grandes */
-@media (min-width: 769px) {
-    nav ul {
-        display: flex;  /* Deja los elementos en fila */
-        flex-direction: row; /* Para el menú en línea horizontal */
-          #hamburger{
-      
-        display: block;  /* Se muestra como bloque en pantallas pequeñas */
-    
-    }
-    }
-    .nav-menu {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        width: auto;
-        background-color: transparent;
-    }
-    .nav-menu a {
-        color: black;
-        border: none;
-    }  nav ul li {
-        display: inline-block;  /* Los elementos se muestran en línea */
-    }
-}
-
-        section {
-            padding: 20px;
-            text-align: center;
-            background-color: #fff;
-        }
-        section h1 {
-            color: red;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        section p {
-            margin: 10px 0;
-            font-size: 1rem;
-        }
- .texto-centrado {
-    
-    text-align: center;
-    margin: 0 auto;
-    max-width:800px;
-    line-height: 1.6;
-    padding-top: 90px;
-}
-
-.galeria {
-    display: flex;
-    justify-content: center; /* Centra las imágenes horizontalmente */
-    gap: 20px; /* Espaciado entre las imágenes */
-    flex-wrap: wrap; /* Asegura que las imágenes se ajusten en pantallas pequeñas */
-}
-#detalle1, #detalle2, #detalle3,#detalle4, #detalle5, #detalle6 {
-    margin-bottom: 240px; /* Agrega más espacio entre las secciones */
-}
-.galeria img {
-    max-width: 200px; /* Ajusta el tamaño máximo de las imágenes */
-    height: auto;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-        footer {
-            text-align: center;
-            padding: 10px 20px;
-            background-color: #222;
-            color: #fff;
-            margin-top: 20px;
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    letter-spacing: 0.03em;
-    line-height: 1.3;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            letter-spacing: 0.03em;
+        }
+        
+        .visor {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .visor img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .visor .cerrar {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
 
-p{
-    padding: 5px;
-}
+        /* HEADER & NAV */
+        header {
+            padding: 20px 0;
+            box-shadow: none;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent 50%);
+            transition: background-color 2.5s ease;
+        }
+        .logo { flex: 1; display: flex; align-items: center; padding: 20px; }
+        .logo img { max-height: 50px; }
 
-img{
-    border-radius: 4px;
-}
+        nav { flex: 2; display: flex; padding: 0 20px; background: transparent; margin-right: 50%; margin-top: 10px; margin-bottom: 20px; } 
+        .nav-menu { display: none; justify-content: center; flex-direction: column; background-color: rgba(255, 255, 255, 0.8); position: absolute; top: 100%; right: 0; width: auto; z-index: 10; padding: 10px 0; }
+        .nav-menu ul { list-style: none; margin: 0; padding: 0; display: flex; }
+        .nav-menu a { display: block; padding: 15px 20px; text-decoration: none; color: #000; font-size: 13px; position: relative; overflow: hidden; border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+        .nav-menu a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background-color: #e20000; transform: scaleX(0); transform-origin: bottom left; transition: transform 1s ease; }
+        .nav-menu a:hover::after { transform: scaleX(1); }
+        .nav-menu a:hover { color: #e20000; } 
+        .menu-toggle { background: none; border: none; cursor: pointer; }
+        nav li { position: relative; margin: 0 10px; }
+        .nav-menu.active { display: flex; }
+        .submenu, .submenu-categorias { position: absolute; background-color: white; display: none; }
+        nav li:hover > .submenu { display: block; }
+        .submenu li:hover > .submenu-categorias { display: block; left: 100%; top: 0; }
 
-.button{
-    background:#009900;
-    text-decoration: none;
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 5px;
-    color:  #f2f2f2;
-    font-weight: 700;
-}
-.button:hover{
-    cursor: pointer;
-    text-decoration: none;
-    background-color: #00cc00;
-    color: white;
-}
+        /* TÍTULOS */
+        .titulo-estatico { text-align: center; padding-top: 50px; }
+        .titulo-estatico h1 { color: #e20000; font-size: 2.5rem; }
+        .texto-intro { text-align: center; max-width: 900px; margin: 20px auto; padding: 0 20px; color: #555; }
 
-/*productos-card*/
-.container-productos{
-    width: 100%;
-    max-width: 1200px;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-}
-.container-productos .card{
-    width: 260px;
-    height: 390px;
-    background: whitesmoke;
-    color:#black;
-    border-radius: 8px;
-    border:1px solid  white;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
-    overflow: hidden;
-    margin: 50px;
-    text-align: center;
-    align-items: center;
-    transition: all 0.25s;
-}
-.container-productos .card:hover{
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0,0,0,0.2);
-}
-.container-productos .card img{
-    width: 300px;
-    height: 290px;
-    cursor: pointer;
-}
-.container-productos .card h5{
-    font-weight: 600;
-    padding: 5px;
-}
-.container-productos .card p{
-    padding-top: 5px;
-}
-.container-productos .card a{
-    padding:10px;
-    display: block;
-    width: 50%;
-    margin: 0 auto;
-}
+        /* ESTRUCTURA MAIN Y FILTROS */
+        .layout-container {
+            display: flex;
+            max-width: 1300px;
+            margin: 40px auto;
+            padding: 0 20px;
+            gap: 30px;
+            align-items: flex-start;
+        }
 
-.swiper {
-    width: 100%;
-    height: 290px;
-    position: relative;
-}
+        .sidebar {
+            width: 250px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 100px;
+            flex-shrink: 0;
+        }
+        .sidebar h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e20000;
+        }
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .filter-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .filter-label:hover { color: #e20000; }
+        .filter-label input { accent-color: #e20000; width: 16px; height: 16px; cursor: pointer; }
 
-.swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    overflow:hidden;
-}
-.swiper-button-next,
-.swiper-button-prev {
-    color: whitesmoke; /* Asegúrate de que sean visibles */
-  font-size: 40px !important;
-                    
-}
+        #mobile-filter-btn {
+            display: none;
+            width: 100%;
+            padding: 15px;
+            background: #e20000;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
 
+        .product-section {
+            flex-grow: 1;
+            width: 100%;
+        }
 
+        /* PRODUCTOS Y CARDS */
+        .container-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            width: 100%;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            padding-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+        
+        /* SWIPER EN CARDS */
+        .swiper {
+            width: 100%;
+            height: 250px;
+            position: relative;
+        }
+        .swiper-slide { display: flex; justify-content: center; align-items: center; background: #fff;}
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+            transform: scale(0.6);
+        }
 
-@media (max-width: 769px) {
+        .producto-nombre { font-size: 1.1rem; font-weight: 600; padding: 15px 10px 5px; color: #333; }
+        
+        .button.agregar-carrito {
+            background: #009900;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+            display: inline-block;
+            margin: auto auto 10px;
+            width: 80%;
+            transition: background 0.3s;
+        }
+        .button.agregar-carrito:hover { background-color: #00cc00; }
 
-    /*menu*/
-    .menu-icon{
-        display: block;
-        cursor: pointer;
-        padding: 0.5rem 1rem;
-    }
-    .navigation{
-        width: 100%;
-        margin-top: 1rem;
-    }
-    .navigation ul{
-        display: none;
-    }
-    .navigation ul.show{
-        display: block;
-    }
-    .navigation ul li{
-        display: block;
-    }
-    .navigation ul li a{
-        display: block;
-        padding: 0.5rem 0;
-    }
-    .navigation ul li a:hover{
-        color: #f2f2f2;
-    }
+        /* FOOTER & REDES */
+        footer { text-align: center; padding: 20px; background-color: #222; color: #fff; margin-top: 40px; }
+        .redes-flotantes { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 1000;}
+        .redes-flotantes img { width: 50px; height: 50px; cursor: pointer; transition: transform 0.3s ease; }
+        .redes-flotantes img:hover { transform: scale(1.1); }
 
-   
-
-
- 
-
-
-
-
-
-
-  
-}
-
-.search-container{
-  width: 10%;
-  display: block;
-  margin: 0 auto;
-  
-}
-
-input#search-bar{
-  margin: 0 auto;
-  width: 100%;
-  height: 45px;
-  padding: 0 20px;
-  font-size: 1rem;
-  border: 1px solid aqua;
-  outline: none;
-  &:focus{
-    border: 1px solid aqua;
-    transition: 0.35s ease;
-    color: #008ABF;
-    &::-webkit-input-placeholder{
-      transition: opacity 0.45s ease; 
-  	  opacity: 0;
-     }
-    &::-moz-placeholder {
-      transition: opacity 0.45s ease; 
-  	  opacity: 0;
-     }
-    &:-ms-placeholder {
-     transition: opacity 0.45s ease; 
-  	 opacity: 0;
-     }    
-   }
- }
-
-.search-icon{
-  position: relative;
-  float: right;
-  width: 75px;
-  height: 75px;
-  top: -62px;
-  right: -45px;
-}
-
-
-
-
-
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .layout-container { flex-direction: column; padding: 0 15px; }
+            #mobile-filter-btn { display: flex; justify-content: space-between; align-items: center; }
+            .sidebar { width: 100%; display: none; position: relative; top: 0; box-shadow: none; border: 1px solid #ddd; margin-bottom: 20px;}
+            .sidebar.active { display: block; }
+            
+            nav ul { flex-direction: column; }
+            .nav-menu { background-color: white; }
+            .hamburger { width: 25px; height: 3px; background-color: black; display: block; position: relative; margin-right: 30px; }
+            .hamburger::before, .hamburger::after { content: ''; position: absolute; width: 25px; height: 3px; background-color: black; left: 0; transition: transform 0.3s ease; }
+            .hamburger::before { top: -8px; }
+            .hamburger::after { top: 8px; }
+            .submenu, .submenu-categorias { left: 0; position: relative; background-color: #f9f9f9; width: 100%;}
+        }
+        @media (min-width: 769px) {
+            .nav-menu { display: flex; flex-direction: row; position: static; background-color: transparent; padding: 0;}
+            .nav-menu a { border: none; }
+            .menu-toggle { display: none; }
+        }
     </style>
+</head>
 <body>
     
-                  <header>
-<div class="logo">
-    <a href="index.html">
-        <img src="images/imagen_2025-05-29_234235197.png" alt="Logo">
-    </a>
-</div>
-      
-
-  <button class="menu-toggle" aria-label="Abrir menú">
-    <span class="hamburger"></span>
-  </button>
-         
-         
-  <nav class="nav-menu">
- 
-    <ul>
-        
-      <li><a href="index.html">INICIO</a></li>
-      <li><a href="sobre_Nosotros.html">SOBRE NOSOTROS</a></li>
-          <li>
-        <a href="#products">PRODUCTOS</a>
-        <ul class="submenu">
-          <li>
-            <a href="#products">CORTINAS</a>
-            <ul class="submenu-categorias">
-                    <li><a href="cortinas.html#detalle15">TRADICIONALES</a></li>
-              <li><a href="cortinas.html#detalle16">ROLLERS
-                      SUNSCREEN</a></li>
-                    <li><a href="cortinas.html#detalle17">ROLLERS
-                            BLACKOUT</a></li>
-              
-            </ul> 
-          </li>
-           <li>
-            <a href="#products">SOFÁS</a>
-            <ul class="submenu-categorias">
-              <li><a href="sofas.html#detalle20">CHASELONGUE/
-                      ESQUINEROS</a></li>
-               <li><a href="sofas.html#detalle21">SOFÁ DE UN CUERPO</a></li>
-                 <li><a href="sofas.html#detalle22">SOFÁ DE DOS CUERPOS</a></li>
-                   <li><a href="sofas.html#detalle23">SOFÁ DE TRES CUERPOS</a></li>
-                <li><a href="sofas.html#detalle24">SOFÁ CAMA</a></li>
-            </ul>
-          </li>
-            <li><a href="tapizados.html">TAPIZADOS</a></li>
-            <li><a href="persianas.html">PERSIANAS</a></li>
-            <li><a href="sillasybutacas.html">SILLAS /BUTACAS</a></li>
-            <li><a href="fundas.html">FUNDAS</a></li>
-            <li><a href="telas.html">TELAS</a></li>
-            <li><a href="respaldoCama.html">RESPALDOS DE CAMA</a></li>
-            <li><a href="colchonetas.html">COLCHONETAS </a></li>
-
-
-            <li><a href="Alfombras.html">ALFOMBRAS /
-                     MOQUETTES</a></li>
-           <li>
-            <a href="#products">PISOS</a>
-            <ul class="submenu-categorias">
-              <li><a href="Pisos.html#detalle30">FLOTANTES</a></li>
-              <li><a href="Pisos.html#detalle31">VILINICOS</a></li>
-            </ul>
-          </li>
-<li>
-            <a href="MotorizacionesYAutomatizmos.html">MOTORIZACIONES /
-              AUTOMATIZMOS</a>
-           
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav> 
-          
-         
-</header>
- <div class="titulo-estatico">
-        <h1>SOFÁS</h1>
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/imagen_2025-05-29_234235197.png" alt="Logo" onerror="this.src='https://placehold.co/200x50?text=Logo'">
+        </a>
     </div>
-    <div class="texto-centrado fade-in">
-         <div id="detalle37">
-        <h1>CHASELONGUE/ESQUINEROS </h1>
-   Los sofás chaise longue y esquineros son la combinación perfecta de comodidad y diseño, ideales para aprovechar al máximo el espacio en cualquier ambiente. Diseñados a medida, se adaptan a las dimensiones y necesidades específicas de cada cliente, ofreciendo una distribución óptima para el descanso y la convivencia.
-
-Sofás Chaise Longue: Caracterizados por su asiento extendido en un extremo, permiten estirar las piernas cómodamente sin necesidad de un reposapiés adicional. Son perfectos para salas de estar modernas, brindando un diseño elegante y funcional.
-Sofás Esquineros: Ideales para optimizar rincones y maximizar el área de descanso, estos sofás ofrecen mayor capacidad de asientos sin ocupar demasiado espacio. Son una excelente opción para familias o espacios compartidos.
-Disponibles en una amplia variedad de tapizados, texturas y colores, estos sofás garantizan un equilibrio entre confort y estética. Además, cuentan con opciones de respaldo ajustable, cojines ergonómicos y materiales de alta calidad que aseguran durabilidad y fácil mantenimiento.
-             <p><strong>Conozca nuestras opciones más populares:</strong></p>
-
-    <h2>NUESTROS SOFÁS CHAISELONGUE/ESQUINEROS</h2>
+    
+    <button class="menu-toggle" aria-label="Abrir menú">
+        <span class="hamburger"></span>
+    </button>
          
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="sobre_Nosotros.html">SOBRE NOSOTROS</a></li>
+            <li>
+                <a href="#products">PRODUCTOS</a>
+                <ul class="submenu">
+                    <li>
+                        <a href="#">CORTINAS</a>
+                        <ul class="submenu-categorias">
+                            <li><a href="cortinas.html#detalle15">TRADICIONALES</a></li>
+                            <li><a href="cortinas.html#detalle16">ROLLERS SUNSCREEN</a></li>
+                            <li><a href="cortinas.html#detalle17">ROLLERS BLACKOUT</a></li>
+                        </ul> 
+                    </li>
+                    <li>
+                        <a href="#">SOFÁS</a>
+                        <ul class="submenu-categorias">
+                            <li><a href="sofas.html#detalle20">CHASELONGUE/ ESQUINEROS</a></li>
+                            <li><a href="sofas.html#detalle21">SOFÁ DE UN CUERPO</a></li>
+                            <li><a href="sofas.html#detalle22">SOFÁ DE DOS CUERPOS</a></li>
+                            <li><a href="sofas.html#detalle23">SOFÁ DE TRES CUERPOS</a></li>
+                            <li><a href="sofas.html#detalle24">SOFÁ CAMA</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tapizados.html">TAPIZADOS</a></li>
+                    <li><a href="persianas.html">PERSIANAS</a></li>
+                    <li><a href="sillasybutacas.html">SILLAS /BUTACAS</a></li>
+                    <li><a href="fundas.html">FUNDAS</a></li>
+                    <li><a href="telas.html">TELAS</a></li>
+                    <li><a href="respaldoCama.html">RESPALDOS DE CAMA</a></li>
+                    <li><a href="colchonetas.html">COLCHONETAS </a></li>
+                    <li><a href="Alfombras.html">ALFOMBRAS / MOQUETTES</a></li>
+                    <li>
+                        <a href="#">PISOS</a>
+                        <ul class="submenu-categorias">
+                            <li><a href="Pisos.html#detalle30">FLOTANTES</a></li>
+                            <li><a href="Pisos.html#detalle31">VINÍLICOS</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="MotorizacionesYAutomatizmos.html">MOTORIZACIONES / AUTOMATISMOS</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav> 
+</header>
 
+<div class="titulo-estatico">
+    <h1>SOFÁS</h1>
 </div>
+<div class="texto-intro">
+    <p>Diseñados a medida para adaptarse a tus necesidades. Explora nuestra amplia variedad de Chaiselongues, esquineros, sillones de 1 a 3 cuerpos y sofás cama. Encuentra el equilibrio perfecto entre confort, estética y durabilidad.</p>
+</div>
+
+<main class="layout-container">
+    
+    <!-- BARRA LATERAL DE FILTROS -->
+    <div>
+        <button id="mobile-filter-btn">
+            <span><i class="fa-solid fa-filter"></i> Filtros de Categorías</span>
+            <i class="fa-solid fa-chevron-down" id="filter-icon"></i>
+        </button>
+
+        <aside class="sidebar" id="filter-sidebar">
+            <h3><i class="fa-solid fa-filter"></i> Categorías</h3>
+            <div class="filter-group">
+                <label class="filter-label">
+                    <input type="checkbox" value="esquinero" class="category-filter">
+                    Chaiselongue / Esquineros
+                </label>
+                <label class="filter-label">
+                    <input type="checkbox" value="1cuerpo" class="category-filter">
+                    Sofá de 1 Cuerpo
+                </label>
+                <label class="filter-label">
+                    <input type="checkbox" value="2cuerpos" class="category-filter">
+                    Sofá de 2 Cuerpos
+                </label>
+                <label class="filter-label">
+                    <input type="checkbox" value="3cuerpos" class="category-filter">
+                    Sofá de 3 Cuerpos
+                </label>
+                <label class="filter-label">
+                    <input type="checkbox" value="sofacama" class="category-filter">
+                    Sofá Cama
+                </label>
+            </div>
+        </aside>
+    </div>
+
+    <!-- CUADRÍCULA DE PRODUCTOS -->
+    <section class="product-section">
+        <div class="container-productos" id="lista-productos">
+            
+            <!-- ESQUINEROS -->
+            <div class="card product-card" data-category="esquinero">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/esquinero.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                </div>
+                <h5 class="producto-nombre">Esquinero Clásico</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="esquinero">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/esquinero2.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                </div>
+                <h5 class="producto-nombre">Esquinero Moderno</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="esquinero">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/esquinero4.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                </div>
+                <h5 class="producto-nombre">Esquinero Confort</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="esquinero">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/chaiselongue.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                </div>
+                <h5 class="producto-nombre">Chaiselongue Premium</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="esquinero">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/esquinero3.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/esquinero3.1.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+                </div>
+                <h5 class="producto-nombre">Esquinero Amplio</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <!-- 1 CUERPO -->
+            <div class="card product-card" data-category="1cuerpo">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/LaCuevaMedidasH87anch.74Prof2.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/LaCuevaMedidasH87anch.74Prof3.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+                </div>
+                <h5 class="producto-nombre">Sillón La Cueva</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="1cuerpo">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/Boston-1-cuerpo.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/Boston-1-cuerpo2.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+                </div>
+                <h5 class="producto-nombre">Boston 1 Cuerpo</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="1cuerpo">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/Oriental-1-cuerpo1.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                </div>
+                <h5 class="producto-nombre">Oriental 1 Cuerpo</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+            
+            <div class="card product-card" data-category="1cuerpo">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/Tussor-Costura-Color.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                </div>
+                <h5 class="producto-nombre">Sillón Tussor Costura</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <!-- 2 CUERPOS -->
+            <div class="card product-card" data-category="2cuerpos">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/Boston-2.10-de-Luxe-1.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/Boston2.10deLuxe.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+                </div>
+                <h5 class="producto-nombre">Boston De Luxe 2 Cuerpos</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="2cuerpos">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/WhatsAppImage2024-08-02at10.54.30.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/WhatsAppImage2024-08-02at10.54.51.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+                </div>
+                <h5 class="producto-nombre">Sofá 2 Cuerpos Clásico</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="2cuerpos">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/BATANTACHADO3CUERPOS2ALM.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                </div>
+                <h5 class="producto-nombre">Sofá Batán Tachado</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="2cuerpos">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/Chesterfield2cuerpos.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                </div>
+                <h5 class="producto-nombre">Chesterfield 2 Cuerpos</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+            
+            <div class="card product-card" data-category="2cuerpos">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/20170503_154916.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                </div>
+                <h5 class="producto-nombre">Sofá Estilo Contemporáneo</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <!-- 3 CUERPOS -->
+            <div class="card product-card" data-category="3cuerpos">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/Ibérico.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/Ibérico1.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+                </div>
+                <h5 class="producto-nombre">Sofá Ibérico 3 Cuerpos</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="3cuerpos">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/MontoyafundaenLino.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/MontoyafundaLinoPestañada.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+                </div>
+                <h5 class="producto-nombre">Sofá Montoya Funda Lino</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="3cuerpos">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/3cuerposx.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                </div>
+                <h5 class="producto-nombre">Sofá Amplio 3 Cuerpos</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="3cuerpos">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/3cuerposE.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                </div>
+                <h5 class="producto-nombre">Sofá Estilo E</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="3cuerpos">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/Sofaconisla60x60.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                </div>
+                <h5 class="producto-nombre">Sofá con Isla 60x60</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <!-- SOFÁ CAMA -->
+            <div class="card product-card" data-category="sofacama">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/SofaCamaEasyClean1.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/SofaCamaEasyClean2.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+                </div>
+                <h5 class="producto-nombre">Sofá Cama Easy Clean</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="sofacama">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/sofacama1.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/sofacama2.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/sofacama3.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/sofacama4.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+                </div>
+                <h5 class="producto-nombre">Sofá Cama Premium</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="sofacama">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/Integra1.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/Integra2.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+                </div>
+                <h5 class="producto-nombre">Sofá Cama Íntegra</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="sofacama">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/Marinera1.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/Marinera.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+                </div>
+                <h5 class="producto-nombre">Cama Marinera</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <div class="card product-card" data-category="sofacama">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/Sofacamaconfalsoposabrazos.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/Sofacamaconfalsoposabrazos2.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                        <div class="swiper-slide"><img src="images/Sofacamaconfalsoposabrazos3.jpg" class="imagen-swiper" onerror="this.src='https://placehold.co/400x400?text=Imagen+No+Encontrada'"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+                </div>
+                <h5 class="producto-nombre">Sofá Cama Sin Posabrazos</h5>
+                <a href="https://wa.me/598099696610" class="button agregar-carrito"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
         </div>
-<main>
-
-<div class="container-productos fade-in" id="lista-productos">
-    <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-      <img src="images/esquinero.jpg" class="imagen-swiper">
-      </div></div>      </div>
-
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-    <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-    <img src="images/esquinero2.jpg" class="imagen-swiper">
-      </div></div>      </div>
-
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-          
-        <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/esquinero4.jpg" class="imagen-swiper">     
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-         
-                <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/chaiselongue.jpg" class="imagen-swiper">
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-          
-    <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/esquinero3.jpg" class="imagen-swiper">
-<img src="images/esquinero3.1.jpg" class="imagen-swiper">
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-          
- 
-          
-          </div>
-
-    <div class="texto-centrado fade-in">
-         <div id="detalle21">
-        <h1>SOFÁ DE UN CUERPO </h1>
-   Los sofás de un cuerpo son la elección ideal para quienes buscan comodidad, estilo y versatilidad en un solo mueble. Diseñados a medida, se adaptan a cualquier espacio, ofreciendo una solución práctica para rincones de lectura, salas de estar, oficinas o habitaciones. Su diseño compacto y funcional los hace perfectos para optimizar espacios pequeños sin sacrificar confort. Disponibles en múltiples texturas, colores y acabados, se integran armoniosamente con cualquier decoración. Además, cuentan con asientos acolchonados, respaldos cómodos y opciones con apoyabrazos o patas personalizadas para mayor confort. Fabricados con materiales de alta calidad, son resistentes y fáciles de limpiar, convirtiéndose en la pieza perfecta para complementar tu hogar u oficina con elegancia y practicidad.
-               <p><strong>Conozca nuestras opciones más populares:</strong></p>
-
-             <h2>NUESTROS SOFÁS DE UN CUERPO</h2>
-         
-
-</div>
-                    </div>                    </div>
-
-
-         <div class="container-productos fade-in" id="lista-productos">
-    <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="LaCuevaMedidasH87anch.74Prof2.jpg" class="imagen-swiper">
-<img src="LaCuevaMedidasH87anch.74Prof3.jpg" class="imagen-swiper">
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-          
-    
-     <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/Boston-1-cuerpo.jpg" class="imagen-swiper">
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-         
-        <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/Oriental-1-cuerpo1.jpg" class="imagen-swiper">   
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-          
-                          <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/Boston-1-cuerpo2.jpg" class="imagen-swiper">   
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-             <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/Tussor-Costura-Color.jpg" class="imagen-swiper">
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-          
-
-    
-          
-          </div>
-  <div class="texto-centrado fade-in">
-         <div id="detalle22">
-        <h1>SOFÁ DE DOS CUERPOS </h1>
-                Los sofás de dos cuerpos son la combinación perfecta de comodidad y estilo, ideales para salas de estar, oficinas y espacios de reunión. Diseñados a medida, se adaptan a las dimensiones y necesidades específicas de cada ambiente, ofreciendo un equilibrio entre funcionalidad y estética. Su tamaño intermedio permite acomodar a dos personas cómodamente sin ocupar demasiado espacio, siendo una excelente opción para optimizar el área disponible. Disponibles en una amplia variedad de tapizados, colores y diseños, se integran fácilmente con cualquier decoración. Cuentan con asientos acolchonados, respaldos ergonómicos y opciones con apoyabrazos y patas personalizadas para mayor confort. Fabricados con materiales de alta calidad, garantizan durabilidad y fácil mantenimiento, convirtiéndose en una pieza clave para cualquier ambiente.
-             <p><strong>Conozca nuestras opciones más populares:</strong></p>
-
-
-       <h2>NUESTROS SOFÁS DE DOS CUERPOS</h2>
-
-</div>
-                    </div>                    </div>
-
-
-
-
-         <div class="container-productos fade-in" id="lista-productos">
-     <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/Boston-2.10-de-Luxe-1.jpg" class="imagen-swiper">    
-<img src="images/Boston2.10deLuxe.jpg" class="imagen-swiper">
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-         
-
-   <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-    <img src="images/WhatsAppImage2024-08-02at10.54.30.jpg" class="imagen-swiper"> 
-    <img src="images/WhatsAppImage2024-08-02at10.54.51.jpg" class="imagen-swiper">
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-         
-       <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-          <img src="images/BATANTACHADO3CUERPOS2ALM.jpg" class="imagen-swiper">   
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-          
-            <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/Chesterfield2cuerpos.jpg" class="imagen-swiper">      
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-          
-
-            <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/20170503_154916.jpg" class="imagen-swiper">
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-    
-          
-          </div>
-          
-
-<div class="texto-centrado fade-in">
-         <div id="detalle23">
-        <h1>SOFÁ DE TRES CUERPOS </h1>
-Los sofás de tres cuerpos son la opción ideal para quienes buscan amplitud, comodidad y elegancia en un solo sofá Diseñados a medida, se adaptan a cualquier espacio proporcionando un equilibrio perfecto entre funcionalidad y diseño. Su tamaño espacioso permite acomodar a tres personas cómodamente, siendo ideales para salas de estar, oficinas o áreas de descanso. Disponibles en una amplia variedad de tapizados, colores y acabados, se integran fácilmente con cualquier estilo de decoración. Cuentan con asientos acolchonados, respaldos ergonómicos y opciones con apoyabrazos y patas personalizadas para mayor confort. Fabricados con materiales de alta calidad, garantizan durabilidad y fácil mantenimiento, convirtiéndose en el centro de cualquier ambiente con su presencia imponente y sofisticada.    
-             <p><strong>Conozca nuestras opciones más populares:</strong></p>
-    <h2>NUESTROS SOFÁS DE TRES CUERPOS</h2>
-         
-
-</div>
-                                       
-
-
-
-         <div class="container-productos fade-in" id="lista-productos">
-     <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-         <img src="images/Ibérico.jpg" class="imagen-swiper"> <img src="images/Ibérico1.jpg" class="imagen-swiper">
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
- 
-    <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-          <img src="images/MontoyafundaenLino.jpg" class="imagen-swiper">  <img src="images/MontoyafundaLinoPestañada.jpg" class="imagen-swiper"> 
-      </div></div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-        <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/3cuerposx.jpg" class="imagen-swiper"></div>
-  </div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-              <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/3cuerposE.jpg" class="imagen-swiper">
-</div>
-  </div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-    
-           <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/Sofaconisla60x60.jpg"  class="imagen-swiper">
-
-</div>
-  </div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-    
-                       </div>
-
-  <div class="texto-centrado fade-in">
-    
-         <div id="detalle24">
-             
-        <h1>SOFÁ CAMA </h1>
-Los sofás cama son la solución perfecta para quienes buscan versatilidad, confort y diseño en un solo mueble. Diseñados a medida, se adaptan a cualquier espacio ofreciendo una doble funcionalidad como sofá durante el día y cama durante la noche. Su mecanismo de apertura fácil y resistente permite una transformación rápida y cómoda, ideal para visitas o espacios reducidos. Disponibles en una amplia variedad de tapizados, colores y estilos, se integran perfectamente con cualquier decoración. Cuentan con colchones de alta calidad, asientos acolchonados y opciones con apoyabrazos y patas personalizadas para mayor confort. Fabricados con materiales duraderos, garantizan resistencia y fácil mantenimiento, siendo la elección ideal para quienes buscan comodidad sin sacrificar espacio    <p><strong>Conozca nuestras opciones más populares:</strong></p>
-    <h2>NUESTROS SOFÁS CAMA</h2>
-         
-
-</div>
-        
-
-
-      
-<div class="container-productos fade-in" id="lista-productos">
-   <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
- <img src="images/SofaCamaEasyClean1.jpg" class="imagen-swiper"><img src="images/SofaCamaEasyClean2.jpg" class="imagen-swiper">
-</div>
-  </div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-  <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
- <img src="images/sofacama1.jpg" class="imagen-swiper">
- <img src="images/sofacama2.jpg" class="imagen-swiper"> 
-        <img src="images/sofacama3.jpg" class="imagen-swiper">
-      <img src="images/sofacama4.jpg" class="imagen-swiper">
-</div>
-  </div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-     <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/Integra1.jpg" class="imagen-swiper">
-<img src="images/Integra2.jpg" class="imagen-swiper">    </div>
-  </div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-                  <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/Marinera1.jpg" class="imagen-swiper">
-<img src="images/Marinera.jpg" class="imagen-swiper">      </div>
-  </div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-            <div class="card">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-<img src="images/Sofacamaconfalsoposabrazos.jpg" class="imagen-swiper">
-<img src="images/Sofacamaconfalsoposabrazos2.jpg" class="imagen-swiper">
-<img src="images/Sofacamaconfalsoposabrazos3.jpg" class="imagen-swiper">
-      </div>
-  </div></div>
-        <div style="margin-top: 15px;"></div>
-
-        <a href="https://wa.me/598099696610" class="button agregar-carrito" data-id="9">Solicite Presupuesto</a>
-
-</div>
-
-        
-
-          
-          </div>
-              
-
-    
-                    </div>          </div>
-
+    </section>
 </main> 
 
-          
-  
-
-    <h2>UBICACIÓN</h2>
-  <!-- Ubicación Google Maps -->
-  <section class="ubicacion fade-in">
-
-   
-   
-    
-     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.025703262303!2d-54.96562992370957!3d-34.90580447351586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x957511920fbb2a45%3A0x214855002a65043!2sCortinas%20%26%20Sofas!5e0!3m2!1ses-419!2suy!4v1740417685035!5m2!1ses-419!2suy" 
-         width="100%" height="100" style="border:0;" allowfullscreen="" loading="lazy">
-</iframe>
-
-
+<!-- UBICACIÓN Y REDES FLOTANTES -->
+<section class="ubicacion">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.025703262303!2d-54.96562992370957!3d-34.90580447351586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x957511920fbb2a45%3A0x214855002a65043!2sCortinas%20%26%20Sofas!5e0!3m2!1ses-419!2suy!4v1740417685035!5m2!1ses-419!2suy" 
+         width="100%" height="250" style="border:0; display: block;" allowfullscreen="" loading="lazy">
+    </iframe>
 </section>
 
+<div class="redes-flotantes">
+    <a href="https://wa.me/598099696563" target="_blank" title="¡Contáctanos por WhatsApp!">
+        <img src="images/2.png" alt="WhatsApp" onerror="this.src='https://cdn-icons-png.flaticon.com/512/733/733585.png'">
+    </a>
+    <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank" title="¡Contáctanos por Instagram!">
+        <img src="images/instagram.png" alt="Instagram" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2111/2111463.png'">
+    </a>
+</div>
 
+<footer class="footer">
+    <p><strong>Maldonado:</strong> Calle Joaquin De Viana Esq Dr Edye - Cel: 099 696 610</p>
+    <p><a href="mailto:Cortinas&Sofas@gmail.com" style="color:#fff;">Cortinas&Sofas@gmail.com</a></p>
+    <p style="margin-top: 15px;">&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
+</footer>
 
-   <div class="tooltip">
-        <a href="https://wa.me/598099696563" target="_blank" class="whatsapp-icon">
-            <img src="images/2.png" alt="WhatsApp">
-            <span class="tooltiptext">¡Contáctanos por WhatsApp!</span>
-        </a>
-    </div>
- <div class="tooltip">
-        <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank" class="instagram-icon">
-            <img src="images/instagram.png" alt="Instagram">
-            <span class="tooltiptext">¡Contáctanos por Instagram!</span>
-        </a>
-    </div>
-     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <p><strong>Maldonado:</strong> Calle Joaquin De Viana Esq Dr Edye - Cel: 099 696 610</p>
-                <p><a href="mailto:Cortinas&Sofas@gmail.com" class="footer-email">Cortinas&Sofas@gmail.com</a></p>
-            </div>
-            <div class="footer-whatsapp">
-                <img src="2.png" alt="WhatsApp">
-                <div>
-                    <p>SOLICITA PRESUPUESTO VIA WHATSAPP</p>
-                    <p>099 696 610</p>
-                </div>
-            </div>
-        </div>
-       
-            <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
-       
-    </footer>
-       <script src="script.js"></script>
-<script>
-  window.addEventListener('load', () => {
-    const imagenes = document.querySelectorAll('.imagen-swiper');
-    console.log("Imágenes encontradas:", imagenes.length);
-
-    imagenes.forEach(img => {
-      img.addEventListener('click', () => {
-        document.getElementById('imagen-ampliada').src = img.src;
-        document.getElementById('visor-imagen').style.display = 'flex';
-      });
-    });
-
-    document.querySelector('.visor .cerrar').addEventListener('click', () => {
-      document.getElementById('visor-imagen').style.display = 'none';
-    });
-
-    document.getElementById('visor-imagen').addEventListener('click', (e) => {
-      if (e.target.id === 'visor-imagen') {
-        e.target.style.display = 'none';
-      }
-    });
-  });
-
-document.addEventListener("DOMContentLoaded", function () {
-  const menuItems = document.querySelectorAll(".nav-menu > ul > li > a");
-  let lastClickedItem = null;
-  let lastClickTime = 0;
-  const doubleClickDelay = 300; // Tiempo en milisegundos para detectar doble clic
-
-  // Función para detectar si es un dispositivo móvil
-  function isMobile() {
-    return window.matchMedia("only screen and (max-width: 768px)").matches;
-  }
-
-  menuItems.forEach((item) => {
-    item.addEventListener("click", function (event) {
-      if (!isMobile()) return; // Solo se ejecuta en dispositivos móviles
-      
-      const parentLi = this.parentElement;
-      const hasSubmenu = parentLi.querySelector(".submenu");
-      const currentTime = new Date().getTime();
-
-      if (hasSubmenu) {
-        event.preventDefault(); // Evita la redirección inmediata
-
-        // Si el mismo elemento se toca dos veces dentro del tiempo límite, redirigir
-        if (lastClickedItem === this && currentTime - lastClickTime < doubleClickDelay) {
-          window.location.href = this.href; // Redirige a la categoría principal
-          return;
-        }
-
-        // Cerrar todos los submenús antes de abrir uno nuevo
-        document.querySelectorAll(".nav-menu > ul > li").forEach((li) => {
-          li.classList.remove("active");
-        });
-
-        // Abrir el submenú del elemento actual
-        parentLi.classList.add("active");
-
-        lastClickedItem = this;
-        lastClickTime = currentTime;
-      }
-    });
-  });
-
-  // Mantener el submenú abierto si la URL coincide con una subcategoría
-  const currentURL = window.location.href;
-
-  document.querySelectorAll(".submenu a, .submenu-categorias a").forEach((subItem) => {
-    if (currentURL.includes(subItem.href)) {
-      const parentLi = subItem.closest("li");
-      if (parentLi) {
-        parentLi.classList.add("active");
-
-        // También abrir el menú padre si es una subcategoría
-        const grandParentLi = parentLi.closest(".submenu");
-        if (grandParentLi) {
-          grandParentLi.parentElement.classList.add("active");
-        }
-      }
-    }
-
-    // Cerrar el menú cuando se selecciona una opción
-    subItem.addEventListener("click", function () {
-      document.querySelectorAll(".nav-menu > ul > li").forEach((li) => {
-        li.classList.remove("active");
-      });
-    });
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    var swipers = document.querySelectorAll('.mySwiper');
-
-    swipers.forEach(function(swiperElement) {
-        new Swiper(swiperElement, {
-            loop: true, // Hace que el slider sea infinito
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            }
-         
-        });
-    });
-});
-document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll(".agregar-carrito").forEach(boton => { 
-        boton.addEventListener("click", function(event) {
-            event.preventDefault();
-
-            let card = this.closest(".card");
-            let nombre = card.querySelector(".producto-nombre")?.innerText.trim();
-            let imagen = card.querySelector(".swiper-slide img")?.src;
-
-            if (!nombre || !imagen) {
-                alert("Error: No se encontró el nombre o la imagen del producto.");
-                return;
-            }
-
-            let mensaje = `Hola, me interesa el producto: *${nombre}*.%0A🔹 Imagen: ${imagen}`;
-            let telefono = "598099696610";
-            let url = `https://wa.me/${telefono}?text=${mensaje}`;
-
-            window.location.href = url;
-        });
-    });
-});
- 
-
-</script>
-
+<!-- VISOR MODAL DE IMÁGENES -->
 <div id="visor-imagen" class="visor">
   <span class="cerrar">&times;</span>
   <img class="imagen-grande" id="imagen-ampliada">
 </div>
 
+<!-- SCRIPTS -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    // --- 1. LÓGICA DEL MENÚ RESPONSIVE ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    }
+
+    // --- 2. INICIALIZAR SWIPER CORRECTAMENTE ---
+    var swipers = document.querySelectorAll('.mySwiper');
+    swipers.forEach(function(swiperElement) {
+        new Swiper(swiperElement, {
+            loop: false, 
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+    });
+
+    // --- 3. LÓGICA DE FILTROS (TIPO CHECKBOX) ---
+    const checkboxes = document.querySelectorAll('.category-filter');
+    const products = document.querySelectorAll('.product-card');
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const checkedCategories = Array.from(checkboxes).filter(i => i.checked).map(i => i.value);
+            
+            products.forEach(product => {
+                const productCategory = product.getAttribute('data-category');
+                if (checkedCategories.length === 0 || checkedCategories.includes(productCategory)) { 
+                    product.style.display = 'flex'; 
+                } else { 
+                    product.style.display = 'none'; 
+                }
+            });
+        });
+    });
+
+    // --- 4. TOGGLE FILTROS EN MOBILE ---
+    const mobileFilterBtn = document.getElementById('mobile-filter-btn');
+    const filterSidebar = document.getElementById('filter-sidebar');
+    const filterIcon = document.getElementById('filter-icon');
+    
+    if (mobileFilterBtn && filterSidebar) {
+        mobileFilterBtn.addEventListener('click', () => {
+            filterSidebar.classList.toggle('active');
+            if(filterSidebar.classList.contains('active')) {
+                filterIcon.style.transform = 'rotate(180deg)';
+            } else {
+                filterIcon.style.transform = 'rotate(0deg)';
+            }
+        });
+    }
+
+    // --- 5. VISOR MODAL PARA AMPLIAR IMÁGENES ---
+    const imagenes = document.querySelectorAll('.imagen-swiper');
+    const visor = document.getElementById('visor-imagen');
+    const imgAmpliada = document.getElementById('imagen-ampliada');
+
+    imagenes.forEach(img => {
+        img.addEventListener('click', () => {
+            imgAmpliada.src = img.src;
+            visor.style.display = 'flex';
+        });
+    });
+
+    document.querySelector('.visor .cerrar').addEventListener('click', () => {
+        visor.style.display = 'none';
+    });
+
+    visor.addEventListener('click', (e) => {
+        if (e.target.id === 'visor-imagen') {
+            visor.style.display = 'none';
+        }
+    });
+
+    // --- 6. BOTÓN DE WHATSAPP DINÁMICO ---
+    document.querySelectorAll(".agregar-carrito").forEach(boton => { 
+        boton.addEventListener("click", function(event) {
+            event.preventDefault();
+            let card = this.closest(".card");
+            let nombre = card.querySelector(".producto-nombre")?.innerText.trim() || "un sofá";
+            let imagen = card.querySelector(".swiper-slide img")?.src || "";
+
+            let mensaje = `Hola, me interesa solicitar presupuesto para el producto: *${nombre}*.`;
+            if (imagen) mensaje += `%0A🔹 Referencia: ${imagen}`;
+            
+            let telefono = "598099696610";
+            window.location.href = `https://wa.me/${telefono}?text=${mensaje}`;
+        });
+    });
+
+});
+</script>
 
 </body>
 </html>
