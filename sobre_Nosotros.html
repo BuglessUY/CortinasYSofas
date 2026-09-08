@@ -1,654 +1,155 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cortinas Personalizadas</title>
+    <title>Cortinas Personalizadas - Sobre Nosotros</title>
+    
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-   <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin-top:  60px;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-            background-color:whitesmoke;
-        }
-       header {
-    padding: 20px 0;
-    box-shadow: none;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent 50%);
-    transition: background-color 2.5s ease; /* Solo la transición de color de fondo */
-}.logo {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding: 20px 20px 20px 20px;
-}.logo img {
-    max-height: 50px;
-}
-
-nav {
-    flex: 2;
-    display: flex;
+<body>
     
-    padding: 0 20px;
-    background: transparent;
-    margin-right: 50%;
-    margin-top: 10px;
-    margin-bottom: 20px; /* Espacio debajo del nav */
-
-} 
-.nav-menu {
-    display: none;
-    justify-content: center;
-    flex-direction: column;  /* Vertical */
-    background-color: white;   /* Fondo del menú desplegable */
-    position: absolute;      /* Lo mantenemos en posición absoluta, pero revisaremos los márgenes */
-    top: 100%;               /* Asegura que se coloque justo debajo del nav */
-    right: 0;
-    width: auto;             /* Ajusta el ancho automáticamente */
-    z-index: 10;
-    padding: 10px 0;         /* Espaciado entre los enlaces */
-    margin: 0;               /* Elimina márgenes que puedan interferir */
-    box-sizing: border-box;  /* Asegura que los márgenes y padding no afecten el ancho total */   
-    background-color: rgba(255, 255, 255, 0.8);
-
-}.nav-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-menu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}.menu-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-
-
-nav li {
-    position: relative;
-    margin: 0 10px; /* Espacio entre los elementos */
-}
-
-nav a {
-    text-decoration: none;
-    color: #000;
-    font-size: 13px;
-    padding: 15px 20px;
-    display: block;
-    position: relative; /* Para el pseudo-elemento */
-    overflow: hidden; /* Para ocultar la línea animada fuera del enlace */
-}
-
-nav a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #e20000; /* Color de la línea */
-    transform: scaleX(0); /* Inicialmente oculta */
-    transform-origin: bottom left; /* Cambia el origen de la transformación */
-    transition: transform 1s ease; /* Transición suave */
-}
-nav a:hover::after {
-    transform: scaleX(1); /* Línea completa en hover */
-}
-
-nav a:hover {
-    color: #e20000; /* Cambia el color del texto en hover si lo deseas */
-} .nav-menu.active {
-    display: flex;
-   
-}
-
-/* Estilo específico para pantallas pequeñas (por ejemplo, móviles) */
-@media (max-width: 768px) {
-    nav ul {
-        display: flex;  /* Para hacer que los elementos estén en fila */
-        flex-direction: column; /* Para apilar los elementos verticalmente */
-    }  .nav-menu {
-        
-        background-color: white;
-    }
-   .hamburger {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    display: block;
-    position: relative;
-    margin-right: 30px;
-    
-}.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    left: 0;
-    transition: transform 0.3s ease;
-}
-
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    top: 8px;
-}/* Ocultar submenús por defecto */
-
-
-.submenu{
-    left:-20% ;
-    position: absolute;
-        background-color: white;
-
-}
-.submenu-categorias{
-    left:-100% ;
-    position: absolute;
-    background-color: white;
-}
-.instagram-icon img {
-    width: 40px; /* Ajusta el tamaño a 60px */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.whatsapp-icon img {
-    width: 40px; /* Ajusta el tamaño a 60px */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-}@media (max-width: 768px) {
-    nav ul {
-        display: flex;  /* Para hacer que los elementos estén en fila */
-        flex-direction: column; /* Para apilar los elementos verticalmente */
-    }  .nav-menu {
-        
-        background-color: white;
-    }
-   .hamburger {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    display: block;
-    position: relative;
-    margin-right: 30px;
-    
-}.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    left: 0;
-    transition: transform 0.3s ease;
-}
-
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    top: 8px;
-}/* Ocultar submenús por defecto */
-
-
-.submenu{
-    left:-20% ;
-    position: absolute;
-        background-color: white;
-
-}
-.submenu-categorias{
-    left:-100% ;
-    position: absolute;
-    background-color: white;
-}
-.instagram-icon img {
-    width: 40px; /* Ajusta el tamaño a 60px */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.whatsapp-icon img {
-    width: 40px; /* Ajusta el tamaño a 60px */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-}
-
-/* Estilo específico para pantallas grandes */
-@media (min-width: 769px) {
-    nav ul {
-        display: flex;  /* Deja los elementos en fila */
-        flex-direction: row; /* Para el menú en línea horizontal */
-          #hamburger{
-      
-        display: block;  /* Se muestra como bloque en pantallas pequeñas */
-    
-    }
-    }
-    .nav-menu {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        width: auto;
-        background-color: transparent;
-    }
-    .nav-menu a {
-        color: black;
-        border: none;
-    }  nav ul li {
-        display: inline-block;  /* Los elementos se muestran en línea */
-    }
-}
-
-        section {
-            padding: 20px;
-            text-align: center;
-            background-color: #fff;
-        }
-        section h1 {
-            color: red;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        section p {
-            margin: 10px 0;
-            font-size: 1rem;
-        }
- .texto-centrado {
-    
-    text-align: center;
-    margin: 0 auto;
-    max-width:800px;
-    line-height: 1.6;
-    padding-top: 90px;
-}
-
-.galeria {
-    display: flex;
-    justify-content: center; /* Centra las imágenes horizontalmente */
-    gap: 20px; /* Espaciado entre las imágenes */
-    flex-wrap: wrap; /* Asegura que las imágenes se ajusten en pantallas pequeñas */
-}
-#detalle1, #detalle2, #detalle3,#detalle4, #detalle5, #detalle6 {
-    margin-bottom: 240px; /* Agrega más espacio entre las secciones */
-}
-.galeria img {
-    max-width: 200px; /* Ajusta el tamaño máximo de las imágenes */
-    height: auto;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-        footer {
-            text-align: center;
-            padding: 10px 20px;
-            background-color: #222;
-            color: #fff;
-            margin-top: 20px;
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    letter-spacing: 0.03em;
-    line-height: 1.3;
-}
-
-p{
-    padding: 5px;
-}
-
-img{
-    border-radius: 4px;
-}
-
-.button{
-    background:#009900;
-    text-decoration: none;
-    padding: 15px;
-    margin-top: 45px;
-    border-radius: 5px;
-    color:  #f2f2f2;
-    font-weight: 700;
-}
-
-.button:hover{
-    cursor: pointer;
-    text-decoration: none;
-    background-color: #00cc00;
-    color: white;
-}
-
-/*productos-card*/
-.container-productos{
-    width: 100%;
-    max-width: 1200px;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-}
-.container-productos .card{
-    width: 260px;
-    height: 390px;
-    background: whitesmoke;
-    color:#black;
-    border-radius: 8px;
-    border:1px solid  white;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
-    overflow: hidden;
-    margin: 50px;
-    text-align: center;
-    align-items: center;
-    transition: all 0.25s;
-}
-.container-productos .card:hover{
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0,0,0,0.2);
-}
-.container-productos .card img{
-    width: 300px;
-    height: 290px;
-    cursor: pointer;
-}
-.container-productos .card h5{
-    font-weight: 600;
-    padding: 5px;
-}
-.container-productos .card p{
-    padding-top: 5px;
-}
-.container-productos .card a{
-    padding:10px;
-    display: block;
-    width: 50%;
-    margin: 0 auto;
-}
-
-
-
-
-
-
-
-@media (max-width: 769px) {
-
-    /*menu*/
-    .menu-icon{
-        display: block;
-        cursor: pointer;
-        padding: 0.5rem 1rem;
-    }
-    .navigation{
-        width: 100%;
-        margin-top: 1rem;
-    }
-    .navigation ul{
-        display: none;
-    }
-    .navigation ul.show{
-        display: block;
-    }
-    .navigation ul li{
-        display: block;
-    }
-    .navigation ul li a{
-        display: block;
-        padding: 0.5rem 0;
-    }
-    .navigation ul li a:hover{
-        color: #f2f2f2;
-    }
-
-   
-
-
- 
-
-
-
-
-
-
-  
-}
-
-.search-container{
-  width: 10%;
-  display: block;
-  margin: 0 auto;
-  
-}
-
-input#search-bar{
-  margin: 0 auto;
-  width: 100%;
-  height: 45px;
-  padding: 0 20px;
-  font-size: 1rem;
-  border: 1px solid aqua;
-  outline: none;
-  &:focus{
-    border: 1px solid aqua;
-    transition: 0.35s ease;
-    color: #008ABF;
-    &::-webkit-input-placeholder{
-      transition: opacity 0.45s ease; 
-  	  opacity: 0;
-     }
-    &::-moz-placeholder {
-      transition: opacity 0.45s ease; 
-  	  opacity: 0;
-     }
-    &:-ms-placeholder {
-     transition: opacity 0.45s ease; 
-  	 opacity: 0;
-     }    
-   }
- }
-
-.search-icon{
-  position: relative;
-  float: right;
-  width: 75px;
-  height: 75px;
-  top: -62px;
-  right: -45px;
-}
-
-
-
-
-
-    </style>
-<body>              <header>
-<div class="logo">
-    <a href="index.html">
-        <img src="images/imagen_2025-05-29_234235197.png" alt="Logo">
-    </a>
-</div>
-      
-
-  <button class="menu-toggle" aria-label="Abrir menú">
-    <span class="hamburger"></span>
-  </button>
-         
-         
-    <nav class="nav-menu">
- 
-    <ul>
-        
-      <li><a href="index.html">INICIO</a></li>
-      <li><a href="sobre_Nosotros.html">SOBRE NOSOTROS</a></li>
-          <li>
-        <a href="#products">PRODUCTOS</a>
-        <ul class="submenu">
-          <li>
-            <a href="#products">CORTINAS</a>
-            <ul class="submenu-categorias">
-                    <li><a href="cortinas.html#detalle15">TRADICIONALES</a></li>
-              <li><a href="cortinas.html#detalle16">ROLLERS
-                      SUNSCREEN</a></li>
-                    <li><a href="cortinas.html#detalle17">ROLLERS
-                            BLACKOUT</a></li>
-              
-            </ul> 
-          </li>
-           <li>
-            <a href="#products">SOFÁS</a>
-            <ul class="submenu-categorias">
-              <li><a href="sofas.html#detalle20">CHASELONGUE/
-                      ESQUINEROS</a></li>
-               <li><a href="sofas.html#detalle21">SOFÁ DE UN CUERPO</a></li>
-                 <li><a href="sofas.html#detalle22">SOFÁ DE DOS CUERPOS</a></li>
-                   <li><a href="sofas.html#detalle23">SOFÁ DE TRES CUERPOS</a></li>
-                <li><a href="sofas.html#detalle24">SOFÁ CAMA</a></li>
-            </ul>
-          </li>
-            <li><a href="tapizados.html">TAPIZADOS</a></li>
-            <li><a href="persianas.html">PERSIANAS</a></li>
-            <li><a href="sillasybutacas.html">SILLAS / BUTACAS</a></li>
-            <li><a href="fundas.html">FUNDAS / TELAS / COLCHONETAS</a></li>
-            <li><a href="Alfombras.html">ALFOMBRAS /
-                     MOQUETTES</a></li>
-           <li>
-            <a href="#products">PISOS</a>
-            <ul class="submenu-categorias">
-              <li><a href="Pisos.html#detalle30">FLOTANTES</a></li>
-              <li><a href="Pisos.html#detalle31">VILINICOS</a></li>
-            </ul>
-          </li>
-<li>
-            <a href="MotorizacionesYAutomatizmos.html">MOTORIZACIONES /
-              AUTOMATIZMOS</a>
-           
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav> 
-         
-         
-</header>
-
- <div class="titulo-estatico">
-        <h1>CORTINAS & SOFAS</h1>
-    </div>
-    <div class="texto-centrado fade-in">
-          <div class="texto">
-            <h1>ACERCA DE NOSOTROS</h1>
-            <p>
-                Bienvenidos a <strong>Cortinas y Sofás</strong>, su aliado de confianza en la confección y suministro de cortinas y muebles desde 1982.
-                Con más de 40 años de experiencia en el sector, nos especializamos en ofrecer soluciones decorativas a medida que se adaptan a su estilo y necesidades.
-            </p>
-            <p>
-                Nuestra Misión En <strong>Cortinas y Sofás</strong>, nuestra misión es brindar productos de la más alta calidad, combinando estética y funcionalidad.
-                Nos comprometemos a garantizar la satisfacción total de nuestros clientes a través de un servicio excepcional y atención al detalle.
-            </p>
-            <p>
-                <strong>Nuestros Productos</strong><br>
-                - <em>Cortinas Tradicionales</em>: Ofrecemos una variada gama de telas, incluyendo Voiles, Rústicos, Linos, gasas y Blackout.<br>
-                - <em>Cortinas Roller</em>: Fabricamos cortinas Sunscreen, Blackout y de fibras naturales.<br>
-                - <em>Sofás y Juegos de Living</em>: Fabricación personalizada en géneros, cueros y telas de tapicería.<br>
-                - <em>Telas Easy Clean</em>: Telas antimanchas para facilitar el mantenimiento.<br>
-                - <em>Retapizados Artesanales</em>: Adaptación a todos los estilos para sillas y sillones.<br>
-                - <em>Accesorios de Rieles y Barrales</em>: Disponibles en madera, hierro y acero inoxidable.<br>
-                - <em>Pisos Vinílicos y Flotantes</em>: Más de 40 diseños para complementar su decoración.
-            </p>
-            
+    <!-- ================= HEADER Y NAVEGACIÓN ================= -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/imagen_2025-05-29_234235197.png" alt="Logo Cortinas y Sofás">
+            </a>
         </div>
-          </div>
+        
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span class="hamburger"></span>
+        </button>
+         
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="sobre_Nosotros.html">SOBRE NOSOTROS</a></li>
+                <li>
+                    <a href="#products">PRODUCTOS</a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#products">CORTINAS</a>
+                            <ul class="submenu-categorias">
+                                <li><a href="cortinas.html#detalle15">TRADICIONALES</a></li>
+                                <li><a href="cortinas.html#detalle16">ROLLERS SUNSCREEN</a></li>
+                                <li><a href="cortinas.html#detalle17">ROLLERS BLACKOUT</a></li>
+                            </ul> 
+                        </li>
+                        <li>
+                            <a href="#products">SOFÁS</a>
+                            <ul class="submenu-categorias">
+                                <li><a href="sofas.html#detalle20">CHAISELONGUE / ESQUINEROS</a></li>
+                                <li><a href="sofas.html#detalle21">SOFÁ DE UN CUERPO</a></li>
+                                <li><a href="sofas.html#detalle22">SOFÁ DE DOS CUERPOS</a></li>
+                                <li><a href="sofas.html#detalle23">SOFÁ DE TRES CUERPOS</a></li>
+                                <li><a href="sofas.html#detalle24">SOFÁ CAMA</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="tapizados.html">TAPIZADOS</a></li>
+                        <li><a href="persianas.html">PERSIANAS</a></li>
+                        <li><a href="sillasybutacas.html">SILLAS / BUTACAS</a></li>
+                        <li><a href="fundas.html">FUNDAS / TELAS / COLCHONETAS</a></li>
+                        <li><a href="Alfombras.html">ALFOMBRAS / MOQUETTES</a></li>
+                        <li>
+                            <a href="#products">PISOS</a>
+                            <ul class="submenu-categorias">
+                                <li><a href="Pisos.html#detalle30">FLOTANTES</a></li>
+                                <li><a href="Pisos.html#detalle31">VINÍLICOS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="MotorizacionesYAutomatizmos.html">MOTORIZACIONES / AUTOMATISMOS</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav> 
+    </header>
 
+    <!-- ================= CONTENIDO PRINCIPAL ================= -->
+    <main>
+        <div class="titulo-estatico">
+            <h1>CORTINAS & SOFAS</h1>
+        </div>
 
-  
- <h2>UBICACIÓN</h2>
-  <!-- Ubicación Google Maps -->
-  <section class="ubicacion fade-in">
+        <section class="texto-centrado fade-in">
+            <div class="texto">
+                <h1>ACERCA DE NOSOTROS</h1>
+                <p>
+                    Bienvenidos a <strong>Cortinas y Sofás</strong>, su aliado de confianza en la confección y suministro de cortinas y muebles desde 1982. 
+                    Con más de 40 años de experiencia en el sector, nos especializamos en ofrecer soluciones decorativas a medida que se adaptan a su estilo y necesidades.
+                </p>
+                <p>
+                    <strong>Nuestra Misión</strong><br>
+                    En <strong>Cortinas y Sofás</strong>, nuestra misión es brindar productos de la más alta calidad, combinando estética y funcionalidad. 
+                    Nos comprometemos a garantizar la satisfacción total de nuestros clientes a través de un servicio excepcional y atención al detalle.
+                </p>
+                <br>
+                <p>
+                    <strong>Nuestros Productos</strong>
+                </p>
+                <ul style="text-align: left; display: inline-block; padding-left: 20px;">
+                    <li><em>Cortinas Tradicionales:</em> Ofrecemos una variada gama de telas, incluyendo Voiles, Rústicos, Linos, gasas y Blackout.</li>
+                    <li><em>Cortinas Roller:</em> Fabricamos cortinas Sunscreen, Blackout y de fibras naturales.</li>
+                    <li><em>Sofás y Juegos de Living:</em> Fabricación personalizada en géneros, cueros y telas de tapicería.</li>
+                    <li><em>Telas Easy Clean:</em> Telas antimanchas para facilitar el mantenimiento.</li>
+                    <li><em>Retapizados Artesanales:</em> Adaptación a todos los estilos para sillas y sillones.</li>
+                    <li><em>Accesorios de Rieles y Barrales:</em> Disponibles en madera, hierro y acero inoxidable.</li>
+                    <li><em>Pisos Vinílicos y Flotantes:</em> Más de 40 diseños para complementar su decoración.</li>
+                </ul>
+            </div>
+        </section>
 
-   
-   
-    
-     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.025703262303!2d-54.96562992370957!3d-34.90580447351586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x957511920fbb2a45%3A0x214855002a65043!2sCortinas%20%26%20Sofas!5e0!3m2!1ses-419!2suy!4v1740417685035!5m2!1ses-419!2suy" 
-         width="100%" height="100" style="border:0;" allowfullscreen="" loading="lazy">
-</iframe>
+        <!-- ================= UBICACIÓN Y MAPA ================= -->
+        <section class="ubicacion fade-in">
+            <h2 class="lineas-laterales">UBICACIÓN</h2>
+            <div class="mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.025703262303!2d-54.96562992370957!3d-34.90580447351586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x957511920fbb2a45%3A0x214855002a65043!2sCortinas%20%26%20Sofas!5e0!3m2!1ses-419!2suy!4v1740417685035!5m2!1ses-419!2suy" 
+                allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
 
-
-</section>
-
-  <div class="tooltip">
-        <a href="https://wa.me/598099696563" target="_blank" class="whatsapp-icon">
+    <!-- ================= ICONOS FLOTANTES ================= -->
+    <div class="tooltip whatsapp-icon">
+        <a href="https://wa.me/598099696563" target="_blank">
             <img src="images/2.png" alt="WhatsApp">
-            <span class="tooltiptext">¡Contáctanos por WhatsApp!</span>
         </a>
+        <span class="tooltiptext">¡Contáctanos por WhatsApp!</span>
     </div>
- <div class="tooltip">
-        <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank" class="instagram-icon">
+    
+    <div class="tooltip instagram-icon">
+        <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank">
             <img src="images/instagram.png" alt="Instagram">
-            <span class="tooltiptext">¡Contáctanos por Instagram!</span>
         </a>
+        <span class="tooltiptext">¡Contáctanos por Instagram!</span>
     </div>
-     <footer class="footer">
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
         <div class="footer-content">
             <div class="footer-info">
-                <p><strong>Maldonado:</strong> Calle Joaquin De Viana Esq Dr Edye - Cel: 099 696 610</p>
+                <p><strong>Ubicación:</strong> Maldonado / Calle Joaquin De Viana Esq Dr Edye</p>
+                <p><strong>Cel:</strong> 099 696 610</p>
                 <p><a href="mailto:Cortinas&Sofas@gmail.com" class="footer-email">Cortinas&Sofas@gmail.com</a></p>
             </div>
+            
             <div class="footer-whatsapp">
-                <img src="2.png" alt="WhatsApp">
+                <img src="images/2.png" alt="WhatsApp"> 
                 <div>
-                    <p>SOLICITA PRESUPUESTO VIA WHATSAPP</p>
+                    <p>SOLICITA PRESUPUESTO VÍA WHATSAPP</p>
                     <p>099 696 610</p>
                 </div>
             </div>
         </div>
-        <div class="footer-sobrenosotros">
+        <div class="footer-bottom">
             <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
         </div>
     </footer>
-       <script src="script.js"></script>
 
+    <!-- ================= SCRIPTS ================= -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
