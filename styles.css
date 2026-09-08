@@ -5,10 +5,10 @@
     --primary-color: #e20000;
     --success-color: #009900;
     --success-hover: #00cc00;
-    --bg-color: snow; /* Tu color de fondo */
+    --bg-color: whitesmoke;
     --text-color: #333;
-    --header-bg: rgba(255, 255, 255, 0.8);
-    --header-solid: rgba(255, 255, 255, 0.95);
+    --header-bg: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), transparent 80%);
+    --header-solid: rgba(255, 255, 255, 0.98);
 }
 
 html {
@@ -16,18 +16,24 @@ html {
     overflow-x: hidden;
 }
 
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    letter-spacing: 0.03em;
+}
+
+body {
     background-color: var(--bg-color);
     color: var(--text-color);
+    line-height: 1.6;
+    margin-top: 80px; /* Espacio para el header fijo */
     overflow-x: hidden;
 }
 
-* {
-    box-sizing: border-box;
-    letter-spacing: 0.03em;
+img {
+    border-radius: 4px;
 }
 
 /* =========================================
@@ -43,11 +49,11 @@ header {
     width: 100%;
     z-index: 1000;
     background: var(--header-bg);
-    transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
 header.solid-bg {
-    background-color: var(--header-solid);
+    background: var(--header-solid);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
@@ -57,6 +63,7 @@ header.solid-bg {
     align-items: center;
     padding: 10px 20px;
 }
+
 .logo img {
     max-height: 50px;
 }
@@ -70,9 +77,9 @@ nav {
 
 nav ul {
     list-style: none;
+    display: flex;
     margin: 0;
     padding: 0;
-    display: flex;
 }
 
 nav li {
@@ -91,6 +98,7 @@ nav a {
     overflow: hidden;
 }
 
+/* Animación de línea roja en enlaces */
 nav a::after {
     content: '';
     position: absolute;
@@ -107,20 +115,48 @@ nav a::after {
 nav a:hover::after {
     transform: scaleX(1);
 }
+
 nav a:hover {
     color: var(--primary-color);
 }
+
+/* Botón Menú Móvil */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    display: block;
+    position: relative;
+    transition: 0.3s;
+}
+
+.hamburger::before, .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+.hamburger::before { top: -8px; }
+.hamburger::after { top: 8px; }
 
 /* Submenús Escritorio */
 .submenu {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 200px;
+    left: -20%;
+    width: 220px;
     background-color: var(--header-solid);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
     padding: 10px 0;
     z-index: 100;
 }
@@ -129,8 +165,8 @@ nav a:hover {
     display: none;
     position: absolute;
     top: 0;
-    left: 100%;
-    width: 200px;
+    left: 100%; /* Cambiado para abrir a la derecha o izquierda según espacio en JS si fuera necesario, por ahora a la derecha */
+    width: 220px;
     background-color: var(--header-solid);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -148,6 +184,7 @@ nav li:hover > .submenu,
     font-weight: normal;
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
+
 .submenu li a:hover, .submenu-categorias li a:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
@@ -157,10 +194,9 @@ nav li:hover > .submenu,
 ========================================= */
 .hero {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 80px);
     overflow: hidden;
     position: relative;
-    margin-top: 0; /* Ocupa toda la pantalla desde arriba */
 }
 
 .hero img, .slide {
@@ -178,34 +214,29 @@ nav li:hover > .submenu,
 }
 
 /* =========================================
-   4. SECCIONES GENERALES (Títulos, Textos)
+   4. SECCIONES Y TEXTOS
 ========================================= */
 .titulo-estatico {
     background-color: black;
     color: white;
     padding: 20px;
     text-align: center;
-    margin-top: 80px; 
 }
 
-.titulo-seccion {
-    background-color: var(--primary-color);
-    color: white;
-    font-weight: bold;
+.texto-centrado {
     text-align: center;
-    padding: 15px;
-    margin-top: 20px;
-    position: sticky;
-    top: 70px;
-    z-index: 900;
+    margin: 0 auto;
+    max-width: 800px;
+    line-height: 1.8;
+    padding: 60px 20px;
 }
 
-.titulo-seccion h1 {
-    font-size: 2.5em;
-    margin: 0;
+.texto-centrado h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
-/* Títulos con líneas a los lados */
 h2.lineas-laterales {
     display: flex;
     align-items: center;
@@ -225,71 +256,8 @@ h2.lineas-laterales::after {
     margin: 0 20px;
 }
 
-/* Textos centrados */
-.texto-centrado {
-    text-align: center;
-    margin: 0 auto;
-    max-width: 800px;
-    line-height: 1.8;
-    padding: 60px 20px;
-}
-
-.texto-centrado h1 {
-    color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
 /* =========================================
-   5. SECCIÓN SOBRE NOSOTROS (Imágenes Circulares)
-========================================= */
-.sobre-nosotros {
-    padding: 60px 20px;
-    text-align: center;
-    max-width: 1000px;
-    margin: 0 auto 100px auto;
-}
-
-.sobre-nosotros .texto p {
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 30px;
-}
-
-/* Mejorado a Flexbox para evitar que se rompa en móviles */
-.imagenes-circulares-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.imagen-circular {
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #ccc;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0; 
-    animation: subirDesdeAbajo 1s ease-out forwards;
-}
-
-/* Retraso progresivo para que aparezcan una por una */
-.imagen-circular:nth-child(1) { animation-delay: 0.1s; }
-.imagen-circular:nth-child(2) { animation-delay: 0.3s; }
-.imagen-circular:nth-child(3) { animation-delay: 0.5s; }
-.imagen-circular:nth-child(4) { animation-delay: 0.7s; }
-.imagen-circular:nth-child(5) { animation-delay: 0.9s; }
-
-.imagen-circular:hover {
-    transform: scale(1.15);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-/* =========================================
-   6. TARJETAS DE PRODUCTOS
+   5. TARJETAS DE PRODUCTOS
 ========================================= */
 .container-productos {
     width: 100%;
@@ -303,7 +271,7 @@ h2.lineas-laterales::after {
 }
 
 .card {
-    width: 260px;
+    width: 280px;
     background: #fff;
     border-radius: 8px;
     border: 1px solid #eee;
@@ -311,6 +279,9 @@ h2.lineas-laterales::after {
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card:hover {
@@ -318,15 +289,14 @@ h2.lineas-laterales::after {
     box-shadow: 0 12px 20px rgba(0,0,0,0.15);
 }
 
-.swiper {
-    width: 100%;
-    height: 250px;
+.card-info {
+    padding: 15px;
 }
 
-.swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.card h5 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
 }
 
 .button {
@@ -344,6 +314,70 @@ h2.lineas-laterales::after {
 
 .button:hover {
     background-color: var(--success-hover);
+    color: white;
+}
+
+/* Swiper para las cards */
+.swiper {
+    width: 100%;
+    height: 250px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: var(--primary-color) !important;
+    font-size: 20px !important;
+    transform: scale(0.7);
+}
+
+/* =========================================
+   6. VISOR DE IMÁGENES (MODAL)
+========================================= */
+.visor {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.visor img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.visor .cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.visor .cerrar:hover {
+    color: var(--primary-color);
 }
 
 /* =========================================
@@ -387,7 +421,32 @@ h2.lineas-laterales::after {
 }
 
 /* =========================================
-   8. MAPA Y UBICACIÓN
+   8. BUSCADOR (Preparado para futuro)
+========================================= */
+.search-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+input#search-bar {
+    width: 100%;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    transition: 0.35s ease;
+}
+
+input#search-bar:focus {
+    border-color: var(--primary-color);
+}
+
+/* =========================================
+   9. MAPA Y UBICACIÓN
 ========================================= */
 .ubicacion {
     background-color: #fff;
@@ -408,7 +467,7 @@ h2.lineas-laterales::after {
 }
 
 /* =========================================
-   9. FOOTER E ICONOS FLOTANTES
+   10. FOOTER E ICONOS FLOTANTES
 ========================================= */
 .footer {
     background-color: #222;
@@ -426,8 +485,8 @@ h2.lineas-laterales::after {
     margin: 0 auto 20px auto;
 }
 
-.footer-info, .footer-whatsapp {
-    margin: 10px;
+.footer-info p, .footer-whatsapp p {
+    margin-bottom: 5px;
 }
 
 .footer-email {
@@ -435,9 +494,14 @@ h2.lineas-laterales::after {
     text-decoration: none;
 }
 
+.footer-whatsapp {
+    display: flex;
+    align-items: center;
+}
+
 .footer-whatsapp img {
     width: 40px;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
 .footer-bottom {
@@ -453,8 +517,9 @@ h2.lineas-laterales::after {
     z-index: 1000;
     bottom: 20px;
 }
+
 .whatsapp-icon { right: 20px; }
-.instagram-icon { right: 90px; } /* Separados horizontalmente */
+.instagram-icon { right: 90px; }
 
 .whatsapp-icon img, .instagram-icon img {
     width: 55px;
@@ -467,7 +532,6 @@ h2.lineas-laterales::after {
     transform: scale(1.15);
 }
 
-/* Tooltips */
 .tooltip .tooltiptext {
     visibility: hidden;
     background-color: #333;
@@ -483,28 +547,19 @@ h2.lineas-laterales::after {
     white-space: nowrap;
     font-size: 12px;
 }
+
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
 }
 
 /* =========================================
-   10. ANIMACIONES (KEYFRAMES Y CLASES)
+   11. ANIMACIONES
 ========================================= */
 @keyframes zoomInOut {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
-}
-
-@keyframes caerDesdeArriba {
-    0% { transform: translateY(-100px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes subirDesdeAbajo {
-    0% { transform: translateY(100px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
 }
 
 .fade-in {
@@ -513,41 +568,23 @@ h2.lineas-laterales::after {
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.fade-in.visible, .fade-in.show {
+.fade-in.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
 /* =========================================
-   11. RESPONSIVE DESIGN (MÓVILES)
+   12. RESPONSIVE DESIGN (MÓVILES)
 ========================================= */
 @media (max-width: 768px) {
-    /* Menú Móvil */
     .menu-toggle {
         display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
     }
     
-    .hamburger, .hamburger::before, .hamburger::after {
-        width: 30px;
-        height: 3px;
-        background-color: black;
-        display: block;
-        position: relative;
-        transition: 0.3s;
+    nav { 
+        justify-content: flex-start; 
+        padding: 0; 
     }
-    .hamburger::before, .hamburger::after {
-        content: '';
-        position: absolute;
-        left: 0;
-    }
-    .hamburger::before { top: -8px; }
-    .hamburger::after { top: 8px; }
-
-    nav { justify-content: flex-start; padding: 0; }
     
     .nav-menu {
         display: none;
@@ -558,31 +595,56 @@ h2.lineas-laterales::after {
         background-color: white;
         flex-direction: column;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        padding: 0;
     }
-    .nav-menu.active { display: flex; }
     
-    nav ul { flex-direction: column; }
-    nav li { margin: 0; }
-    nav a { border-bottom: 1px solid #ddd; padding: 15px; }
+    .nav-menu.active { 
+        display: flex; 
+    }
+    
+    nav ul { 
+        flex-direction: column; 
+    }
+    
+    nav li { 
+        margin: 0; 
+    }
+    
+    nav a { 
+        border-bottom: 1px solid #ddd; 
+        padding: 15px; 
+    }
 
-    /* Submenús en Móvil (Se anula el hover, funcionará por clic vía JS) */
+    /* Submenús en Móvil */
     .submenu, .submenu-categorias {
         position: static;
         width: 100%;
         box-shadow: none;
         background-color: #f9f9f9;
-    }
-    nav li:hover > .submenu, .submenu li:hover > .submenu-categorias {
         display: none;
     }
-    .active-mobile > .submenu, .active-mobile > .submenu-categorias {
-        display: block !important;
+    
+    nav li:hover > .submenu, 
+    .submenu li:hover > .submenu-categorias {
+        display: none; /* Desactivar hover en móviles */
+    }
+    
+    /* Clases dinámicas manejadas por JS */
+    nav li.active-mobile > .submenu,
+    .submenu li.active-mobile > .submenu-categorias {
+        display: block;
     }
 
-    /* Ajustes visuales móvil */
     .hero { height: 60vh; }
-    .imagenes-circulares-container { gap: 15px; }
-    .imagen-circular { width: 120px; height: 120px; }
     h2.lineas-laterales { font-size: 20px; }
-    .footer-content { flex-direction: column; text-align: center; }
+    
+    .footer-content { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    
+    .footer-whatsapp {
+        margin-top: 20px;
+        justify-content: center;
+    }
 }
