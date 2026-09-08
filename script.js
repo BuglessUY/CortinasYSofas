@@ -1,23 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Inicializar todos los módulos
     initHeaderScroll();
     initMobileMenu();
     initSwiper();
     initWhatsAppCart();
     initImageViewer();
-    initScrollAnimations();
-    initHeroSlider();
+    initScrollAnimations(); // Ahora con IntersectionObserver
 });
 
 /* ==================================================
-   1. CAMBIO DE FONDO DEL HEADER AL HACER SCROLL
+   1. HEADER SCROLL Y EFECTOS
 ================================================== */
 function initHeaderScroll() {
     const header = document.querySelector('header');
     if (!header) return;
 
+    // Si no estamos en la página de inicio (sin hero), poner el header sólido siempre
+    if (!document.querySelector('.hero')) {
+        header.classList.add('solid-bg');
+        return;
+    }
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 150) {
+        if (window.scrollY > 100) {
             header.classList.add('solid-bg');
         } else {
             header.classList.remove('solid-bg');
@@ -26,7 +30,7 @@ function initHeaderScroll() {
 }
 
 /* ==================================================
-   2. LÓGICA DEL MENÚ MÓVIL Y SUBMENÚS
+   2. LÓGICA DEL MENÚ MÓVIL OVERLAY
 ================================================== */
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
@@ -34,14 +38,12 @@ function initMobileMenu() {
     const menuItems = document.querySelectorAll(".nav-menu > ul > li > a");
     const submenuItems = document.querySelectorAll(".submenu > li > a");
 
-    let lastClickedItem = null;
-    let lastClickTime = 0;
-    const doubleClickDelay = 300; // Milisegundos para detectar doble clic
-
-    // Abrir/Cerrar menú hamburguesa
+    // Abrir/Cerrar menú hamburguesa y evitar scroll de fondo
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('is-active');
             navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
         });
     }
 
@@ -49,26 +51,25 @@ function initMobileMenu() {
         return window.innerWidth <= 768;
     }
 
-    // Lógica multinivel para móviles (Prevenir redirección al primer tap)
-    function handleMenuClick(event, links) {
+    // Comportamiento de acordeón para móviles
+    function handleMenuClick(links) {
         links.forEach((item) => {
             item.addEventListener("click", function (e) {
-                if (!isMobile()) return; // En PC funciona el hover nativo de CSS
+                if (!isMobile()) return; 
 
                 const parentLi = this.parentElement;
                 const hasSubmenu = parentLi.querySelector("ul");
-                const currentTime = new Date().getTime();
 
                 if (hasSubmenu) {
-                    e.preventDefault(); // Evitar redirección inmediata
+                    e.preventDefault(); 
 
-                    // Doble clic = Redirigir
-                    if (lastClickedItem === this && (currentTime - lastClickTime) < doubleClickDelay) {
+                    // Si ya está abierto y se hace clic en el enlace principal, redirigir
+                    if (parentLi.classList.contains('active-mobile') && this.getAttribute('href') !== '#') {
                         window.location.href = this.href;
                         return;
                     }
 
-                    // Cerrar hermanos del mismo nivel
+                    // Cerrar hermanos
                     const siblings = parentLi.parentElement.children;
                     for (let sibling of siblings) {
                         if (sibling !== parentLi) {
@@ -76,18 +77,15 @@ function initMobileMenu() {
                         }
                     }
 
-                    // Alternar clase activa
+                    // Alternar clase
                     parentLi.classList.toggle("active-mobile");
-
-                    lastClickedItem = this;
-                    lastClickTime = currentTime;
                 }
             });
         });
     }
 
-    handleMenuClick(null, menuItems);
-    handleMenuClick(null, submenuItems);
+    handleMenuClick(menuItems);
+    handleMenuClick(submenuItems);
 }
 
 /* ==================================================
@@ -97,19 +95,17 @@ function initSwiper() {
     const swipers = document.querySelectorAll('.mySwiper');
     if (swipers.length === 0) return;
 
-    // Solo inicializa si la librería Swiper está cargada
     if (typeof Swiper !== 'undefined') {
         swipers.forEach((swiperElement) => {
             new Swiper(swiperElement, {
                 loop: true,
+                effect: "fade", // Efecto más elegante para el catálogo
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 }
             });
         });
-    } else {
-        console.warn("Librería Swiper no detectada.");
     }
 }
 
@@ -123,15 +119,12 @@ function initWhatsAppCart() {
         boton.addEventListener("click", function (event) {
             event.preventDefault();
 
-            // Buscar la card contenedora
             let card = this.closest(".card");
             if (!card) return;
 
-            // Extraer nombre (preparado para leer un h5, nombre de clase genérico, o dataset)
             let tituloEl = card.querySelector("h5") || card.querySelector(".producto-nombre");
             let nombre = tituloEl ? tituloEl.innerText.trim() : "Producto del catálogo";
             
-            // Extraer imagen activa
             let imagenEl = card.querySelector(".swiper-slide-active img") || card.querySelector("img");
             let imagen = imagenEl ? imagenEl.src : "Sin imagen";
 
@@ -145,13 +138,11 @@ function initWhatsAppCart() {
 }
 
 /* ==================================================
-   5. VISOR DE IMÁGENES (MODAL TIPO LIGHTBOX)
+   5. VISOR DE IMÁGENES (LIGHTBOX MODAL)
 ================================================== */
 function initImageViewer() {
-    // Usamos el visor centralizado que ahora debe estar en el HTML o lo creamos dinámicamente si no existe
     let visor = document.getElementById('visor-imagen');
     
-    // Si no existe el div visor en el HTML, lo creamos dinámicamente para no ensuciar los HTML
     if (!visor) {
         visor = document.createElement('div');
         visor.id = 'visor-imagen';
@@ -165,20 +156,20 @@ function initImageViewer() {
 
     const imagenAmpliada = visor.querySelector('#imagen-ampliada');
     const botonCerrar = visor.querySelector('.cerrar');
-    const imagenesGaleria = document.querySelectorAll('.imagen-swiper, .galeria img');
+    const imagenesGaleria = document.querySelectorAll('.imagen-swiper, .galeria img, .category-card img');
 
-    // Asignar evento a cada imagen
     imagenesGaleria.forEach(img => {
         img.style.cursor = 'pointer';
         img.addEventListener('click', (e) => {
-            // Evitamos que Swiper detecte esto como un link o deslice
+            // Permitir clic en los links de las categorías, bloquear en las cards de productos
+            if(img.closest('.category-card')) return; 
+            
             e.preventDefault(); 
             imagenAmpliada.src = img.src;
             visor.style.display = 'flex';
         });
     });
 
-    // Cerrar modal
     botonCerrar.addEventListener('click', () => {
         visor.style.display = 'none';
     });
@@ -191,42 +182,33 @@ function initImageViewer() {
 }
 
 /* ==================================================
-   6. ANIMACIONES DE SCROLL (FADE IN)
+   6. ANIMACIONES DE SCROLL (INTERSECTION OBSERVER)
 ================================================== */
 function initScrollAnimations() {
-    const fadeInElements = document.querySelectorAll('.fade-in');
-
-    function checkVisibility() {
-        const viewportHeight = window.innerHeight;
-        
-        fadeInElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            if (elementTop < viewportHeight - 80) { // 80px de margen antes de aparecer
-                element.classList.add('visible');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility(); // Chequear elementos visibles al cargar
-}
-
-/* ==================================================
-   7. SLIDER HERO (Página de inicio)
-================================================== */
-function initHeroSlider() {
-    const slides = document.querySelectorAll(".hero .slide");
-    if (slides.length === 0) return;
-
-    // Solo como placeholder por si se desean agregar botones de next/prev a futuro
-    let currentSlide = 0;
+    const fadeElements = document.querySelectorAll('.fade-in, .fade-up');
     
-    window.showSlide = function(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.remove("active");
-            if (i === index) {
-                slide.classList.add("active");
+    // Cambiamos clases antiguas por la nueva para unificación
+    fadeElements.forEach(el => {
+        if(el.classList.contains('fade-in')) {
+            el.classList.remove('fade-in');
+            el.classList.add('fade-up');
+        }
+    });
+
+    const elementsToAnimate = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Solo animar la primera vez
             }
         });
-    }
+    }, {
+        root: null,
+        threshold: 0.1, // Anima cuando el 10% del elemento es visible
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    elementsToAnimate.forEach(el => observer.observe(el));
 }
