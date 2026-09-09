@@ -1,1450 +1,284 @@
-<html lang="es"> 
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cortinas Personalizadas</title>
+    <title>Servicio de Tapicería | Cortinas & Sofás</title>
+    <meta name="description" content="Servicios de tapizado a medida para renovar sillas, sofás y más con máxima calidad.">
+    
+    <!-- Fuentes Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
-</head>
+
+    <!-- CSS Específico para la Galería de Tapizados (Portfolio) -->
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: Arial, sans-serif;
-            margin-top:  60px;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-            background-color:whitesmoke;
-        }
-  
-  header {
-    padding: 20px 0;
-    box-shadow: none;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent 50%);
-    transition: background-color 2.5s ease; /* Solo la transición de color de fondo */
-}.logo {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding: 20px 20px 20px 20px;
-}.logo img {
-    max-height: 50px;
-}
-
-nav {
-    flex: 2;
-    display: flex;
-    
-    padding: 0 20px;
-    background: transparent;
-    margin-right: 50%;
-    margin-top: 10px;
-    margin-bottom: 20px; /* Espacio debajo del nav */
-
-}  
-.nav-menu {
-    display: none;
-    justify-content: center;
-    flex-direction: column;  /* Vertical */
-    background-color: white;   /* Fondo del menú desplegable */
-    position: absolute;      /* Lo mantenemos en posición absoluta, pero revisaremos los márgenes */
-    top: 100%;               /* Asegura que se coloque justo debajo del nav */
-    right: 0;
-    width: auto;             /* Ajusta el ancho automáticamente */
-    z-index: 10;
-    padding: 10px 0;         /* Espaciado entre los enlaces */
-    margin: 0;               /* Elimina márgenes que puedan interferir */
-    box-sizing: border-box;  /* Asegura que los márgenes y padding no afecten el ancho total */   
-    background-color: rgba(255, 255, 255, 0.8);
-
-}.nav-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-menu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}.menu-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-
-
-nav li {
-    position: relative;
-    margin: 0 10px; /* Espacio entre los elementos */
-}
-
-nav a {
-    text-decoration: none;
-    color: #000;
-    font-size: 13px;
-    padding: 15px 20px;
-    display: block;
-    position: relative; /* Para el pseudo-elemento */
-    overflow: hidden; /* Para ocultar la línea animada fuera del enlace */
-}
-
-nav a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #e20000; /* Color de la línea */
-    transform: scaleX(0); /* Inicialmente oculta */
-    transform-origin: bottom left; /* Cambia el origen de la transformación */
-    transition: transform 1s ease; /* Transición suave */
-}
-nav a:hover::after {
-    transform: scaleX(1); /* Línea completa en hover */
-}
-
-nav a:hover {
-    color: #e20000; /* Cambia el color del texto en hover si lo deseas */
-} .nav-menu.active {
-    display: flex;
-   
-}
-
-/* Estilo específico para pantallas pequeñas (por ejemplo, móviles) */
-@media (max-width: 768px) {
-    nav ul {
-        display: flex;  /* Para hacer que los elementos estén en fila */
-        flex-direction: column; /* Para apilar los elementos verticalmente */
-    }
-   .hamburger {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    display: block;
-    position: relative;
-    margin-right: 30px;
-    
-}.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    left: 0;
-    transition: transform 0.3s ease;
-}
-
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    top: 8px;
-}
-@media (max-width: 768px) {
-    nav ul {
-        display: flex;  /* Para hacer que los elementos estén en fila */
-        flex-direction: column; /* Para apilar los elementos verticalmente */
-    }  .nav-menu {
-        
-        background-color: white;
-    }
-   .hamburger {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    display: block;
-    position: relative;
-    margin-right: 30px;
-    
-}.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    left: 0;
-    transition: transform 0.3s ease;
-}
-
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    top: 8px;
-}/* Ocultar submenús por defecto */
-
-
-.submenu{
-    left:-20% ;
-    position: absolute;
-        background-color: white;
-
-}
-.submenu-categorias{
-    left:-100% ;
-    position: absolute;
-    background-color: white;
-}
-
-}
-}
-
-    
-
-/* Estilo específico para pantallas grandes */
-@media (min-width: 769px) {
-    nav ul {
-        display: flex;  /* Deja los elementos en fila */
-        flex-direction: row; /* Para el menú en línea horizontal */
-          #hamburger{
-      
-        display: block;  /* Se muestra como bloque en pantallas pequeñas */
-    
-    }
-    }
-    .nav-menu {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        width: auto;
-        background-color: transparent;
-    }
-    .nav-menu a {
-        color: black;
-        border: none;
-    }  nav ul li {
-        display: inline-block;  /* Los elementos se muestran en línea */
-    }
-}
-
-        section {
-            padding: 20px;
-            text-align: center;
-            background-color: #fff;
-        }
-        section h1 {
-            color: red;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        section p {
-            margin: 10px 0;
-            font-size: 1rem;
-        }
- .texto-centrado {
-    
-    text-align: center;
-    margin: 0 auto;
-    max-width:50%;
-    height: auto;
-    line-height: 1.6;
-    padding-top: 90px;
-    margin-bottom:90px; 
-}
-
- .galeria {
-            display: flex;
-            gap:20px;
-            transition: transform 0.5s ease-in-out;
-        }
-#detalle1, #detalle2, #detalle3,#detalle4, #detalle5, #detalle6 {
-    margin-bottom: 240px; /* Agrega más espacio entre las secciones */
-}
-.galeria img {
-            width: 50%;
-            object-fit: cover;
-      flex: 0 0 auto;
-        }  .slider-container {
-    position: relative;
-    width: 100%;
-    height: 100%;  /* Usa el 100% de la altura de la pantalla */
-    overflow: hidden;
-}
-    .slider-container {
+        .portfolio-gallery {
             width: 100%;
-            max-width: 900px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            position: relative;
-             overflow: hidden; /* Oculta las imágenes fuera del área visible */
-
+            padding: 50px 0;
+            background: #111; /* Fondo oscuro elegante para resaltar el antes y después */
+            border-radius: var(--radius);
+            margin-top: 40px;
         }
-       .slider-wrapper {
-    display: flex;
-    overflow: hidden; /* Evita cortes inesperados */
-    width: 100%; /* Asegúrate de que el contenedor no sea más ancho que el 100% */
-}
-.slider {
-    display: flex;
-    width: 100%; 
-    transform: translateX(0);
-    transition: transform 0.5s ease-in-out;
-}
-
-
-
-
-
-    .slider-btn {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 24px;
-            position: absolute;
-            z-index: 10;
-            top: 50%;
-            transform: translateY(-50%);
+        .portfolio-swiper {
+            width: 100%;
+            padding-bottom: 50px;
         }
-
-
-  
-
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: red;
-            border: none;
-            padding: 15px;
-            cursor: pointer;
+        .portfolio-swiper .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 80%; /* Deja ver parte de las diapositivas laterales */
+            max-width: 800px;
+            height: 60vh;
+            min-height: 400px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.5);
         }
-        .prev { left: 0px; }
-        .next { right: 0px; }
-        footer {
-            text-align: center;
-            padding: 10px 20px;
-            background-color: #222;
-            color: #red;
-            margin-top: 100px;
+        .portfolio-swiper .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-          @media (max-width: 768px) {
-          
-            .prev { left: 0px; }
-            .next { right: 0px; }
-            .galeria {
-                gap: 5px; /* Menos espacio en móvil */
-            }.slider-container {
-            width: auto;
-            max-width: 768px;
-            height: 768px;
-                    margin-right: -100px;
-
-                    margin-left: -100px; /* Ajusta según necesites */
-
-            display: flex;
-            align-items: center;
-            position: relative;
-                overflow: hidden; /* Oculta las imágenes fuera del área visible */
-
+        .portfolio-swiper .swiper-pagination-bullet {
+            background: #fff;
+            opacity: 0.5;
         }
-          .galeria img {
-        width: 70%; /* Asegura que ocupe el ancho completo */
-        height: 130px; /* Mantiene la proporción */
-    }
-             .slide {
-        flex: 0 0 50%; /* En pantallas pequeñas, muestra dos imágenes */
-    }
-          figure {
-  margin:0;
-}
-#gallery {
- 
-    max-width: 900px;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    height: 500px; /* Ajusta esta altura según sea necesario */
-}
-
-.gallery-container {
-    position: relative;
-    width: 100%;
-    height: 100%; /* Ajusta la altura al 100% del contenedor principal */
-}
-
-.gallery-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Ajusta la altura al 100% del contenedor principal */
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%; /* Asegura que las imágenes llenen el contenedor */
-    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsión */
-    display: block;
-}
-
-.gallery-item.active {
-    opacity: 1;
-}
-
-/* Navegación de la galería */
-.gallery-navigation {
-    display: flex;
-    justify-content: space-between;
-    width: calc(100% - 40px);
-    margin: 0 20px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.nav-button {
-    background-color: rgba(0,0,0, .3);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-.nav-button > span {
-  font-size: 30px;
-}
-.nav-button:hover {
-    background-color: #005f5f;
-}   }
-        figure {
-  margin:0;
-}
-#gallery {
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    height: 500px; /* Ajusta esta altura según sea necesario */
-}
-
-.gallery-container {
-    position: relative;
-    width: 100%;
-    height: 100%; /* Ajusta la altura al 100% del contenedor principal */
-}
-
-.gallery-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Ajusta la altura al 100% del contenedor principal */
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%; /* Asegura que las imágenes llenen el contenedor */
-    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsión */
-    display: block;
-}
-
-.gallery-item.active {
-    opacity: 1;
-}
-
-/* Navegación de la galería */
-.gallery-navigation {
-    display: flex;
-    justify-content: space-between;
-    width: calc(100% - 40px);
-    margin: 0 20px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.nav-button {
-    background-color: rgba(0,0,0,.2);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-.nav-button > span {
-  font-size: 30px;
-}
-.nav-button:hover {
-    background-color: #990033;
-}
-.container {
-	width:100%;
-	padding-right:15px;
-	padding-left:15px;
-	margin-right:auto;
-	margin-left:auto;
-	max-width:800px
-}
-/* Basic appearance stuff ends here */
-
-/* Parallax Horizontal Scroller - by Bree Dulmage, 2020 */
-#proparallax {
-	display: block;
-	position: relative;
-	overflow: hidden;
-	min-height: 37.5rem;
-	border: 10px solid black;
-	box-shadow: 0px 8px 10px 8px grey;
-}	
-
-#proparallax img {
-	position: absolute;
-	width: 50rem;
-	height: 37.5rem;
-	overflow: hidden;
-	object-fit: cover;
-}
-
-@keyframes parallax_one { /* controls img.one movement */
-	0% { /* .imageloaded */
-		height: 37.5rem;
-		width: 50rem;
-		left: 0rem;
-		opacity: 1;
-	}
-	/* .imagehold runs from 0 to 27.77% */
-	27.77% { /* .imageloaded */
-		width: 50rem;
-		left: 0rem;
-	}
-	27.78% { /* .imagepreunload */
-		width: 50rem;
-		left: 0rem;
-		right: 50rem;
-	}
-	33.33% { /* .imageunloaded */
-		height: 37.5rem;
-		width: 0rem;
-		left: 0rem;
-		right: 0rem;
-		opacity: 1;
-	}
-	33.34% { /* imageoff */
-		opacity: 0;	
-	}
-	94.43% { /* .imageon */
-		left: 0rem;
-		opacity: 0;
-	}
-	94.44% { /* .imageinitial */
-		height: 37.5rem;
-		width: 0rem;
-		left: 50rem;
-		opacity: 1;
-	}
-	100% { /* .imageloaded */
-		width: 50rem;
-		left: 0rem;
-		opacity: 1;		
-	}
-}
-
-@keyframes parallax_two { /* controls img.two movement */
-	0% { /* .imageoff */
-		opacity: 0;
-	}
-	27.77% { /* .imageon */
-		left: 0rem;
-		opacity: 0;
-	}
-	27.78% { /* .imageinitial */
-		width: 0rem;
-		height: 37.5rem;
-		left: 50rem;
-		opacity: 1;
-	}
-	33.33% { /* .imageloaded */
-		width: 50rem;
-		left: 0rem;
-	}
-	/* .imagehold runs from 33.34% - 61.10% */
-	61.10%{ /* .imageloaded */
-		width: 50rem;
-		left: 0rem;
-	}
-	61.11% { /* .imagepreunload */
-		width: 50rem;
-		left: 0rem;
-		right: 50rem;
-	}
-	66.67% { /* .imageunloaded */
-		width: 0rem;
-		right: 0rem;
-		left: 0rem;
-		height: 37.5rem;
-		opacity: 1;
-	}
-	66.68% { /* .imageoff */
-		opacity: 0;
-	}
-	100% { /* .imageoff */
-		opacity: 0;
-	}
-}
-
-@keyframes parallax_three { /* controls img.three movement */
-	0% { /* .imageoff */
-		opacity: 0;
-	}
-	61.10%{ /* .imageon */
-		opacity: 0;
-	}
-	61.11% { /* .imageinitial */
-		width: 0rem;
-		height: 37.5rem;
-		left: 50rem;
-		opacity: 1;		
-	}
-	66.67% { /* .imageloaded */
-		width: 50rem;
-		left: 0rem;
-	}
-	/* .imagehold runs from 66.67% - 94.43% */
-	94.43% { /* .imageloaded */
-		width: 50rem;
-		left: 0rem;
-	}
-	94.44% { /* .imagepreunload */
-		width: 50rem;
-		left: 0rem;
-		right: 50rem;
-	}
-	100% { /* imageunloaded */
-		width: 0rem;
-		right: 0rem;
-		left: 0rem;
-		height: 37.5rem;
-		opacity: 1;
-	}
-}
-
-#proparallax img.one{
-	animation-name: parallax_one; /* controls img.one movement */
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-duration: 18s;
-	animation-direction: forwards;
-	object-fit: cover;
-}
-
-#proparallax img.two {
-	animation-name: parallax_two; /* controls img.two movement */
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-duration: 18s;
-	animation-direction: forwards;
-	object-fit: cover;
-}
-
-#proparallax img.three {
-	animation-name: parallax_three; /* controls img.three movement */
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-duration: 18s;
-	animation-direction: forwards;
-	object-fit: cover;
-}
-
-
-
-.content {
-        width:100%;
-	height: 60vmin;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-size: cover;
-	background-position: center center;
-	background-image: var(--img, url(https://cdn.josetxu.com/img/gp-fisura-saqueadores.jpg));
-	transition: background 0.5s ease 0s;
-	max-height: 800px;
-        max-width:800px;
-        margin: 0 auto;
-        margin-top:30px;
-       
-}
-
-.content:before {
-	content: "Cortinas&Sofas.com";
-	position: absolute;
-	width: 100%;
-	text-align: center;
-	
-	text-shadow: -1px -1px 0 #0007;
-	color: #fff4;
-	font-size: 18px;
-}
-
-/* CONTROLS */
-.controls {
-	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
-	display: flex;
-	justify-content: flex-end;
-	flex-direction: row;
-	flex-wrap: wrap;
-	position: absolute;
-}
-
-
-input[type=radio] {
-	display: none;
-}		
-	
-
-label {
-	width: 50vw;
-	height: 100vh;
-	position: relative;
-	cursor: pointer;
-	opacity: 0.15;
-}
-
-label:hover {
-	opacity: 1;
-}
-
-input:first-child:checked ~ .content .controls label:first-child,
-input:last-of-type:checked ~ .content .controls label:last-of-type {
-	cursor: default;
-	opacity: 0.025;
-}
-
-/* HIDE LABELS */
-#b2:checked ~ .content .controls label[for=b2], 
-#b3:checked ~ .content .controls label[for=b3], 
-#b4:checked ~ .content .controls label[for=b4], 
-#b5:checked ~ .content .controls label[for=b5], 
-#b6:checked ~ .content .controls label[for=b6], 
-#b7:checked ~ .content .controls label[for=b7], 
-#b8:checked ~ .content .controls label[for=b8], 
-#b9:checked ~ .content .controls label[for=b9], 
-
-#b3:checked ~ .content .controls label[for=b1],
-#b4:checked ~ .content .controls label[for=b1],
-#b4:checked ~ .content .controls label[for=b2],
-#b5:checked ~ .content .controls label[for=b1],
-#b5:checked ~ .content .controls label[for=b2],
-#b5:checked ~ .content .controls label[for=b3],
-#b6:checked ~ .content .controls label[for=b1],
-#b6:checked ~ .content .controls label[for=b2],
-#b6:checked ~ .content .controls label[for=b3],
-#b6:checked ~ .content .controls label[for=b4],
-#b7:checked ~ .content .controls label[for=b1],
-#b7:checked ~ .content .controls label[for=b2],
-#b7:checked ~ .content .controls label[for=b3],
-#b7:checked ~ .content .controls label[for=b4],
-#b7:checked ~ .content .controls label[for=b5],
-#b8:checked ~ .content .controls label[for=b1],
-#b8:checked ~ .content .controls label[for=b2],
-#b8:checked ~ .content .controls label[for=b3],
-#b8:checked ~ .content .controls label[for=b4],
-#b8:checked ~ .content .controls label[for=b5],
-#b8:checked ~ .content .controls label[for=b6],
-#b9:checked ~ .content .controls label[for=b1],
-#b9:checked ~ .content .controls label[for=b2],
-#b9:checked ~ .content .controls label[for=b3],
-#b9:checked ~ .content .controls label[for=b4],
-#b9:checked ~ .content .controls label[for=b5],
-#b9:checked ~ .content .controls label[for=b6],
-#b9:checked ~ .content .controls label[for=b7],
-#b10:checked ~ .content .controls label[for=b1] ,
-#b10:checked ~ .content .controls label[for=b2] ,
-#b10:checked ~ .content .controls label[for=b3] ,
-#b10:checked ~ .content .controls label[for=b4] ,
-#b10:checked ~ .content .controls label[for=b5] ,
-#b10:checked ~ .content .controls label[for=b6] ,
-#b10:checked ~ .content .controls label[for=b7] ,
-#b10:checked ~ .content .controls label[for=b8] {
-	display: none;
-}
-
-/* ARROWS */
-label:before {
-	content: "";
-	position: absolute;
-	background: 
-		linear-gradient(30deg, #fff0 60%, #fff calc(60% + 1px)), 
-		linear-gradient(-30deg, #fff 40%, #fff0 calc(40% + 1px)), 
-		linear-gradient(-90deg, #fff0 70%, #fff calc(70% + 1px));
-	width: 6vmin;
-	height: 6vmin;
-	border-radius: 5px;
-	right: 7vmin;
-	top: calc(50% - 3vmin);
-}
-
-/* LEFT ARROW */
-#b1:checked ~ .content .controls label[for=b1]:before,
-#b2:checked ~ .content .controls label[for=b1]:before,
-#b3:checked ~ .content .controls label[for=b2]:before,
-#b4:checked ~ .content .controls label[for=b3]:before,
-#b5:checked ~ .content .controls label[for=b4]:before,
-#b6:checked ~ .content .controls label[for=b5]:before,
-#b7:checked ~ .content .controls label[for=b6]:before,
-#b8:checked ~ .content .controls label[for=b7]:before,
-#b9:checked ~ .content .controls label[for=b8]:before,
-#b10:checked ~ .content .controls label[for=b9]:before {
-	left: 7vmin;
-	transform: rotate(180deg);
-}
-
-
-/* TITLES  */
-body:after {
-	position: absolute;
-	top: 2vh;
-	color: #fff;
-	font-size: 35px;
-	line-height: 45px;
-	transition: all 0.5s ease 0s;
-	text-shadow: 0px 1px 0 #000000d9;
-	white-space: pre-wrap;
-	text-align: center;
-	width: 100vw;
-	padding: 1vmin;
-	background: #ffffff05;
-	font-weight: 300;
-}
-
-body:has(input#b1:checked):after {
-    
-}
-
-body:has(input#b2:checked):after {
-}
-
-body:has(input#b3:checked):after {
-}
-
-body:has(input#b4:checked):after {
-}
-
-body:has(input#b5:checked):after {
-}
-
-body:has(input#b6:checked):after {
-}
-
-body:has(input#b7:checked):after {
-}
-
-body:has(input#b8:checked):after {
-}
-
-body:has(input#b9:checked):after {
-}
-
-body:has(input#b10:checked):after {
-}body:has(input#b11:checked):after {
-}body:has(input#b12:checked):after {
-}body:has(input#b13:checked):after {
-}body:has(input#b14:checked):after {
-}
-
-
-
-/*** THUMBNAILS ***/
-.thumbnails {
-	
-	background: #ffffff05;
-	width: 100vw;
-	text-align: center;
-	padding-top: 50vmin;
-        position: absolute;
-}
-
-.thumbnails label {
-	background-color: #0008;
-	position: relative;
-	width: 8vmin;
-	height: 8vmin;
-	display: inline-block;
-	margin-left: 1vw;
-	background-image: var(--img);
-	background-size: cover;
-	background-position: center;
-	opacity: 0.5;
-	border-radius: 2px;
-}
-
-/* IMAGES / THUMBNAILS */
-body:has(input#b1:checked), .thumbnails label[for=b1] {
-	--img: url(images/tapizados16.jpg);
-}
-
-body:has(input#b2:checked), .thumbnails label[for=b2] {
-	--img: url(images/tapizados1.jpg);
-}
-
-body:has(input#b3:checked), .thumbnails label[for=b3] {
-	--img: url(images/tapizados15.jpg);
-}
-
-body:has(input#b4:checked), .thumbnails label[for=b4] {
-	--img: url(images/tapizados14.jpg);
-}
-
-body:has(input#b5:checked), .thumbnails label[for=b5] {
-	--img: url(images/tapizados9.jpg);
-}
-
-body:has(input#b6:checked), .thumbnails label[for=b6] {
-	--img: url(images/tapizados13.jpg);
-}
-
-body:has(input#b7:checked), .thumbnails label[for=b7] {
-	--img: url(images/tapizados11.jpg);
-}
-
-body:has(input#b8:checked), .thumbnails label[for=b8] {
-	--img: url(images/tapizados10.jpg);
-}
-
-body:has(input#b9:checked), .thumbnails label[for=b9] {
-	--img: url(images/tapizados7.jpg);
-}
-
-body:has(input#b10:checked), .thumbnails label[for=b10] {
-	--img: url(images/tapizados6.jpg);
-}body:has(input#b11:checked), .thumbnails label[for=b11] {
-	--img: url(images/tapizados5.jpg);
-}body:has(input#b12:checked), .thumbnails label[for=b12] {
-	--img: url(images/tapizados4.jpg);
-}body:has(input#b13:checked), .thumbnails label[for=b13] {
-	--img: url(images/tapizados3.jpg);
-}body:has(input#b14:checked), .thumbnails label[for=b14] {
-	--img: url(images/tapizados2.jpg);
-}
-
-.thumbnails label:before { display: none; }
-.thumbnails label:hover { opacity: 1; }
-.thumbnails label:first-child { margin-left: 0; }
-
-#b1:checked ~ .content .thumbnails label[for=b1],
-#b2:checked ~ .content .thumbnails label[for=b2],
-#b3:checked ~ .content .thumbnails label[for=b3],
-#b4:checked ~ .content .thumbnails label[for=b4],
-#b5:checked ~ .content .thumbnails label[for=b5],
-#b6:checked ~ .content .thumbnails label[for=b6],
-#b7:checked ~ .content .thumbnails label[for=b7],
-#b8:checked ~ .content .thumbnails label[for=b8],
-#b9:checked ~ .content .thumbnails label[for=b9],
-#b10:checked ~ .content .thumbnails label[for=b10],
-#b11:checked ~ .content .thumbnails label[for=b11],
-#b12:checked ~ .content .thumbnails label[for=b12], 
-#b13:checked ~ .content .thumbnails label[for=b13],
-#b14:checked ~ .content .thumbnails label[for=b14]
-{
-	opacity: 1;
-	box-shadow: 0 0 0.01vmin 0.5vmin #fff;
-}
-
-
-
-/* MEDIA QUERIES */
-@media only screen and (max-width:769px) {
-	body:after {
-		top: 2vh;
-		font-size: 20px;
-		white-space: initial;
-	}
-}
-
-@media only screen and (max-width:768px) {
-	body:after {
-		font-size: 25px;
-		white-space: pre-wrap;
-	}
-        .content {
-        width:100%;
-	height: 60vmin;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-size: cover;
-	background-position: center center;
-	background-image: var(--img, url(https://cdn.josetxu.com/img/gp-fisura-saqueadores.jpg));
-	transition: background 0.5s ease 0s;
-	max-height: 800px;
-        max-width:800px;
-        margin: 0 auto;
-        margin-top:30px;
-       
-}
-/*** THUMBNAILS ***/
-.thumbnails {
-	
-	background: #ffffff05;
-	width: 100vw;
-	text-align: center;
-	padding-top: 50vmin;
-        
-}
-
-.thumbnails label {
-	background-color: #0008;
-	position: relative;
-	width: 8vmin;
-	height: 8vmin;
-	display: inline-block;
-	margin-left: 1vw;
-	background-image: var(--img);
-	background-size: cover;
-	background-position: center;
-	opacity: 0.5;
-	border-radius: 2px;
-}
-.content:before {
-	content: "Cortinas&Sofas.com";
-	position: absolute;
-	width: 100%;
-	text-align: center;
-	
-	text-shadow: -1px -1px 0 #0007;
-	color: #fff4;
-	font-size: 18px;
-}
-
-/* CONTROLS */
-.controls {
-	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
-	display: flex;
-	justify-content: flex-end;
-	flex-direction: row;
-	flex-wrap: wrap;
-	position: absolute;
-}
-}
-
-/* BROWSER SUPPORT */
-.firefox {
-	background: #0008;
-	color: #fff;
-	position: absolute;
-	top: 45vh;
-	width: 45vmin;
-	padding: 2vmin 3vmin;
-	border-radius: 5px;
-	text-align: center;
-	font-size: 24px;
-}
-
-.firefox span code {
-	font-size: 24px;
-	background: #0008;
-	padding: 0 10px;
-	border-radius: 25px;
-}
-
-@supports (-webkit-font-smoothing: antialiased) {
-	.firefox {
-		display: none;
-	}
-        
-}@media (max-width: 768px) {
-    nav ul {
-        display: flex;  /* Para hacer que los elementos estén en fila */
-        flex-direction: column; /* Para apilar los elementos verticalmente */
-    }  .nav-menu {
-        
-        background-color: white;
-    }
-   .hamburger {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    display: block;
-    position: relative;
-    margin-right: 30px;
-    
-}.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    left: 0;
-    transition: transform 0.3s ease;
-}
-
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    top: 8px;
-}/* Ocultar submenús por defecto */
-
-
-.submenu{
-    left:-20% ;
-    position: absolute;
-        background-color: white;
-
-}
-.submenu-categorias{
-    left:-100% ;
-    position: absolute;
-    background-color: white;
-}
-.instagram-icon img {
-    width: 40px; /* Ajusta el tamaño a 60px */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.whatsapp-icon img {
-    width: 40px; /* Ajusta el tamaño a 60px */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-}
+        .portfolio-swiper .swiper-pagination-bullet-active {
+            background: var(--primary);
+            opacity: 1;
+        }
+        .portfolio-swiper .swiper-button-next,
+        .portfolio-swiper .swiper-button-prev {
+            color: #fff !important;
+            background: rgba(0,0,0,0.5);
+            width: 50px; height: 50px;
+            border-radius: 50%;
+        }
+        .portfolio-swiper .swiper-button-next::after,
+        .portfolio-swiper .swiper-button-prev::after {
+            font-size: 20px;
+        }
+        @media (max-width: 768px) {
+            .portfolio-swiper .swiper-slide {
+                width: 95%;
+                height: 45vh;
+            }
+        }
     </style>
-<body>
-                     <header>
- <div class="logo">
-    <a href="index.html">
-        <img src="images/imagen_2025-05-29_234235197.png" alt="Logo">
-    </a>
-</div>
-      
-
-  <button class="menu-toggle" aria-label="Abrir menú">
-    <span class="hamburger"></span>
-  </button>
-         
-          
-    <nav class="nav-menu">
- 
-    <ul>
-        
-      <li><a href="index.html">INICIO</a></li>
-      <li><a href="sobre_Nosotros.html">SOBRE NOSOTROS</a></li>
-          <li>
-        <a href="#products">PRODUCTOS</a>
-        <ul class="submenu">
-          <li>
-            <a href="#products">CORTINAS</a>
-            <ul class="submenu-categorias">
-                    <li><a href="cortinas.html#detalle15">TRADICIONALES</a></li>
-              <li><a href="cortinas.html#detalle16">ROLLERS
-                      SUNSCREEN</a></li>
-                    <li><a href="cortinas.html#detalle17">ROLLERS
-                            BLACKOUT</a></li>
-              
-            </ul> 
-          </li>
-           <li>
-            <a href="#products">SOFÁS</a>
-            <ul class="submenu-categorias">
-              <li><a href="sofas.html#detalle20">CHASELONGUE/
-                      ESQUINEROS</a></li>
-               <li><a href="sofas.html#detalle21">SOFÁ DE UN CUERPO</a></li>
-                 <li><a href="sofas.html#detalle22">SOFÁ DE DOS CUERPOS</a></li>
-                   <li><a href="sofas.html#detalle23">SOFÁ DE TRES CUERPOS</a></li>
-                <li><a href="sofas.html#detalle24">SOFÁ CAMA</a></li>
-            </ul>
-          </li>
-            <li><a href="tapizados.html">TAPIZADOS</a></li>
-            <li><a href="persianas.html">PERSIANAS</a></li>
-            <li><a href="sillasybutacas.html">SILLAS /BUTACAS</a></li>
-            <li><a href="fundas.html">FUNDAS</a></li>
-            <li><a href="telas.html">TELAS</a></li>
-            <li><a href="respaldoCama.html">RESPALDOS DE CAMA</a></li>
-            <li><a href="colchonetas.html">COLCHONETAS </a></li>
-
-
-            <li><a href="Alfombras.html">ALFOMBRAS /
-                     MOQUETTES</a></li>
-           <li>
-            <a href="#products">PISOS</a>
-            <ul class="submenu-categorias">
-              <li><a href="Pisos.html#detalle30">FLOTANTES</a></li>
-              <li><a href="Pisos.html#detalle31">VILINICOS</a></li>
-            </ul>
-          </li>
-<li>
-            <a href="MotorizacionesYAutomatizmos.html">MOTORIZACIONES /
-              AUTOMATIZMOS</a>
-           
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav> 
-         
-         
-</header>
-
- <div class="titulo-estatico">
-        <h1>TAPIZADOS</h1>
-    </div>
-      <div class="texto-centrado fade-in">
-        <h1>TAPICERIA</h1>
-Ofrecemos servicios de tapizado a medida para renovar y personalizar sillas, sofás, respaldos de cama y más, brindando una nueva vida a tus muebles con calidad y estilo. Trabajamos con una amplia variedad de telas, texturas y colores, permitiendo adaptar cada pieza a la decoración y necesidades de tu espacio. Utilizamos materiales de alta resistencia para garantizar durabilidad, comodidad y un acabado impecable. Nuestro servicio incluye restauración, acolchonado y refuerzo de estructuras, asegurando que cada mueble recupere su funcionalidad y estética.
-	      <p><strong>Conozca nuestras opciones más populares:</strong></p>
-
-      </div>
-            <h2>El Antes Y Después De Algunos De Nuestros Tapizados </h2>
-
-
-<input type="radio" name="control" id="b1" checked>
-<input type="radio" name="control" id="b2">
-<input type="radio" name="control" id="b3">
-<input type="radio" name="control" id="b4">
-<input type="radio" name="control" id="b5">
-<input type="radio" name="control" id="b6">
-<input type="radio" name="control" id="b7">
-<input type="radio" name="control" id="b8">
-<input type="radio" name="control" id="b9">
-<input type="radio" name="control" id="b10">
-<input type="radio" name="control" id="b10">
-	<input type="radio" name="control" id="b11">
-	<input type="radio" name="control" id="b12">
-	<input type="radio" name="control" id="b13">
-	<input type="radio" name="control" id="b14">
-<div class="content">
-    <div class="controls">
-        <label for="b1"></label>
-        <label for="b2"></label>
-        <label for="b3"></label>
-        <label for="b4"></label>
-        <label for="b5"></label>
-        <label for="b6"></label>
-        <label for="b7"></label>
-        <label for="b8"></label>
-        <label for="b9"></label>
-        <label for="b10"></label>
-	     <label for="b11"></label>
-	     <label for="b12"></label>
-	     <label for="b13"></label>
-	     <label for="b14"></label>
-    </div>
-    <div class="thumbnails">
-        <label for="b1"></label>
-        <label for="b2"></label>
-        <label for="b3"></label>
-        <label for="b4"></label>
-        <label for="b5"></label>
-        <label for="b6"></label>
-        <label for="b7"></label>
-        <label for="b8"></label>
-        <label for="b9"></label>
-        <label for="b10"></label>
-	            <label for="b11"></label>
-
-	            <label for="b12"></label>
-
-	            <label for="b13"></label>
-
-	            <label for="b14"></label>
-
-    </div>
-</div>
-<div class="firefox">
-	<span>Sorry, <code>:has()</code> is not supported by this browser.</span>
-</div>
-
-
-  
-
-
-
-
-
-  <div class="tooltip">
-        <a href="https://wa.me/598099696563" target="_blank" class="whatsapp-icon">
-            <img src="images/2.png" alt="WhatsApp">
-            <span class="tooltiptext">¡Contáctanos por WhatsApp!</span>
-        </a>
-    </div>
- <div class="tooltip">
-        <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank" class="instagram-icon">
-            <img src="images/instagram.png" alt="Instagram">
-            <span class="tooltiptext">¡Contáctanos por Instagram!</span>
-        </a>
-    </div>
-     
-
+</head>
+<body class="inner-page">
     
-</body>
-<footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <p><strong>Maldonado:</strong> Calle Joaquin De Viana Esq Dr Edye - Cel: 099 696 610</p>
-                <p><a href="mailto:Cortinas&Sofas@gmail.com" class="footer-email">Cortinas&Sofas@gmail.com</a></p>
+    <!-- ================= HEADER Y NAVEGACIÓN ================= -->
+    <header class="header-modern solid">
+        <div class="mobile-overlay"></div>
+        <div class="header-container-modern">
+            <a href="index.html" class="logo-modern">
+                <img src="images/imagen_2025-05-29_234235197.png" alt="Cortinas & Sofás">
+            </a>
+            
+            <div class="nav-wrapper">
+                <div class="mobile-nav-header">
+                    <img src="images/imagen_2025-05-29_234235197.png" alt="Cortinas & Sofás" class="mobile-logo-img">
+                    <button class="close-menu-btn" aria-label="Cerrar menú">&times;</button>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                        <li class="nav-item"><a href="sobre_Nosotros.html" class="nav-link">Sobre Nosotros</a></li>
+                        <li class="nav-item has-mega-menu">
+                            <a href="#" class="nav-link active-link">
+                                Productos 
+                                <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </a>
+                            <div class="mega-menu-panel">
+                                <div class="mega-menu-grid">
+                                    <div class="mega-col">
+                                        <h4 class="mega-title">Cortinas</h4>
+                                        <ul class="mega-links accordion-content">
+                                            <li><a href="cortinas.html#detalle15">Tradicionales</a></li>
+                                            <li><a href="cortinas.html#detalle16">Rollers Sunscreen</a></li>
+                                            <li><a href="cortinas.html#detalle17">Rollers Blackout</a></li>
+                                        </ul>
+                                        <h4 class="mega-title mt-top">Pisos</h4>
+                                        <ul class="mega-links accordion-content">
+                                            <li><a href="Pisos.html#detalle30">Flotantes</a></li>
+                                            <li><a href="Pisos.html#detalle31">Vinílicos</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-col">
+                                        <h4 class="mega-title">Sofás</h4>
+                                        <ul class="mega-links accordion-content">
+                                            <li><a href="sofas.html#detalle20">Chaiselongue / Esquineros</a></li>
+                                            <li><a href="sofas.html#detalle21">Sofá de Un Cuerpo</a></li>
+                                            <li><a href="sofas.html#detalle22">Sofá de Dos Cuerpos</a></li>
+                                            <li><a href="sofas.html#detalle23">Sofá de Tres Cuerpos</a></li>
+                                            <li><a href="sofas.html#detalle24">Sofá Cama</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-col">
+                                        <h4 class="mega-title">Complementos</h4>
+                                        <ul class="mega-links accordion-content">
+                                            <li><a href="tapizados.html">Tapizados</a></li>
+                                            <li><a href="persianas.html">Persianas</a></li>
+                                            <li><a href="sillasybutacas.html">Sillas / Butacas</a></li>
+                                            <li><a href="fundas.html">Fundas / Telas / Colchonetas</a></li>
+                                            <li><a href="Alfombras.html">Alfombras / Moquettes</a></li>
+                                            <li><a href="MotorizacionesYAutomatizmos.html">Motorizaciones / Automatismos</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-col mega-banner">
+                                        <img src="images/top.jpg" alt="Interiorismo a medida">
+                                        <div class="mega-banner-overlay">
+                                            <span>Diseño y Confort</span>
+                                            <p>Transforma tus espacios</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <div class="footer-whatsapp">
-                <img src="2.png" alt="WhatsApp">
-                <div>
-                    <p>SOLICITA PRESUPUESTO VIA WHATSAPP</p>
-                    <p>099 696 610</p>
+            <button class="hamburger-modern" aria-label="Abrir menú">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- TÍTULO DE PÁGINA -->
+        <section class="page-title fade-up">
+            <div class="container">
+                <h1>Servicio de Tapicería</h1>
+                <p>Restauración y elegancia para darle nueva vida a tus muebles.</p>
+            </div>
+        </section>
+
+        <!-- INTRODUCCIÓN -->
+        <section class="section-padding">
+            <div class="container text-center max-w-800 fade-up">
+                <h2 class="titulo-elegante">Renueva tus Muebles Favoritos</h2>
+                <div class="divider mx-auto" style="margin-bottom: 25px;"></div>
+                <p>Ofrecemos servicios de tapizado a medida para renovar y personalizar sillas, sofás, respaldos de cama y más, brindando una nueva vida a tus muebles con calidad y estilo. Trabajamos con una amplia variedad de telas, texturas y colores.</p>
+                <p>Utilizamos materiales de alta resistencia para garantizar durabilidad, comodidad y un acabado impecable. Nuestro servicio incluye restauración, acolchonado y refuerzo de estructuras, asegurando que cada mueble recupere su funcionalidad y estética.</p>
+                
+                <div style="margin-top: 40px;">
+                    <a href="https://wa.me/598099696610" target="_blank" class="btn btn-primary">
+                        <img src="images/2.png" alt="WhatsApp" style="display:inline-block; width:20px; vertical-align:middle; filter:brightness(0) invert(1); margin-right:8px;">
+                        Consultar por Tapizados
+                    </a>
                 </div>
             </div>
-        </div>
-        <div class="footer-sobrenosotros">
-            <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
+        </section>
+
+        <!-- GALERÍA PORTAFOLIO (REEMPLAZO DEL CÓDIGO ANTIGUO) -->
+        <section class="section-padding bg-light fade-up" style="padding-top: 50px;">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="subtitle">Descubre nuestro trabajo</span>
+                    <h2>El Antes y Después</h2>
+                    <div class="divider mx-auto"></div>
+                </div>
+
+                <div class="portfolio-gallery">
+                    <!-- Swiper Coverflow Gallery -->
+                    <div class="swiper portfolio-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slides con imágenes originales -->
+                            <div class="swiper-slide"><img src="images/tapizados16.jpg" alt="Antes y después 1"></div>
+                            <div class="swiper-slide"><img src="images/tapizados1.jpg" alt="Antes y después 2"></div>
+                            <div class="swiper-slide"><img src="images/tapizados15.jpg" alt="Antes y después 3"></div>
+                            <div class="swiper-slide"><img src="images/tapizados14.jpg" alt="Antes y después 4"></div>
+                            <div class="swiper-slide"><img src="images/tapizados9.jpg" alt="Antes y después 5"></div>
+                            <div class="swiper-slide"><img src="images/tapizados13.jpg" alt="Antes y después 6"></div>
+                            <div class="swiper-slide"><img src="images/tapizados11.jpg" alt="Antes y después 7"></div>
+                            <div class="swiper-slide"><img src="images/tapizados10.jpg" alt="Antes y después 8"></div>
+                            <div class="swiper-slide"><img src="images/tapizados7.jpg" alt="Antes y después 9"></div>
+                            <div class="swiper-slide"><img src="images/tapizados6.jpg" alt="Antes y después 10"></div>
+                            <div class="swiper-slide"><img src="images/tapizados5.jpg" alt="Antes y después 11"></div>
+                            <div class="swiper-slide"><img src="images/tapizados4.jpg" alt="Antes y después 12"></div>
+                            <div class="swiper-slide"><img src="images/tapizados3.jpg" alt="Antes y después 13"></div>
+                            <div class="swiper-slide"><img src="images/tapizados2.jpg" alt="Antes y después 14"></div>
+                        </div>
+                        <!-- Paginación y Botones -->
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ICONOS Y FOOTER -->
+    <div class="floating-socials">
+        <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank" class="social-icon instagram"><img src="images/instagram.png" alt="Instagram"></a>
+        <a href="https://wa.me/598099696610" target="_blank" class="social-icon whatsapp"><img src="images/2.png" alt="WhatsApp"></a>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Cortinas & Sofás</h3>
+                    <p>Diseño de interiores, confección a medida y excelencia desde 1982.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><strong>Showroom:</strong> Maldonado / Calle Joaquin De Viana Esq Dr Edye</li>
+                        <li><strong>Atención al cliente:</strong> 099 696 610</li>
+                        <li><a href="mailto:Cortinas&Sofas@gmail.com">Cortinas&Sofas@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
-       <script src="script.js"></script>
 
-<script>
-let currentIndex = 0;
-
-document.querySelector('.prev-button').addEventListener('click', () => {
-    navigate(-1);
-});
-
-document.querySelector('.next-button').addEventListener('click', () => {
-    navigate(1);
-});
-
-function navigate(direction) {
-    const items = document.querySelectorAll('.gallery-item');
-    const totalImages = items.length;
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
     
-    items[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + direction + totalImages) % totalImages;
-    items[currentIndex].classList.add('active');
-}
-
-// Inicializar la galería mostrando la primera imagen
-document.addEventListener('DOMContentLoaded', () => {
-    const items = document.querySelectorAll('.gallery-item');
-    if (items.length > 0) {
-        items[currentIndex].classList.add('active');
-    }
-});
-
-// AUTOPLAY
-let autoplayInterval = null;
-
-function startAutoplay(interval) {
-    stopAutoplay();  // Detiene cualquier autoplay anterior para evitar múltiples intervalos.
-    autoplayInterval = setInterval(() => {
-        navigate(1);  // Navega a la siguiente imagen cada intervalo de tiempo.
-    }, interval);
-}
-
-function stopAutoplay() {
-    clearInterval(autoplayInterval);
-}
-
-// Iniciar autoplay con un intervalo de 3 segundos.
-startAutoplay(3000);
-
-// Opcional: Detener autoplay cuando el usuario interactúa con los botones de navegación.
-document.querySelectorAll('.nav-button').forEach(button => {
-    button.addEventListener('click', stopAutoplay);
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const menuItems = document.querySelectorAll(".nav-menu > ul > li > a");
-  let lastClickedItem = null;
-  let lastClickTime = 0;
-  const doubleClickDelay = 300; // Tiempo en milisegundos para detectar doble clic
-
-  // Función para detectar si es un dispositivo móvil
-  function isMobile() {
-    return window.matchMedia("only screen and (max-width: 768px)").matches;
-  }
-
-  menuItems.forEach((item) => {
-    item.addEventListener("click", function (event) {
-      if (!isMobile()) return; // Solo se ejecuta en dispositivos móviles
-      
-      const parentLi = this.parentElement;
-      const hasSubmenu = parentLi.querySelector(".submenu");
-      const currentTime = new Date().getTime();
-
-      if (hasSubmenu) {
-        event.preventDefault(); // Evita la redirección inmediata
-
-        // Si el mismo elemento se toca dos veces dentro del tiempo límite, redirigir
-        if (lastClickedItem === this && currentTime - lastClickTime < doubleClickDelay) {
-          window.location.href = this.href; // Redirige a la categoría principal
-          return;
-        }
-
-        // Cerrar todos los submenús antes de abrir uno nuevo
-        document.querySelectorAll(".nav-menu > ul > li").forEach((li) => {
-          li.classList.remove("active");
+    <!-- Inicialización Especial de Swiper para Portafolio -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var portfolioSwiper = new Swiper('.portfolio-swiper', {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                loop: true,
+                coverflowEffect: {
+                    rotate: 20,
+                    stretch: 0,
+                    depth: 200,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                }
+            });
         });
-
-        // Abrir el submenú del elemento actual
-        parentLi.classList.add("active");
-
-        lastClickedItem = this;
-        lastClickTime = currentTime;
-      }
-    });
-  });
-
-  // Mantener el submenú abierto si la URL coincide con una subcategoría
-  const currentURL = window.location.href;
-
-  document.querySelectorAll(".submenu a, .submenu-categorias a").forEach((subItem) => {
-    if (currentURL.includes(subItem.href)) {
-      const parentLi = subItem.closest("li");
-      if (parentLi) {
-        parentLi.classList.add("active");
-
-        // También abrir el menú padre si es una subcategoría
-        const grandParentLi = parentLi.closest(".submenu");
-        if (grandParentLi) {
-          grandParentLi.parentElement.classList.add("active");
-        }
-      }
-    }
-
-    // Cerrar el menú cuando se selecciona una opción
-    subItem.addEventListener("click", function () {
-      document.querySelectorAll(".nav-menu > ul > li").forEach((li) => {
-        li.classList.remove("active");
-      });
-    });
-  });
-});
-</script>
-
-
-
-
-
-
+    </script>
+</body>
 </html>
