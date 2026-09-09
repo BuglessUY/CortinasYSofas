@@ -30,9 +30,6 @@ function initHeaderScroll() {
 }
 
 /* ==================================================
-   2. LÓGICA DEL MENÚ MÓVIL OVERLAY
-================================================== */
-/* ==================================================
    2. LÓGICA DEL MENÚ MÓVIL OVERLAY (ACTUALIZADA)
 ================================================== */
 function initMobileMenu() {
@@ -71,47 +68,6 @@ function initMobileMenu() {
             }
         });
     });
-}
-
-    function isMobile() {
-        return window.innerWidth <= 768;
-    }
-
-    // Comportamiento de acordeón para móviles
-    function handleMenuClick(links) {
-        links.forEach((item) => {
-            item.addEventListener("click", function (e) {
-                if (!isMobile()) return; 
-
-                const parentLi = this.parentElement;
-                const hasSubmenu = parentLi.querySelector("ul");
-
-                if (hasSubmenu) {
-                    e.preventDefault(); 
-
-                    // Si ya está abierto y se hace clic en el enlace principal, redirigir
-                    if (parentLi.classList.contains('active-mobile') && this.getAttribute('href') !== '#') {
-                        window.location.href = this.href;
-                        return;
-                    }
-
-                    // Cerrar hermanos
-                    const siblings = parentLi.parentElement.children;
-                    for (let sibling of siblings) {
-                        if (sibling !== parentLi) {
-                            sibling.classList.remove("active-mobile");
-                        }
-                    }
-
-                    // Alternar clase
-                    parentLi.classList.toggle("active-mobile");
-                }
-            });
-        });
-    }
-
-    handleMenuClick(menuItems);
-    handleMenuClick(submenuItems);
 }
 
 /* ==================================================
