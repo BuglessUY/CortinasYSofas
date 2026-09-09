@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sofás Personalizados - Catálogo | Cortinas & Sofás</title>
+    <meta name="description" content="Colección de sofás a medida: Esquineros, sillones individuales, dos o tres cuerpos y sofás cama.">
     
     <!-- Fuentes Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,489 +15,312 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="inner-page">
     
-    <!-- ================= HEADER Y NAVEGACIÓN ================= -->
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/imagen_2025-05-29_234235197.png" alt="Logo Cortinas y Sofás">
+    <!-- ================= HEADER Y NAVEGACIÓN (MEGA MENÚ) ================= -->
+    <header class="header-modern solid">
+        <div class="mobile-overlay"></div>
+        <div class="header-container-modern">
+            <a href="index.html" class="logo-modern">
+                <img src="images/imagen_2025-05-29_234235197.png" alt="Cortinas & Sofás">
             </a>
-        </div>
-        
-        <button class="menu-toggle" aria-label="Abrir menú">
-            <span class="hamburger"></span>
-        </button>
-         
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="index.html">INICIO</a></li>
-                <li><a href="sobre_Nosotros.html">SOBRE NOSOTROS</a></li>
-                <li>
-                    <a href="#products">PRODUCTOS</a>
-                    <ul class="submenu">
-                        <li>
-                            <a href="#products">CORTINAS</a>
-                            <ul class="submenu-categorias">
-                                <li><a href="cortinas.html#detalle15">TRADICIONALES</a></li>
-                                <li><a href="cortinas.html#detalle16">ROLLERS SUNSCREEN</a></li>
-                                <li><a href="cortinas.html#detalle17">ROLLERS BLACKOUT</a></li>
-                            </ul> 
+            
+            <div class="nav-wrapper">
+                <div class="mobile-nav-header">
+                    <img src="images/imagen_2025-05-29_234235197.png" alt="Cortinas & Sofás" class="mobile-logo-img">
+                    <button class="close-menu-btn" aria-label="Cerrar menú">&times;</button>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                        <li class="nav-item"><a href="sobre_Nosotros.html" class="nav-link">Sobre Nosotros</a></li>
+                        <li class="nav-item has-mega-menu">
+                            <a href="#" class="nav-link active-link">
+                                Productos 
+                                <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </a>
+                            <div class="mega-menu-panel">
+                                <div class="mega-menu-grid">
+                                    <div class="mega-col">
+                                        <h4 class="mega-title">Cortinas</h4>
+                                        <ul class="mega-links accordion-content">
+                                            <li><a href="cortinas.html#detalle15">Tradicionales</a></li>
+                                            <li><a href="cortinas.html#detalle16">Rollers Sunscreen</a></li>
+                                            <li><a href="cortinas.html#detalle17">Rollers Blackout</a></li>
+                                        </ul>
+                                        <h4 class="mega-title mt-top">Pisos</h4>
+                                        <ul class="mega-links accordion-content">
+                                            <li><a href="Pisos.html#detalle30">Flotantes</a></li>
+                                            <li><a href="Pisos.html#detalle31">Vinílicos</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-col">
+                                        <h4 class="mega-title">Sofás</h4>
+                                        <ul class="mega-links accordion-content">
+                                            <li><a href="sofas.html#detalle20">Chaiselongue / Esquineros</a></li>
+                                            <li><a href="sofas.html#detalle21">Sofá de Un Cuerpo</a></li>
+                                            <li><a href="sofas.html#detalle22">Sofá de Dos Cuerpos</a></li>
+                                            <li><a href="sofas.html#detalle23">Sofá de Tres Cuerpos</a></li>
+                                            <li><a href="sofas.html#detalle24">Sofá Cama</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-col">
+                                        <h4 class="mega-title">Complementos</h4>
+                                        <ul class="mega-links accordion-content">
+                                            <li><a href="tapizados.html">Tapizados</a></li>
+                                            <li><a href="persianas.html">Persianas</a></li>
+                                            <li><a href="sillasybutacas.html">Sillas / Butacas</a></li>
+                                            <li><a href="fundas.html">Fundas / Telas / Colchonetas</a></li>
+                                            <li><a href="Alfombras.html">Alfombras / Moquettes</a></li>
+                                            <li><a href="MotorizacionesYAutomatizmos.html">Motorizaciones / Automatismos</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-col mega-banner">
+                                        <img src="images/top.jpg" alt="Interiorismo a medida">
+                                        <div class="mega-banner-overlay">
+                                            <span>Diseño y Confort</span>
+                                            <p>Transforma tus espacios</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
-                        <li>
-                            <a href="#products">SOFÁS</a>
-                            <ul class="submenu-categorias">
-                                <li><a href="sofas.html#detalle20">CHAISELONGUE / ESQUINEROS</a></li>
-                                <li><a href="sofas.html#detalle21">SOFÁ DE UN CUERPO</a></li>
-                                <li><a href="sofas.html#detalle22">SOFÁ DE DOS CUERPOS</a></li>
-                                <li><a href="sofas.html#detalle23">SOFÁ DE TRES CUERPOS</a></li>
-                                <li><a href="sofas.html#detalle24">SOFÁ CAMA</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="tapizados.html">TAPIZADOS</a></li>
-                        <li><a href="persianas.html">PERSIANAS</a></li>
-                        <li><a href="sillasybutacas.html">SILLAS / BUTACAS</a></li>
-                        <li><a href="fundas.html">FUNDAS / TELAS / COLCHONETAS</a></li>
-                        <li><a href="Alfombras.html">ALFOMBRAS / MOQUETTES</a></li>
-                        <li>
-                            <a href="#products">PISOS</a>
-                            <ul class="submenu-categorias">
-                                <li><a href="Pisos.html#detalle30">FLOTANTES</a></li>
-                                <li><a href="Pisos.html#detalle31">VINÍLICOS</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="MotorizacionesYAutomatizmos.html">MOTORIZACIONES / AUTOMATISMOS</a></li>
                     </ul>
-                </li>
-            </ul>
-        </nav> 
+                </nav>
+            </div>
+            <button class="hamburger-modern" aria-label="Abrir menú">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
+        </div>
     </header>
 
     <!-- ================= CONTENIDO SOFÁS ================= -->
     <main>
-        <div class="titulo-estatico fade-up">
-            <h1>Colección de Sofás</h1>
-        </div>
-
-        <!-- CHAISELONGUE / ESQUINEROS -->
-        <section class="texto-centrado fade-up" id="detalle37">
-            <h1 class="titulo-elegante">Chaise Longue & Esquineros</h1>
-            <p>Los sofás chaise longue y esquineros son la combinación perfecta de comodidad y diseño, ideales para aprovechar al máximo el espacio en cualquier ambiente. Diseñados a medida, se adaptan a las dimensiones y necesidades específicas de cada cliente, ofreciendo una distribución óptima para el descanso y la convivencia.</p>
-            <p><strong>Sofás Chaise Longue:</strong> Caracterizados por su asiento extendido en un extremo, permiten estirar las piernas cómodamente sin necesidad de un reposapiés adicional. Son perfectos para salas de estar modernas, brindando un diseño elegante y funcional.</p>
-            <p><strong>Sofás Esquineros:</strong> Ideales para optimizar rincones y maximizar el área de descanso, estos sofás ofrecen mayor capacidad de asientos sin ocupar demasiado espacio.</p>
-            <h2 class="lineas-laterales">Modelos Modulares y Esquineros</h2>
+        <!-- TÍTULO DE PÁGINA -->
+        <section class="page-title fade-up">
+            <div class="container">
+                <h1>Colección de Sofás</h1>
+                <p>Confort, diseño y fabricación a medida.</p>
+            </div>
         </section>
 
-        <section class="container-productos fade-up" id="lista-productos-esquineros">
-            <div class="card" data-category="esquineros" data-id="20">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/esquinero.jpg" class="imagen-swiper" alt="Esquinero 1"></div>
-                    </div>
+        <!-- CHAISELONGUE / ESQUINEROS -->
+        <section class="catalog-section" id="detalle20">
+            <div class="container">
+                <div class="catalog-intro fade-up">
+                    <h2>Chaise Longue & Esquineros</h2>
+                    <div class="divider mx-auto"></div>
+                    <p>Los sofás chaise longue y esquineros son la combinación perfecta de comodidad y diseño, ideales para aprovechar al máximo el espacio en cualquier ambiente. Diseñados a medida, se adaptan a las dimensiones y necesidades específicas de cada cliente.</p>
+                    <p><strong>Sofás Chaise Longue:</strong> Asiento extendido para estirar las piernas cómodamente.<br>
+                    <strong>Sofás Esquineros:</strong> Ideales para optimizar rincones y maximizar el área de descanso.</p>
                 </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Esquinero Clásico</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
 
-            <div class="card" data-category="esquineros" data-id="21">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/esquinero2.jpg" class="imagen-swiper" alt="Esquinero 2"></div>
+                <div class="products-grid">
+                    <div class="product-card fade-up">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/esquinero.jpg" alt="Esquinero 1"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Esquinero Clásico</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Esquinero Mod. 2</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="esquineros" data-id="22">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/esquinero4.jpg" class="imagen-swiper" alt="Esquinero 4"></div>
+                    <div class="product-card fade-up delay-1">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/esquinero2.jpg" alt="Esquinero 2"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Esquinero Mod. 2</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Esquinero Mod. 4</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="esquineros" data-id="23">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/chaiselongue.jpg" class="imagen-swiper" alt="Chaiselongue"></div>
+                    <div class="product-card fade-up delay-2">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/esquinero4.jpg" alt="Esquinero 4"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Esquinero Mod. 4</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Sofá Chaiselongue</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="esquineros" data-id="24">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/esquinero3.jpg" class="imagen-swiper" alt="Esquinero 3"></div>
-                        <div class="swiper-slide"><img src="images/esquinero3.1.jpg" class="imagen-swiper" alt="Esquinero 3.1"></div>
+                    <div class="product-card fade-up">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/chaiselongue.jpg" alt="Chaiselongue"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Sofá Chaiselongue</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Esquinero Mod. 3</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
+                    <div class="product-card fade-up delay-1">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/esquinero3.jpg" alt="Esquinero 3"></div><div class="swiper-slide"><img src="images/esquinero3.1.jpg" alt="Esquinero 3.1"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Esquinero Mod. 3</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- SOFÁ DE UN CUERPO -->
-        <section class="texto-centrado fade-up" id="detalle21">
-            <h1 class="titulo-elegante">Sillones de Un Cuerpo</h1>
-            <p>Los sofás de un cuerpo son la elección ideal para quienes buscan comodidad, estilo y versatilidad en un solo mueble. Diseñados a medida, se adaptan a cualquier espacio, ofreciendo una solución práctica para rincones de lectura, salas de estar, oficinas o habitaciones. Su diseño compacto y funcional los hace perfectos para optimizar espacios pequeños sin sacrificar confort.</p>
-            <h2 class="lineas-laterales">Nuestros Modelos Individuales</h2>
-        </section>
+        <section class="catalog-section bg-light" id="detalle21">
+            <div class="container">
+                <div class="catalog-intro fade-up">
+                    <h2>Sillones de Un Cuerpo</h2>
+                    <div class="divider mx-auto"></div>
+                    <p>Los sofás de un cuerpo son la elección ideal para quienes buscan comodidad, estilo y versatilidad. Diseñados a medida, se adaptan a cualquier espacio, ofreciendo una solución práctica para rincones de lectura o salas de estar.</p>
+                </div>
 
-        <section class="container-productos fade-up" id="lista-productos-uncuerpo">
-            <div class="card" data-category="uncuerpo" data-id="25">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="LaCuevaMedidasH87anch.74Prof2.jpg" class="imagen-swiper" alt="La Cueva 2"></div>
-                        <div class="swiper-slide"><img src="LaCuevaMedidasH87anch.74Prof3.jpg" class="imagen-swiper" alt="La Cueva 3"></div>
+                <div class="products-grid">
+                    <div class="product-card fade-up">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="LaCuevaMedidasH87anch.74Prof2.jpg" alt="La Cueva 2"></div><div class="swiper-slide"><img src="LaCuevaMedidasH87anch.74Prof3.jpg" alt="La Cueva 3"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Sofá La Cueva</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Sofá La Cueva</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="uncuerpo" data-id="26">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Boston-1-cuerpo.jpg" class="imagen-swiper" alt="Boston 1"></div>
+                    <div class="product-card fade-up delay-1">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/Boston-1-cuerpo.jpg" alt="Boston 1"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Boston Individual</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Boston Individual</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="uncuerpo" data-id="27">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Oriental-1-cuerpo1.jpg" class="imagen-swiper" alt="Oriental 1"></div>
+                    <div class="product-card fade-up delay-2">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/Oriental-1-cuerpo1.jpg" alt="Oriental 1"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Oriental 1 Cuerpo</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Oriental 1 Cuerpo</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="uncuerpo" data-id="28">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Boston-1-cuerpo2.jpg" class="imagen-swiper" alt="Boston 1 V2"></div>
+                    <div class="product-card fade-up">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/Boston-1-cuerpo2.jpg" alt="Boston 1 V2"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Boston Individual V2</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Boston Individual V2</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="uncuerpo" data-id="29">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Tussor-Costura-Color.jpg" class="imagen-swiper" alt="Tussor Costura"></div>
+                    <div class="product-card fade-up delay-1">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/Tussor-Costura-Color.jpg" alt="Tussor Costura"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Tussor Costura</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Tussor Costura</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
                 </div>
             </div>
         </section>
 
         <!-- SOFÁ DE DOS CUERPOS -->
-        <section class="texto-centrado fade-up" id="detalle22">
-            <h1 class="titulo-elegante">Sofás de Dos Cuerpos</h1>
-            <p>Los sofás de dos cuerpos son la combinación perfecta de comodidad y estilo, ideales para salas de estar, oficinas y espacios de reunión. Diseñados a medida, se adaptan a las dimensiones y necesidades específicas de cada ambiente, ofreciendo un equilibrio entre funcionalidad y estética.</p>
-            <h2 class="lineas-laterales">Modelos Intermedios</h2>
-        </section>
+        <section class="catalog-section" id="detalle22">
+            <div class="container">
+                <div class="catalog-intro fade-up">
+                    <h2>Sofás de Dos Cuerpos</h2>
+                    <div class="divider mx-auto"></div>
+                    <p>La combinación perfecta de comodidad y estilo, ideales para salas de estar, oficinas y espacios de reunión. Diseñados a medida, se adaptan a las dimensiones y necesidades específicas de cada ambiente.</p>
+                </div>
 
-        <section class="container-productos fade-up" id="lista-productos-doscuerpos">
-            <div class="card" data-category="doscuerpos" data-id="30">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Boston-2.10-de-Luxe-1.jpg" class="imagen-swiper" alt="Boston Luxe 1"></div>
-                        <div class="swiper-slide"><img src="images/Boston2.10deLuxe.jpg" class="imagen-swiper" alt="Boston Luxe"></div>
+                <div class="products-grid">
+                    <div class="product-card fade-up">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/Boston-2.10-de-Luxe-1.jpg" alt="Boston Luxe 1"></div><div class="swiper-slide"><img src="images/Boston2.10deLuxe.jpg" alt="Boston Luxe"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Boston Luxe 2 Cuerpos</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Boston Luxe 2 Cuerpos</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="doscuerpos" data-id="31">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/WhatsAppImage2024-08-02at10.54.30.jpg" class="imagen-swiper" alt="Modelo Wpp 1"></div>
-                        <div class="swiper-slide"><img src="images/WhatsAppImage2024-08-02at10.54.51.jpg" class="imagen-swiper" alt="Modelo Wpp 2"></div>
+                    <div class="product-card fade-up delay-1">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/WhatsAppImage2024-08-02at10.54.30.jpg" alt="Modelo Wpp 1"></div><div class="swiper-slide"><img src="images/WhatsAppImage2024-08-02at10.54.51.jpg" alt="Modelo Wpp 2"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Línea A - 2 Cuerpos</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Línea A - 2 Cuerpos</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="doscuerpos" data-id="32">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/BATANTACHADO3CUERPOS2ALM.jpg" class="imagen-swiper" alt="Batan"></div>
+                    <div class="product-card fade-up delay-2">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/BATANTACHADO3CUERPOS2ALM.jpg" alt="Batan"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Batán Tachado</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Batán Tachado</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="doscuerpos" data-id="33">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Chesterfield2cuerpos.jpg" class="imagen-swiper" alt="Chesterfield"></div>
+                    <div class="product-card fade-up">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/Chesterfield2cuerpos.jpg" alt="Chesterfield"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Chesterfield Clásico</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Chesterfield Clásico</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="doscuerpos" data-id="34">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/20170503_154916.jpg" class="imagen-swiper" alt="Clasico"></div>
+                    <div class="product-card fade-up delay-1">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/20170503_154916.jpg" alt="Clasico"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Línea Clásica</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Línea Clásica</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
                 </div>
             </div>
         </section>
 
         <!-- SOFÁ DE TRES CUERPOS -->
-        <section class="texto-centrado fade-up" id="detalle23">
-            <h1 class="titulo-elegante">Sofás de Tres Cuerpos</h1>
-            <p>Los sofás de tres cuerpos son la opción ideal para quienes buscan amplitud, comodidad y elegancia en un solo sofá. Diseñados a medida, se adaptan a cualquier espacio proporcionando un equilibrio perfecto entre funcionalidad y diseño. Su tamaño espacioso permite acomodar a tres personas cómodamente.</p>
-            <h2 class="lineas-laterales">Modelos Amplios</h2>
-        </section>
+        <section class="catalog-section bg-light" id="detalle23">
+            <div class="container">
+                <div class="catalog-intro fade-up">
+                    <h2>Sofás de Tres Cuerpos</h2>
+                    <div class="divider mx-auto"></div>
+                    <p>La opción ideal para quienes buscan amplitud, comodidad y elegancia. Su tamaño espacioso permite acomodar a tres personas cómodamente, proporcionando un equilibrio perfecto entre funcionalidad y diseño.</p>
+                </div>
 
-        <section class="container-productos fade-up" id="lista-productos-trescuerpos">
-            <div class="card" data-category="trescuerpos" data-id="35">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Ibérico.jpg" class="imagen-swiper" alt="Ibérico"></div>
-                        <div class="swiper-slide"><img src="images/Ibérico1.jpg" class="imagen-swiper" alt="Ibérico 1"></div>
+                <div class="products-grid">
+                    <div class="product-card fade-up">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/Ibérico.jpg" alt="Ibérico"></div><div class="swiper-slide"><img src="images/Ibérico1.jpg" alt="Ibérico 1"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Ibérico 3 Cuerpos</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Ibérico 3 Cuerpos</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="trescuerpos" data-id="36">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/MontoyafundaenLino.jpg" class="imagen-swiper" alt="Montoya Lino"></div>
-                        <div class="swiper-slide"><img src="images/MontoyafundaLinoPestañada.jpg" class="imagen-swiper" alt="Montoya Lino Pest."></div>
+                    <div class="product-card fade-up delay-1">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/MontoyafundaenLino.jpg" alt="Montoya Lino"></div><div class="swiper-slide"><img src="images/MontoyafundaLinoPestañada.jpg" alt="Montoya Lino Pest."></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Montoya Funda Lino</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Montoya Funda Lino</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="trescuerpos" data-id="37">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/3cuerposx.jpg" class="imagen-swiper" alt="3 Cuerpos X"></div>
+                    <div class="product-card fade-up delay-2">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/3cuerposx.jpg" alt="3 Cuerpos X"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Línea X - 3 Cuerpos</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Línea X - 3 Cuerpos</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="trescuerpos" data-id="38">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/3cuerposE.jpg" class="imagen-swiper" alt="3 Cuerpos E"></div>
+                    <div class="product-card fade-up">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/3cuerposE.jpg" alt="3 Cuerpos E"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Línea E - 3 Cuerpos</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Línea E - 3 Cuerpos</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="trescuerpos" data-id="39">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Sofaconisla60x60.jpg" class="imagen-swiper" alt="Isla"></div>
+                    <div class="product-card fade-up delay-1">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/Sofaconisla60x60.jpg" alt="Isla"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Sofá con Isla 60x60</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Sofá con Isla 60x60</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
                 </div>
             </div>
         </section>
 
         <!-- SOFÁ CAMA -->
-        <section class="texto-centrado fade-up" id="detalle24">
-            <h1 class="titulo-elegante">Sofás Cama</h1>
-            <p>Los sofás cama son la solución perfecta para quienes buscan versatilidad, confort y diseño en un solo mueble. Diseñados a medida, se adaptan a cualquier espacio ofreciendo una doble funcionalidad como sofá durante el día y cama durante la noche. Su mecanismo de apertura fácil y resistente permite una transformación rápida y cómoda.</p>
-            <h2 class="lineas-laterales">Modelos Funcionales</h2>
-        </section>
+        <section class="catalog-section" id="detalle24">
+            <div class="container">
+                <div class="catalog-intro fade-up">
+                    <h2>Sofás Cama</h2>
+                    <div class="divider mx-auto"></div>
+                    <p>La solución perfecta para quienes buscan versatilidad, confort y diseño. Su doble funcionalidad y mecanismo de apertura fácil permite una transformación rápida y cómoda para invitados y descansos.</p>
+                </div>
 
-        <section class="container-productos fade-up" id="lista-productos-sofacama">
-            <div class="card" data-category="sofacama" data-id="40">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/SofaCamaEasyClean1.jpg" class="imagen-swiper" alt="Easy Clean 1"></div>
-                        <div class="swiper-slide"><img src="images/SofaCamaEasyClean2.jpg" class="imagen-swiper" alt="Easy Clean 2"></div>
+                <div class="products-grid">
+                    <div class="product-card fade-up">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/SofaCamaEasyClean1.jpg" alt="Easy Clean 1"></div><div class="swiper-slide"><img src="images/SofaCamaEasyClean2.jpg" alt="Easy Clean 2"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Easy Clean</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Easy Clean</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="sofacama" data-id="41">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/sofacama1.jpg" class="imagen-swiper" alt="Sofa Cama 1"></div>
-                        <div class="swiper-slide"><img src="images/sofacama2.jpg" class="imagen-swiper" alt="Sofa Cama 2"></div>
-                        <div class="swiper-slide"><img src="images/sofacama3.jpg" class="imagen-swiper" alt="Sofa Cama 3"></div>
-                        <div class="swiper-slide"><img src="images/sofacama4.jpg" class="imagen-swiper" alt="Sofa Cama 4"></div>
+                    <div class="product-card fade-up delay-1">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/sofacama1.jpg" alt="Sofa Cama 1"></div><div class="swiper-slide"><img src="images/sofacama2.jpg" alt="Sofa Cama 2"></div><div class="swiper-slide"><img src="images/sofacama3.jpg" alt="Sofa Cama 3"></div><div class="swiper-slide"><img src="images/sofacama4.jpg" alt="Sofa Cama 4"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Sofá Cama Multiuso</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Sofá Cama Multiuso</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="sofacama" data-id="42">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Integra1.jpg" class="imagen-swiper" alt="Integra 1"></div>
-                        <div class="swiper-slide"><img src="images/Integra2.jpg" class="imagen-swiper" alt="Integra 2"></div>
+                    <div class="product-card fade-up delay-2">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/Integra1.jpg" alt="Integra 1"></div><div class="swiper-slide"><img src="images/Integra2.jpg" alt="Integra 2"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Modelo Integra</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Modelo Integra</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="sofacama" data-id="43">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Marinera1.jpg" class="imagen-swiper" alt="Marinera 1"></div>
-                        <div class="swiper-slide"><img src="images/Marinera.jpg" class="imagen-swiper" alt="Marinera"></div>
+                    <div class="product-card fade-up">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/Marinera1.jpg" alt="Marinera 1"></div><div class="swiper-slide"><img src="images/Marinera.jpg" alt="Marinera"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Tipo Marinera</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Tipo Marinera</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="sofacama" data-id="44">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Sofacamaconfalsoposabrazos.jpg" class="imagen-swiper" alt="Falso Posa 1"></div>
-                        <div class="swiper-slide"><img src="images/Sofacamaconfalsoposabrazos2.jpg" class="imagen-swiper" alt="Falso Posa 2"></div>
-                        <div class="swiper-slide"><img src="images/Sofacamaconfalsoposabrazos3.jpg" class="imagen-swiper" alt="Falso Posa 3"></div>
+                    <div class="product-card fade-up delay-1">
+                        <div class="product-gallery swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="images/Sofacamaconfalsoposabrazos.jpg" alt="Falso Posa 1"></div><div class="swiper-slide"><img src="images/Sofacamaconfalsoposabrazos2.jpg" alt="Falso Posa 2"></div><div class="swiper-slide"><img src="images/Sofacamaconfalsoposabrazos3.jpg" alt="Falso Posa 3"></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                        <div class="product-info"><h3 class="product-name">Falso Posabrazos</h3><a href="#" class="btn-whatsapp agregar-carrito"><img src="images/2.png" alt="WhatsApp"> Solicitar Presupuesto</a></div>
                     </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Falso Posabrazos</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ================= UBICACIÓN Y MAPA ================= -->
-    <section class="ubicacion fade-up">
-        <h2 class="lineas-laterales">Nuestro Showroom</h2>
-        <div class="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.025703262303!2d-54.96562992370957!3d-34.90580447351586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x957511920fbb2a45%3A0x214855002a65043!2sCortinas%20%26%20Sofas!5e0!3m2!1ses-419!2suy!4v1740417685035!5m2!1ses-419!2suy" 
-            allowfullscreen="" loading="lazy"></iframe>
+    <!-- MAPA Y UBICACIÓN -->
+    <section class="ubicacion section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>Nuestra Ubicación</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="mapa fade-up delay-1">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.025703262303!2d-54.96562992370957!3d-34.90580447351586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x957511920fbb2a45%3A0x214855002a65043!2sCortinas%20%26%20Sofas!5e0!3m2!1ses-419!2suy!4v1740417685035!5m2!1ses-419!2suy" 
+                allowfullscreen="" loading="lazy"></iframe>
+            </div>
         </div>
     </section>
 
-    <!-- ================= ICONOS FLOTANTES ================= -->
-    <div class="whatsapp-icon">
-        <a href="https://wa.me/598099696563" target="_blank" title="Contactar por WhatsApp">
-            <img src="images/2.png" alt="WhatsApp">
-        </a>
-    </div>
-    
-    <div class="instagram-icon">
-        <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank" title="Síguenos en Instagram">
-            <img src="images/instagram.png" alt="Instagram">
-        </a>
+    <!-- ICONOS Y FOOTER -->
+    <div class="floating-socials">
+        <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank" class="social-icon instagram"><img src="images/instagram.png" alt="Instagram"></a>
+        <a href="https://wa.me/598099696610" target="_blank" class="social-icon whatsapp"><img src="images/2.png" alt="WhatsApp"></a>
     </div>
 
-    <!-- ================= FOOTER ================= -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3 style="color: white; margin-bottom: 15px; font-family: 'Playfair Display'; font-weight: 600;">Cortinas & Sofás</h3>
-                <p><strong>Showroom:</strong> Maldonado / Calle Joaquin De Viana Esq Dr Edye</p>
-                <p><strong>Atención al cliente:</strong> 099 696 610</p>
-                <p><a href="mailto:Cortinas&Sofas@gmail.com" class="footer-email">Cortinas&Sofas@gmail.com</a></p>
-            </div>
-            
-            <div class="footer-whatsapp">
-                <img src="images/2.png" alt="WhatsApp"> 
-                <div>
-                    <p>SOLICITA TU PRESUPUESTO</p>
-                    <p>099 696 610</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Cortinas & Sofás</h3>
+                    <p>Diseño de interiores, confección a medida y excelencia desde 1982.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><strong>Showroom:</strong> Maldonado / Calle Joaquin De Viana Esq Dr Edye</li>
+                        <li><strong>Atención al cliente:</strong> 099 696 610</li>
+                        <li><a href="mailto:Cortinas&Sofas@gmail.com">Cortinas&Sofas@gmail.com</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- ================= SCRIPTS ================= -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
