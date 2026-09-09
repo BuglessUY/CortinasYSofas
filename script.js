@@ -9,48 +9,80 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initHeaderScroll() {
-  const header = document.querySelector('.header');
+  const header = document.querySelector('.header-modern');
   if (!header) return;
-  // Si no está el hero (es página interna), siempre mantener el fondo sólido
-  if (!document.querySelector('.hero')) return;
+
+  // Si no está en la página principal, mantenerlo sólido siempre
+  if (!document.querySelector('.hero')) {
+    header.classList.add('scrolled');
+    header.classList.add('solid');
+    return;
+  }
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) {
-      header.classList.add('solid-bg');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
     } else {
-      header.classList.remove('solid-bg');
+      header.classList.remove('scrolled');
     }
   });
 }
 
 function initMobileMenu() {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-  const dropdownLinks = document.querySelectorAll('.has-dropdown > a');
+  const hamburger = document.querySelector('.hamburger-modern');
+  const closeBtn = document.querySelector('.close-menu-btn');
+  const navWrapper = document.querySelector('.nav-wrapper');
+  const overlay = document.querySelector('.mobile-overlay');
 
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('is-active');
-      navMenu.classList.toggle('active');
-      document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-    });
+  // Abrir y Cerrar Panel Lateral
+  function toggleMenu() {
+    const isOpen = navWrapper.classList.contains('open');
+    if (isOpen) {
+      navWrapper.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    } else {
+      navWrapper.classList.add('open');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Evita el scroll del body
+    }
   }
 
-  dropdownLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-      if (window.innerWidth <= 768) {
+  if (hamburger) hamburger.addEventListener('click', toggleMenu);
+  if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+  if (overlay) overlay.addEventListener('click', toggleMenu); // Cerrar al tocar fondo oscuro
+
+  // Lógica de Acordeones en Móvil
+  if (window.innerWidth <= 992) {
+    // 1. Acordeón Principal (Productos)
+    const megaMenuToggle = document.querySelector('.has-mega-menu > .nav-link');
+    const megaMenuPanel = document.querySelector('.mega-menu-panel');
+    const chevron = document.querySelector('.chevron-icon');
+
+    if (megaMenuToggle) {
+      megaMenuToggle.addEventListener('click', (e) => {
         e.preventDefault();
-        const parentLi = this.parentElement;
-        
-        // Cerrar hermanos
-        Array.from(parentLi.parentElement.children).forEach(sibling => {
-          if (sibling !== parentLi) sibling.classList.remove('active-mobile');
-        });
-        
-        parentLi.classList.toggle('active-mobile');
-      }
+        megaMenuPanel.classList.toggle('open-accordion');
+        if(megaMenuPanel.classList.contains('open-accordion')) {
+          chevron.style.transform = 'rotate(180deg)';
+        } else {
+          chevron.style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    // 2. Sub-acordeones internos (Cortinas, Sofás, etc.)
+    const megaTitles = document.querySelectorAll('.mega-title');
+    megaTitles.forEach(title => {
+      title.addEventListener('click', function() {
+        this.classList.toggle('expanded');
+        const content = this.nextElementSibling;
+        if (content && content.classList.contains('accordion-content')) {
+          content.classList.toggle('show');
+        }
+      });
     });
-  });
+  }
 }
 
 function initSwiper() {
