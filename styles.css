@@ -153,6 +153,18 @@ header:not(.solid-bg) nav a::after {
     background-color: #ffffff;
 }
 
+/* Flechas del menú */
+.arrow {
+    font-size: 10px;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+nav li:hover > a .arrow {
+    transform: rotate(180deg);
+}
+
 /* =========================================
    2.1 SUBMENÚS (ESCRITORIO)
 ========================================= */
@@ -209,17 +221,7 @@ nav li:hover > .submenu,
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
-/* Flechas del menú */
-.arrow {
-    font-size: 10px;
-    margin-left: 5px;
-    transition: transform 0.3s ease;
-    display: inline-block;
-}
 
-nav li:hover > a .arrow {
-    transform: rotate(180deg);
-}
 /* =========================================
    2.2 MENÚ MÓVIL (FULLSCREEN OVERLAY)
 ========================================= */
@@ -658,7 +660,7 @@ h2.lineas-laterales::after {
     }
     nav a::after { display: none; }
 
-    /* Submenús en Móvil (acordeón) */
+    /* Submenús en Móvil (acordeón mejorado) */
     .submenu, .submenu-categorias {
         position: static;
         width: 100%;
@@ -678,15 +680,18 @@ h2.lineas-laterales::after {
         text-transform: uppercase;
         border-bottom: 1px solid rgba(255,255,255,0.05);
     }
-  nav li:hover > .submenu, .submenu li:hover > .submenu-categorias { display: none; }       /* Mostrar menús activos al hacer clic */
-   
+    
+    nav li:hover > .submenu, .submenu li:hover > .submenu-categorias { display: none; }
+    
+    /* Mostrar menús activos al hacer clic */
     nav li.active-mobile > .submenu, 
     .submenu li.active-mobile > .submenu-categorias { 
         display: block; 
-    } nav li.active-mobile > a .arrow {
-        transform: rotate(180deg);
     }
 
+    nav li.active-mobile > a .arrow {
+        transform: rotate(180deg);
+    }
 
     .hero-content h1 { font-size: 2.5rem; }
     .hero-content p { font-size: 1rem; }
