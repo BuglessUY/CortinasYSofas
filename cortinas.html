@@ -1,400 +1,440 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cortinas Personalizadas - Catálogo | Cortinas & Sofás</title>
-    
-    <!-- Fuentes Premium -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- CSS Externo -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colección de Cortinas | Cortinas & Sofás</title>
+  <meta name="description" content="Catálogo de cortinas tradicionales, rollers sunscreen y blackout hechas a medida.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    
-    <!-- ================= HEADER Y NAVEGACIÓN ================= -->
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/imagen_2025-05-29_234235197.png" alt="Logo Cortinas y Sofás">
-            </a>
-        </div>
-        
-        <button class="menu-toggle" aria-label="Abrir menú">
-            <span class="hamburger"></span>
-        </button>
-         
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="index.html">INICIO</a></li>
-                <li><a href="sobre_Nosotros.html">SOBRE NOSOTROS</a></li>
-                <li>
-                    <a href="#products">PRODUCTOS</a>
-                    <ul class="submenu">
-                        <li>
-                            <a href="#products">CORTINAS</a>
-                            <ul class="submenu-categorias">
-                                <li><a href="cortinas.html#detalle15">TRADICIONALES</a></li>
-                                <li><a href="cortinas.html#detalle16">ROLLERS SUNSCREEN</a></li>
-                                <li><a href="cortinas.html#detalle17">ROLLERS BLACKOUT</a></li>
-                            </ul> 
-                        </li>
-                        <li>
-                            <a href="#products">SOFÁS</a>
-                            <ul class="submenu-categorias">
-                                <li><a href="sofas.html#detalle20">CHAISELONGUE / ESQUINEROS</a></li>
-                                <li><a href="sofas.html#detalle21">SOFÁ DE UN CUERPO</a></li>
-                                <li><a href="sofas.html#detalle22">SOFÁ DE DOS CUERPOS</a></li>
-                                <li><a href="sofas.html#detalle23">SOFÁ DE TRES CUERPOS</a></li>
-                                <li><a href="sofas.html#detalle24">SOFÁ CAMA</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="tapizados.html">TAPIZADOS</a></li>
-                        <li><a href="persianas.html">PERSIANAS</a></li>
-                        <li><a href="sillasybutacas.html">SILLAS / BUTACAS</a></li>
-                        <li><a href="fundas.html">FUNDAS / TELAS / COLCHONETAS</a></li>
-                        <li><a href="Alfombras.html">ALFOMBRAS / MOQUETTES</a></li>
-                        <li>
-                            <a href="#products">PISOS</a>
-                            <ul class="submenu-categorias">
-                                <li><a href="Pisos.html#detalle30">FLOTANTES</a></li>
-                                <li><a href="Pisos.html#detalle31">VINÍLICOS</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="MotorizacionesYAutomatizmos.html">MOTORIZACIONES / AUTOMATISMOS</a></li>
-                    </ul>
-                </li>
+<body class="inner-page">
+  
+  <!-- HEADER -->
+  <header class="header solid-bg">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/imagen_2025-05-29_234235197.png" alt="Logo Cortinas y Sofás">
+        </a>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">INICIO</a></li>
+          <li><a href="sobre_Nosotros.html">SOBRE NOSOTROS</a></li>
+          <li class="has-dropdown">
+            <a href="#" class="active-link">PRODUCTOS <span class="arrow">▼</span></a>
+            <ul class="submenu">
+              <li class="has-dropdown">
+                <a href="#">CORTINAS <span class="arrow">▼</span></a>
+                <ul class="submenu-categorias">
+                  <li><a href="cortinas.html#detalle15">TRADICIONALES</a></li>
+                  <li><a href="cortinas.html#detalle16">ROLLERS SUNSCREEN</a></li>
+                  <li><a href="cortinas.html#detalle17">ROLLERS BLACKOUT</a></li>
+                </ul> 
+              </li>
+              <li class="has-dropdown">
+                <a href="#">SOFÁS <span class="arrow">▼</span></a>
+                <ul class="submenu-categorias">
+                  <li><a href="sofas.html#detalle20">CHAISELONGUE / ESQUINEROS</a></li>
+                  <li><a href="sofas.html#detalle21">SOFÁ DE UN CUERPO</a></li>
+                  <li><a href="sofas.html#detalle22">SOFÁ DE DOS CUERPOS</a></li>
+                  <li><a href="sofas.html#detalle23">SOFÁ DE TRES CUERPOS</a></li>
+                  <li><a href="sofas.html#detalle24">SOFÁ CAMA</a></li>
+                </ul>
+              </li>
+              <li><a href="tapizados.html">TAPIZADOS</a></li>
+              <li><a href="persianas.html">PERSIANAS</a></li>
+              <li><a href="sillasybutacas.html">SILLAS / BUTACAS</a></li>
+              <li><a href="fundas.html">FUNDAS / TELAS / COLCHONETAS</a></li>
+              <li><a href="Alfombras.html">ALFOMBRAS / MOQUETTES</a></li>
+              <li class="has-dropdown">
+                <a href="#">PISOS <span class="arrow">▼</span></a>
+                <ul class="submenu-categorias">
+                  <li><a href="Pisos.html#detalle30">FLOTANTES</a></li>
+                  <li><a href="Pisos.html#detalle31">VINÍLICOS</a></li>
+                </ul>
+              </li>
+              <li><a href="MotorizacionesYAutomatizmos.html">MOTORIZACIONES / AUTOMATISMOS</a></li>
             </ul>
-        </nav> 
-    </header>
+          </li>
+        </ul>
+      </nav> 
+    </div>
+  </header>
 
-    <!-- ================= CONTENIDO CORTINAS ================= -->
-    <main>
-        <div class="titulo-estatico fade-up">
-            <h1>Colección de Cortinas</h1>
-        </div>
-
-        <!-- CORTINAS TRADICIONALES -->
-        <section class="texto-centrado fade-up" id="detalle15">
-            <h1 class="titulo-elegante">Línea Tradicional</h1>
-            <p>Las cortinas tradicionales ofrecen elegancia, funcionalidad y un toque distintivo para cualquier espacio. Diseñadas a medida, se adaptan perfectamente a las necesidades de cada cliente, garantizando un ajuste preciso y un acabado impecable. Disponibles en una amplia variedad de telas, colores y estilos, proporcionan control de luz, privacidad y un ambiente acogedor en hogares y oficinas.</p>
-            <h2 class="lineas-laterales">Modelos Clásicos y Contemporáneos</h2>
-        </section>
-
-        <section class="container-productos fade-up" id="lista-productos-tradicionales">
-            <div class="card" data-category="tradicionales" data-id="1">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/tradicional1.jpg" class="imagen-swiper" alt="Tradicional 1"></div>
-                        <div class="swiper-slide"><img src="images/tradicional1.1.jpg" class="imagen-swiper" alt="Tradicional 1.1"></div>
-                    </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Cortina Tradicional Mod. 1</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="tradicionales" data-id="2">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/BullenPiznaAmericana.jpg" class="imagen-swiper" alt="Bullen Pinza Americana"></div>
-                    </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Bullen Pinza Americana</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="tradicionales" data-id="3">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/CortinaGasayCenefatapizada.jpg" class="imagen-swiper" alt="Gasa y Cenefa"></div>
-                    </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Gasa y Cenefa Tapizada</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="tradicionales" data-id="4">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/cortinadosydeco1.jpg" class="imagen-swiper" alt="Deco 1"></div>
-                        <div class="swiper-slide"><img src="images/cortinadosydeco1.1.jpg" class="imagen-swiper" alt="Deco 1.1"></div>
-                    </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Cortinados y Deco</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="tradicionales" data-id="5">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/LinoPinzaEscondida.jpg" class="imagen-swiper" alt="Lino Pinza"></div>
-                    </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Lino Pinza Escondida</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="tradicionales" data-id="6">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/PENT1.jpg" class="imagen-swiper" alt="Pent 1"></div>
-                        <div class="swiper-slide"><img src="images/PENT2.jpg" class="imagen-swiper" alt="Pent 2"></div>
-                    </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Línea PENT</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ROLLERS SUNSCREEN -->
-        <section class="texto-centrado fade-up" id="detalle16">
-            <h1 class="titulo-elegante">Rollers Sunscreen</h1>
-            <p>Las roller sunscreen combinan diseño moderno y funcionalidad, permitiendo el paso de luz natural mientras reducen el deslumbramiento y protegen contra los rayos UV. Fabricados a medida, se ajustan perfectamente a cada espacio, brindando confort y eficiencia en hogares y oficinas. Disponibles en diversos niveles de apertura y colores.</p>
-            <h2 class="lineas-laterales">Modelos Sunscreen</h2>
-        </section>
-
-        <section class="container-productos fade-up" id="lista-productos-sunscreen">
-            <div class="card" data-category="sunscreen" data-id="7">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/RollerM.jpg" class="imagen-swiper" alt="Roller M"></div>
-                        <div class="swiper-slide"><img src="images/RollerMA.jpg" class="imagen-swiper" alt="Roller MA"></div>
-                    </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Sunscreen Línea M</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="sunscreen" data-id="8">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/SUNSCREEN1.jpg" class="imagen-swiper" alt="Sunscreen 1"></div>
-                    </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Sunscreen Mod. 1</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="sunscreen" data-id="9">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/SUNSCREEN2.jpg" class="imagen-swiper" alt="Sunscreen 2"></div>
-                        <div class="swiper-slide"><img src="images/SUNSCREEN2.1.jpg" class="imagen-swiper" alt="Sunscreen 2.1"></div>
-                    </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Sunscreen Mod. 2</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="sunscreen" data-id="10">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/SUNSCREEN3.jpg" class="imagen-swiper" alt="Sunscreen 3"></div>
-                        <div class="swiper-slide"><img src="images/SUNSCREEN3.1.jpg" class="imagen-swiper" alt="Sunscreen 3.1"></div>
-                    </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Sunscreen Mod. 3</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="sunscreen" data-id="11">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Roller 405.jpg" class="imagen-swiper" alt="Roller 405"></div>
-                        <div class="swiper-slide"><img src="images/Roller 406.jpg" class="imagen-swiper" alt="Roller 406"></div>
-                    </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Sunscreen 405 / 406</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="sunscreen" data-id="12">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/SUNSCREEN4.jpg" class="imagen-swiper" alt="Sunscreen 4"></div>
-                        <div class="swiper-slide"><img src="images/SUNSCREEN4.1.jpg" class="imagen-swiper" alt="Sunscreen 4.1"></div>
-                    </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Sunscreen Mod. 4</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ROLLERS BLACKOUT -->
-        <section class="texto-centrado fade-up" id="detalle17">
-            <h1 class="titulo-elegante">Rollers Blackout</h1>
-            <p>Los rollers blackout son la opción ideal para lograr ambientes con total oscuridad y máxima privacidad. Fabricados a medida, se adaptan perfectamente a cualquier espacio, garantizando un ajuste preciso y un acabado de alta calidad. Perfectos para dormitorios o áreas de trabajo, optimizando el confort acústico y térmico.</p>
-            <h2 class="lineas-laterales">Modelos Blackout</h2>
-        </section>
-
-        <section class="container-productos fade-up" id="lista-productos-blackout">
-            <div class="card" data-category="blackout" data-id="13">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="1-_1_.jpg" class="imagen-swiper" alt="Blackout 1"></div>
-                        <div class="swiper-slide"><img src="1-_2_.jpg" class="imagen-swiper" alt="Blackout 2"></div>
-                    </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Blackout Estándar</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="blackout" data-id="14">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Juliettepinzaamericanadoble1.jpg" class="imagen-swiper" alt="Juliette Doble 1"></div>
-                        <div class="swiper-slide"><img src="images/Juliettepinzaamericanadoble2.jpg" class="imagen-swiper" alt="Juliette Doble 2"></div>
-                    </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Juliette Pinza Doble</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="blackout" data-id="15">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/BlackoutpinzaSimple1.jpg" class="imagen-swiper" alt="Blackout Pinza 1"></div>
-                        <div class="swiper-slide"><img src="images/BlackoutpinzaSimple2.jpg" class="imagen-swiper" alt="Blackout Pinza 2"></div>
-                    </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Blackout Pinza Simple</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="blackout" data-id="16">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Blackoutrielcurvo1.jpg" class="imagen-swiper" alt="Riel Curvo 1"></div>
-                        <div class="swiper-slide"><img src="images/Blackoutrielcurvo1.1.jpg" class="imagen-swiper" alt="Riel Curvo 1.1"></div>
-                    </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Blackout Riel Curvo</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="blackout" data-id="17">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/JulietteyLIno1.jpg" class="imagen-swiper" alt="Juliette Lino 1"></div>
-                        <div class="swiper-slide"><img src="images/JulietteyLIno2.jpg" class="imagen-swiper" alt="Juliette Lino 2"></div>
-                    </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Juliette y Lino</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-
-            <div class="card" data-category="blackout" data-id="18">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Blackoutpinzamericana.jpg" class="imagen-swiper" alt="Blackout Pinza Americana"></div>
-                    </div>
-                </div>
-                <div class="card-info">
-                    <h5 class="producto-nombre">Blackout Pinza Americana</h5>
-                    <a href="#" class="button agregar-carrito">Solicitar Presupuesto</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ================= UBICACIÓN Y MAPA ================= -->
-    <section class="ubicacion fade-up">
-        <h2 class="lineas-laterales">Nuestro Showroom</h2>
-        <div class="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.025703262303!2d-54.96562992370957!3d-34.90580447351586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x957511920fbb2a45%3A0x214855002a65043!2sCortinas%20%26%20Sofas!5e0!3m2!1ses-419!2suy!4v1740417685035!5m2!1ses-419!2suy" 
-            allowfullscreen="" loading="lazy"></iframe>
-        </div>
+  <main>
+    <!-- PAGE TITLE -->
+    <section class="page-title fade-up">
+      <div class="container">
+        <h1>Colección de Cortinas</h1>
+        <p>Diseños exclusivos hechos a tu medida.</p>
+      </div>
     </section>
 
-    <!-- ================= ICONOS FLOTANTES ================= -->
-    <div class="whatsapp-icon">
-        <a href="https://wa.me/598099696563" target="_blank" title="Contactar por WhatsApp">
-            <img src="images/2.png" alt="WhatsApp">
-        </a>
-    </div>
-    
-    <div class="instagram-icon">
-        <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank" title="Síguenos en Instagram">
-            <img src="images/instagram.png" alt="Instagram">
-        </a>
-    </div>
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3 style="color: white; margin-bottom: 15px; font-family: 'Playfair Display'; font-weight: 600;">Cortinas & Sofás</h3>
-                <p><strong>Showroom:</strong> Maldonado / Calle Joaquin De Viana Esq Dr Edye</p>
-                <p><strong>Atención al cliente:</strong> 099 696 610</p>
-                <p><a href="mailto:Cortinas&Sofas@gmail.com" class="footer-email">Cortinas&Sofas@gmail.com</a></p>
-            </div>
-            
-            <div class="footer-whatsapp">
-                <img src="images/2.png" alt="WhatsApp"> 
-                <div>
-                    <p>SOLICITA TU PRESUPUESTO</p>
-                    <p>099 696 610</p>
-                </div>
-            </div>
+    <!-- TRADICIONALES -->
+    <section class="catalog-section" id="detalle15">
+      <div class="container">
+        <div class="catalog-intro fade-up">
+          <h2>Línea Tradicional</h2>
+          <div class="divider mx-auto"></div>
+          <p>Las cortinas tradicionales ofrecen elegancia, funcionalidad y un toque distintivo. Diseñadas a medida, se adaptan perfectamente garantizando un ajuste preciso y acabado impecable.</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
-        </div>
-    </footer>
 
-    <!-- ================= SCRIPTS ================= -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+        <div class="products-grid">
+          <!-- Producto 1 -->
+          <div class="product-card fade-up">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/tradicional1.jpg" alt="Cortina Tradicional 1"></div>
+                <div class="swiper-slide"><img src="images/tradicional1.1.jpg" alt="Cortina Tradicional 1.1"></div>
+              </div>
+              <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Cortina Tradicional Mod. 1</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Producto 2 -->
+          <div class="product-card fade-up delay-1">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/BullenPiznaAmericana.jpg" alt="Bullen Pinza Americana"></div>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Bullen Pinza Americana</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Producto 3 -->
+          <div class="product-card fade-up delay-2">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/CortinaGasayCenefatapizada.jpg" alt="Gasa y Cenefa"></div>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Gasa y Cenefa Tapizada</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Producto 4 -->
+          <div class="product-card fade-up">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/cortinadosydeco1.jpg" alt="Cortinados y Deco 1"></div>
+                <div class="swiper-slide"><img src="images/cortinadosydeco1.1.jpg" alt="Cortinados y Deco 1.1"></div>
+              </div>
+              <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Cortinados y Deco</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Producto 5 -->
+          <div class="product-card fade-up delay-1">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/LinoPinzaEscondida.jpg" alt="Lino Pinza Escondida"></div>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Lino Pinza Escondida</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Producto 6 -->
+          <div class="product-card fade-up delay-2">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/PENT1.jpg" alt="Línea PENT 1"></div>
+                <div class="swiper-slide"><img src="images/PENT2.jpg" alt="Línea PENT 2"></div>
+              </div>
+              <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Línea PENT</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUNSCREEN -->
+    <section class="catalog-section bg-light" id="detalle16">
+      <div class="container">
+        <div class="catalog-intro fade-up">
+          <h2>Rollers Sunscreen</h2>
+          <div class="divider mx-auto"></div>
+          <p>Combinan diseño moderno y funcionalidad, permitiendo el paso de luz natural mientras reducen el deslumbramiento y protegen contra los rayos UV.</p>
+        </div>
+
+        <div class="products-grid">
+          <!-- Producto 7 -->
+          <div class="product-card fade-up">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/RollerM.jpg" alt="Roller M"></div>
+                <div class="swiper-slide"><img src="images/RollerMA.jpg" alt="Roller MA"></div>
+              </div>
+              <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Sunscreen Línea M</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+          <!-- Producto 8 -->
+          <div class="product-card fade-up delay-1">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/SUNSCREEN1.jpg" alt="Sunscreen 1"></div>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Sunscreen Mod. 1</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+          <!-- Producto 9 -->
+          <div class="product-card fade-up delay-2">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/SUNSCREEN2.jpg" alt="Sunscreen 2"></div>
+                <div class="swiper-slide"><img src="images/SUNSCREEN2.1.jpg" alt="Sunscreen 2.1"></div>
+              </div>
+              <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Sunscreen Mod. 2</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+          <!-- Producto 10 -->
+          <div class="product-card fade-up">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/SUNSCREEN3.jpg" alt="Sunscreen 3"></div>
+                <div class="swiper-slide"><img src="images/SUNSCREEN3.1.jpg" alt="Sunscreen 3.1"></div>
+              </div>
+              <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Sunscreen Mod. 3</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+          <!-- Producto 11 -->
+          <div class="product-card fade-up delay-1">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/Roller 405.jpg" alt="Roller 405"></div>
+                <div class="swiper-slide"><img src="images/Roller 406.jpg" alt="Roller 406"></div>
+              </div>
+              <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Sunscreen 405 / 406</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+          <!-- Producto 12 -->
+          <div class="product-card fade-up delay-2">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/SUNSCREEN4.jpg" alt="Sunscreen 4"></div>
+                <div class="swiper-slide"><img src="images/SUNSCREEN4.1.jpg" alt="Sunscreen 4.1"></div>
+              </div>
+              <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Sunscreen Mod. 4</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLACKOUT -->
+    <section class="catalog-section" id="detalle17">
+      <div class="container">
+        <div class="catalog-intro fade-up">
+          <h2>Rollers Blackout</h2>
+          <div class="divider mx-auto"></div>
+          <p>La opción ideal para lograr ambientes con total oscuridad y máxima privacidad. Perfectos para dormitorios o áreas de trabajo.</p>
+        </div>
+
+        <div class="products-grid">
+          <!-- Producto 13 -->
+          <div class="product-card fade-up">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/1-_1_.jpg" alt="Blackout 1"></div>
+                <div class="swiper-slide"><img src="images/1-_2_.jpg" alt="Blackout 2"></div>
+              </div>
+              <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Blackout Estándar</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+          <!-- Producto 14 -->
+          <div class="product-card fade-up delay-1">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/Juliettepinzaamericanadoble1.jpg" alt="Juliette Doble 1"></div>
+                <div class="swiper-slide"><img src="images/Juliettepinzaamericanadoble2.jpg" alt="Juliette Doble 2"></div>
+              </div>
+              <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Juliette Pinza Doble</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+          <!-- Producto 15 -->
+          <div class="product-card fade-up delay-2">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/BlackoutpinzaSimple1.jpg" alt="Blackout Pinza 1"></div>
+                <div class="swiper-slide"><img src="images/BlackoutpinzaSimple2.jpg" alt="Blackout Pinza 2"></div>
+              </div>
+              <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Blackout Pinza Simple</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+          <!-- Producto 16 -->
+          <div class="product-card fade-up">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/Blackoutrielcurvo1.jpg" alt="Riel Curvo 1"></div>
+                <div class="swiper-slide"><img src="images/Blackoutrielcurvo1.1.jpg" alt="Riel Curvo 1.1"></div>
+              </div>
+              <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Blackout Riel Curvo</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+          <!-- Producto 17 -->
+          <div class="product-card fade-up delay-1">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/JulietteyLIno1.jpg" alt="Juliette Lino 1"></div>
+                <div class="swiper-slide"><img src="images/JulietteyLIno2.jpg" alt="Juliette Lino 2"></div>
+              </div>
+              <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Juliette y Lino</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+          <!-- Producto 18 -->
+          <div class="product-card fade-up delay-2">
+            <div class="product-gallery swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/Blackoutpinzamericana.jpg" alt="Blackout Pinza Americana"></div>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Blackout Pinza Americana</h3>
+              <a href="#" class="btn-whatsapp agregar-carrito">
+                <img src="images/2.png" alt="WhatsApp"> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ICONOS FLOTANTES -->
+  <div class="floating-socials">
+    <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank" rel="noopener noreferrer" class="social-icon instagram"><img src="images/instagram.png" alt="Instagram"></a>
+    <a href="https://wa.me/598099696610" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp"><img src="images/2.png" alt="WhatsApp"></a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Cortinas & Sofás</h3>
+          <p>Diseño de interiores, confección a medida y excelencia desde 1982.</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Contacto</h4>
+          <ul>
+            <li><strong>Showroom:</strong> Maldonado / Calle Joaquin De Viana Esq Dr Edye</li>
+            <li><strong>Atención al cliente:</strong> 099 696 610</li>
+            <li><a href="mailto:Cortinas&Sofas@gmail.com">Cortinas&Sofas@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
