@@ -1,196 +1,180 @@
 document.addEventListener("DOMContentLoaded", () => {
-    initHeaderScroll();
-    initMobileMenu();
-    initSwiper();
-    initWhatsAppCart();
-    initImageViewer();
-    initScrollAnimations(); // Ahora con IntersectionObserver
+  initHeaderScroll();
+  initMobileMenu();
+  initSwiper();
+  initWhatsAppCart();
+  initImageViewer();
+  initScrollAnimations();
+  initContactForm();
 });
 
-/* ==================================================
-   1. HEADER SCROLL Y EFECTOS
-================================================== */
 function initHeaderScroll() {
-    const header = document.querySelector('header');
-    if (!header) return;
+  const header = document.querySelector('.header');
+  if (!header) return;
+  // Si no está el hero (es página interna), siempre mantener el fondo sólido
+  if (!document.querySelector('.hero')) return;
 
-    // Si no estamos en la página de inicio (sin hero), poner el header sólido siempre
-    if (!document.querySelector('.hero')) {
-        header.classList.add('solid-bg');
-        return;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      header.classList.add('solid-bg');
+    } else {
+      header.classList.remove('solid-bg');
     }
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            header.classList.add('solid-bg');
-        } else {
-            header.classList.remove('solid-bg');
-        }
-    });
+  });
 }
 
-/* ==================================================
-   2. LÓGICA DEL MENÚ MÓVIL OVERLAY (ACTUALIZADA)
-================================================== */
 function initMobileMenu() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    // Abrir/Cerrar menú hamburguesa
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('is-active');
-            navMenu.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
-        });
-    }
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const dropdownLinks = document.querySelectorAll('.has-dropdown > a');
 
-    // Lógica de acordeón multinivel perfecta para móvil
-    const dropdownLinks = document.querySelectorAll('.has-dropdown > a');
-    
-    dropdownLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault(); // Evita navegar y recargar la página si tiene submenú
-                
-                const parentLi = this.parentElement;
-                
-                // Cierra los menús hermanos del MISMO nivel sin afectar a los padres
-                const siblings = parentLi.parentElement.children;
-                for (let sibling of siblings) {
-                    if (sibling !== parentLi && sibling.classList.contains('active-mobile')) {
-                        sibling.classList.remove('active-mobile');
-                    }
-                }
-                
-                // Abre/Cierra el menú actual
-                parentLi.classList.toggle('active-mobile');
-            }
-        });
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('is-active');
+      navMenu.classList.toggle('active');
+      document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
     });
+  }
+
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const parentLi = this.parentElement;
+        
+        // Cerrar hermanos
+        Array.from(parentLi.parentElement.children).forEach(sibling => {
+          if (sibling !== parentLi) sibling.classList.remove('active-mobile');
+        });
+        
+        parentLi.classList.toggle('active-mobile');
+      }
+    });
+  });
 }
 
-/* ==================================================
-   3. INICIALIZACIÓN DE CARRUSELES SWIPER
-================================================== */
 function initSwiper() {
+  if (typeof Swiper !== 'undefined') {
     const swipers = document.querySelectorAll('.mySwiper');
-    if (swipers.length === 0) return;
-
-    if (typeof Swiper !== 'undefined') {
-        swipers.forEach((swiperElement) => {
-            new Swiper(swiperElement, {
-                loop: true,
-                effect: "fade", // Efecto más elegante para el catálogo
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                }
-            });
-        });
-    }
+    swipers.forEach(swiperEl => {
+      new Swiper(swiperEl, {
+        loop: true,
+        effect: "fade",
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: true,
+        }
+      });
+    });
+  }
 }
 
-/* ==================================================
-   4. CARRITO WHATSAPP (SOLICITAR PRESUPUESTO)
-================================================== */
 function initWhatsAppCart() {
-    const botonesCarrito = document.querySelectorAll(".agregar-carrito");
+  const botonesWa = document.querySelectorAll(".agregar-carrito");
+  botonesWa.forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const card = this.closest(".product-card");
+      if (!card) return;
 
-    botonesCarrito.forEach(boton => {
-        boton.addEventListener("click", function (event) {
-            event.preventDefault();
+      const tituloEl = card.querySelector(".product-name");
+      const nombreProducto = tituloEl ? tituloEl.textContent.trim() : "Producto del catálogo";
+      
+      const imagenEl = card.querySelector(".swiper-slide-active img") || card.querySelector("img");
+      // Enviar URL absoluta de la imagen para que se vea en WA si es posible
+      const imagenSrc = imagenEl ? new URL(imagenEl.getAttribute('src'), window.location.href).href : "";
 
-            let card = this.closest(".card");
-            if (!card) return;
-
-            let tituloEl = card.querySelector("h5") || card.querySelector(".producto-nombre");
-            let nombre = tituloEl ? tituloEl.innerText.trim() : "Producto del catálogo";
-            
-            let imagenEl = card.querySelector(".swiper-slide-active img") || card.querySelector("img");
-            let imagen = imagenEl ? imagenEl.src : "Sin imagen";
-
-            let mensaje = `Hola, me interesa solicitar presupuesto para: *${nombre}*.%0A🔹 Enlace o Imagen de referencia: ${imagen}`;
-            let telefono = "598099696610";
-            let url = `https://wa.me/${telefono}?text=${mensaje}`;
-
-            window.location.href = url;
-        });
+      const mensaje = `Hola, quisiera consultar presupuesto por el siguiente producto: *${nombreProducto}*.\nReferencia: ${imagenSrc}`;
+      const url = `https://wa.me/598099696610?text=${encodeURIComponent(mensaje)}`;
+      
+      window.open(url, '_blank', 'noopener,noreferrer');
     });
+  });
 }
 
-/* ==================================================
-   5. VISOR DE IMÁGENES (LIGHTBOX MODAL)
-================================================== */
 function initImageViewer() {
-    let visor = document.getElementById('visor-imagen');
-    
-    if (!visor) {
-        visor = document.createElement('div');
-        visor.id = 'visor-imagen';
-        visor.className = 'visor';
-        visor.innerHTML = `
-            <span class="cerrar">&times;</span>
-            <img class="imagen-grande" id="imagen-ampliada" alt="Visor ampliado">
-        `;
-        document.body.appendChild(visor);
-    }
+  let visor = document.getElementById('visor-imagen');
+  if (!visor) {
+    visor = document.createElement('div');
+    visor.id = 'visor-imagen';
+    visor.className = 'visor';
+    visor.innerHTML = `
+      <span class="cerrar" aria-label="Cerrar visor">&times;</span>
+      <img id="imagen-ampliada" alt="Visor ampliado">
+    `;
+    document.body.appendChild(visor);
+  }
 
-    const imagenAmpliada = visor.querySelector('#imagen-ampliada');
-    const botonCerrar = visor.querySelector('.cerrar');
-    const imagenesGaleria = document.querySelectorAll('.imagen-swiper, .galeria img, .category-card img');
+  const imagenAmpliada = visor.querySelector('#imagen-ampliada');
+  const cerrar = visor.querySelector('.cerrar');
+  const galeriaImgs = document.querySelectorAll('.product-gallery img');
 
-    imagenesGaleria.forEach(img => {
-        img.style.cursor = 'pointer';
-        img.addEventListener('click', (e) => {
-            // Permitir clic en los links de las categorías, bloquear en las cards de productos
-            if(img.closest('.category-card')) return; 
-            
-            e.preventDefault(); 
-            imagenAmpliada.src = img.src;
-            visor.style.display = 'flex';
-        });
+  galeriaImgs.forEach(img => {
+    img.addEventListener('click', (e) => {
+      e.preventDefault();
+      imagenAmpliada.src = img.src;
+      visor.style.display = 'flex';
     });
+  });
 
-    botonCerrar.addEventListener('click', () => {
-        visor.style.display = 'none';
-    });
-
-    visor.addEventListener('click', (e) => {
-        if (e.target === visor) {
-            visor.style.display = 'none';
-        }
-    });
+  cerrar.addEventListener('click', () => visor.style.display = 'none');
+  visor.addEventListener('click', (e) => {
+    if (e.target === visor) visor.style.display = 'none';
+  });
 }
 
-/* ==================================================
-   6. ANIMACIONES DE SCROLL (INTERSECTION OBSERVER)
-================================================== */
 function initScrollAnimations() {
-    const fadeElements = document.querySelectorAll('.fade-in, .fade-up');
-    
-    // Cambiamos clases antiguas por la nueva para unificación
-    fadeElements.forEach(el => {
-        if(el.classList.contains('fade-in')) {
-            el.classList.remove('fade-in');
-            el.classList.add('fade-up');
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+}
+
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  const statusDiv = document.getElementById('formStatus');
+
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    statusDiv.textContent = 'Enviando...';
+    statusDiv.className = 'form-status';
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
         }
-    });
-
-    const elementsToAnimate = document.querySelectorAll('.fade-up');
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Solo animar la primera vez
-            }
-        });
-    }, {
-        root: null,
-        threshold: 0.1, // Anima cuando el 10% del elemento es visible
-        rootMargin: "0px 0px -50px 0px"
-    });
-
-    elementsToAnimate.forEach(el => observer.observe(el));
+      });
+      
+      const result = await response.json();
+      
+      if (response.ok && result.status === 'success') {
+        statusDiv.textContent = 'Mensaje enviado correctamente. Nos comunicaremos a la brevedad.';
+        statusDiv.classList.add('status-success');
+        form.reset();
+      } else {
+        statusDiv.textContent = result.message || 'Error al enviar el mensaje. Intente vía WhatsApp.';
+        statusDiv.classList.add('status-error');
+      }
+    } catch (error) {
+      statusDiv.textContent = 'Hubo un problema de conexión. Por favor, contáctanos por WhatsApp.';
+      statusDiv.classList.add('status-error');
+    }
+  });
 }
