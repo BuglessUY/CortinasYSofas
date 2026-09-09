@@ -209,7 +209,17 @@ nav li:hover > .submenu,
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+/* Flechas del menú */
+.arrow {
+    font-size: 10px;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
 
+nav li:hover > a .arrow {
+    transform: rotate(180deg);
+}
 /* =========================================
    2.2 MENÚ MÓVIL (FULLSCREEN OVERLAY)
 ========================================= */
