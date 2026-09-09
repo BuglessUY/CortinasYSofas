@@ -1,228 +1,305 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cortinas & Sofás | Diseño de Interiores a Medida</title>
-    
-    <!-- Fuentes Premium -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- CSS Externo -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cortinas & Sofás | Diseño de Interiores a Medida</title>
+  <meta name="description" content="Confeccionamos cortinas y muebles a medida desde 1982, fusionando calidad, confort y estilo para transformar tu hogar.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <!-- ================= HEADER Y NAVEGACIÓN ================= -->
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/imagen_2025-05-29_234235197.png" alt="Logo Cortinas y Sofás">
-            </a>
-        </div>
-        
-        <button class="menu-toggle" aria-label="Abrir menú">
-            <span class="hamburger"></span>
-        </button>
-         
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="index.html">INICIO</a></li>
-                <li><a href="sobre_Nosotros.html">SOBRE NOSOTROS</a></li>
-                <li class="has-dropdown">
-                    <a href="#">PRODUCTOS <span class="arrow">▼</span></a>
-                    <ul class="submenu">
-                        <li class="has-dropdown">
-                            <a href="#">CORTINAS <span class="arrow">▼</span></a>
-                            <ul class="submenu-categorias">
-                                <li><a href="cortinas.html#detalle15">TRADICIONALES</a></li>
-                                <li><a href="cortinas.html#detalle16">ROLLERS SUNSCREEN</a></li>
-                                <li><a href="cortinas.html#detalle17">ROLLERS BLACKOUT</a></li>
-                            </ul> 
-                        </li>
-                        <li class="has-dropdown">
-                            <a href="#">SOFÁS <span class="arrow">▼</span></a>
-                            <ul class="submenu-categorias">
-                                <li><a href="sofas.html#detalle20">CHAISELONGUE / ESQUINEROS</a></li>
-                                <li><a href="sofas.html#detalle21">SOFÁ DE UN CUERPO</a></li>
-                                <li><a href="sofas.html#detalle22">SOFÁ DE DOS CUERPOS</a></li>
-                                <li><a href="sofas.html#detalle23">SOFÁ DE TRES CUERPOS</a></li>
-                                <li><a href="sofas.html#detalle24">SOFÁ CAMA</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="tapizados.html">TAPIZADOS</a></li>
-                        <li><a href="persianas.html">PERSIANAS</a></li>
-                        <li><a href="sillasybutacas.html">SILLAS / BUTACAS</a></li>
-                        <li><a href="fundas.html">FUNDAS / TELAS / COLCHONETAS</a></li>
-                        <li><a href="Alfombras.html">ALFOMBRAS / MOQUETTES</a></li>
-                        <li class="has-dropdown">
-                            <a href="#">PISOS <span class="arrow">▼</span></a>
-                            <ul class="submenu-categorias">
-                                <li><a href="Pisos.html#detalle30">FLOTANTES</a></li>
-                                <li><a href="Pisos.html#detalle31">VINÍLICOS</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="MotorizacionesYAutomatizmos.html">MOTORIZACIONES / AUTOMATISMOS</a></li>
-                    </ul>
-                </li>
+  
+  <!-- HEADER Y NAVEGACIÓN -->
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/imagen_2025-05-29_234235197.png" alt="Logo Cortinas y Sofás">
+        </a>
+      </div>
+      
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+       
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">INICIO</a></li>
+          <li><a href="sobre_Nosotros.html">SOBRE NOSOTROS</a></li>
+          <li class="has-dropdown">
+            <a href="#">PRODUCTOS <span class="arrow">▼</span></a>
+            <ul class="submenu">
+              <li class="has-dropdown">
+                <a href="#">CORTINAS <span class="arrow">▼</span></a>
+                <ul class="submenu-categorias">
+                  <li><a href="cortinas.html#detalle15">TRADICIONALES</a></li>
+                  <li><a href="cortinas.html#detalle16">ROLLERS SUNSCREEN</a></li>
+                  <li><a href="cortinas.html#detalle17">ROLLERS BLACKOUT</a></li>
+                </ul> 
+              </li>
+              <li class="has-dropdown">
+                <a href="#">SOFÁS <span class="arrow">▼</span></a>
+                <ul class="submenu-categorias">
+                  <li><a href="sofas.html#detalle20">CHAISELONGUE / ESQUINEROS</a></li>
+                  <li><a href="sofas.html#detalle21">SOFÁ DE UN CUERPO</a></li>
+                  <li><a href="sofas.html#detalle22">SOFÁ DE DOS CUERPOS</a></li>
+                  <li><a href="sofas.html#detalle23">SOFÁ DE TRES CUERPOS</a></li>
+                  <li><a href="sofas.html#detalle24">SOFÁ CAMA</a></li>
+                </ul>
+              </li>
+              <li><a href="tapizados.html">TAPIZADOS</a></li>
+              <li><a href="persianas.html">PERSIANAS</a></li>
+              <li><a href="sillasybutacas.html">SILLAS / BUTACAS</a></li>
+              <li><a href="fundas.html">FUNDAS / TELAS / COLCHONETAS</a></li>
+              <li><a href="Alfombras.html">ALFOMBRAS / MOQUETTES</a></li>
+              <li class="has-dropdown">
+                <a href="#">PISOS <span class="arrow">▼</span></a>
+                <ul class="submenu-categorias">
+                  <li><a href="Pisos.html#detalle30">FLOTANTES</a></li>
+                  <li><a href="Pisos.html#detalle31">VINÍLICOS</a></li>
+                </ul>
+              </li>
+              <li><a href="MotorizacionesYAutomatizmos.html">MOTORIZACIONES / AUTOMATISMOS</a></li>
             </ul>
-        </nav> 
-    </header>
-
-    <!-- ================= HERO SECTION (DISEÑO RENOVADO) ================= -->
-    <div class="hero">
-        <img src="images/top.jpg" alt="Cortina Principal" class="slide active">
-        <div class="hero-content">
-            <h1>Diseño y Elegancia para tus Espacios</h1>
-            <p>Confeccionamos cortinas y muebles a medida desde 1982, fusionando calidad, confort y estilo para transformar tu hogar.</p>
-            <a href="cortinas.html" class="btn-hero">Explorar el catálogo</a>
-        </div>
+          </li>
+        </ul>
+      </nav> 
     </div>
+  </header>
 
-    <!-- ================= CATEGORÍAS (GRILLA INTERACTIVA) ================= -->
-    <main>
-        <!-- Categoría: Cortinas -->
-        <section class="trabajos-realizados">
-            <h2 class="lineas-laterales fade-up">Colección de Cortinas</h2>
-            <div class="galeria">
-                <a href="cortinas.html#detalle16" class="category-card fade-up">
-                    <img src="images/SUNSCREEN1.1.jpg" alt="Cortinas Rollers">
-                    <div class="category-overlay">
-                        <h3>Rollers Sunscreen</h3>
-                        <span>Ver más detalles</span>
-                    </div>
-                </a>
-                <a href="cortinas.html#detalle17" class="category-card fade-up">
-                    <img src="images/Juliettepinzaamericanadoble1.jpg" alt="Cortinas Blackout">
-                    <div class="category-overlay">
-                        <h3>Rollers Blackout</h3>
-                        <span>Ver más detalles</span>
-                    </div>
-                </a>
-                <a href="cortinas.html#detalle15" class="category-card fade-up">
-                    <img src="images/PENT1.jpg" alt="Cortinas Tradicionales">
-                    <div class="category-overlay">
-                        <h3>Línea Tradicional</h3>
-                        <span>Ver más detalles</span>
-                    </div>
-                </a>
-            </div>
-        </section>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="images/top.jpg" alt="Cortina Principal" class="slide active">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="fade-up">Diseño y Elegancia<br>para tus Espacios</h1>
+      <p class="fade-up delay-1">Confeccionamos cortinas y muebles a medida desde 1982, fusionando calidad, confort y estilo para transformar tu hogar.</p>
+      <div class="hero-actions fade-up delay-2">
+        <a href="cortinas.html" class="btn btn-primary">Explorar Colección</a>
+        <a href="#contacto" class="btn btn-outline">Contáctanos</a>
+      </div>
+    </div>
+  </section>
 
-        <!-- Categoría: Sofás -->
-        <section class="trabajos-realizados">
-            <h2 class="lineas-laterales fade-up">Nuestros Sofás</h2>
-            <div class="galeria">
-                <a href="sofas.html#detalle23" class="category-card fade-up">
-                    <img src="images/Ibérico.jpg" alt="Sofá tres cuerpos">
-                    <div class="category-overlay">
-                        <h3>Tres Cuerpos</h3>
-                        <span>Descubrir modelos</span>
-                    </div>
-                </a>
-                <a href="sofas.html#detalle22" class="category-card fade-up">
-                    <img src="images/Boston-2.10-de-Luxe-1.jpg" alt="Sofá dos cuerpos">
-                    <div class="category-overlay">
-                        <h3>Dos Cuerpos</h3>
-                        <span>Descubrir modelos</span>
-                    </div>
-                </a>
-                <a href="sofas.html#detalle21" class="category-card fade-up">
-                    <img src="images/Boston-1-cuerpo.jpg" alt="Sofá un cuerpo">
-                    <div class="category-overlay">
-                        <h3>Sillones Individuales</h3>
-                        <span>Descubrir modelos</span>
-                    </div>
-                </a>
-                <a href="sofas.html#detalle37" class="category-card fade-up">
-                    <img src="images/esquinero.jpg" alt="Chaise Longue">
-                    <div class="category-overlay">
-                        <h3>Chaise Longue</h3>
-                        <span>Descubrir modelos</span>
-                    </div>
-                </a>
-                <a href="sofas.html#detalle24" class="category-card fade-up">
-                    <img src="images/SofaCamaEasyClean1.jpg" alt="Sofá cama">
-                    <div class="category-overlay">
-                        <h3>Sofás Cama</h3>
-                        <span>Descubrir modelos</span>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <!-- Categoría: Pisos -->
-        <section class="trabajos-realizados" style="padding-bottom: 0;">
-            <h2 class="lineas-laterales fade-up">Pisos Elegantes</h2>
-            <div class="galeria" style="justify-content: center;">
-                <a href="Pisos.html#detalle30" class="category-card fade-up" style="max-width: 400px;">
-                    <img src="images/cortina1.jpg" alt="Piso flotante"> 
-                    <div class="category-overlay">
-                        <h3>Pisos Flotantes</h3>
-                        <span>Ver catálogo</span>
-                    </div>
-                </a>
-                <a href="Pisos.html#detalle31" class="category-card fade-up" style="max-width: 400px;">
-                    <img src="images/cortina1.jpg" alt="Piso Vinílico">
-                    <div class="category-overlay">
-                        <h3>Pisos Vinílicos</h3>
-                        <span>Ver catálogo</span>
-                    </div>
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <!-- ================= UBICACIÓN Y MAPA ================= -->
-    <section class="ubicacion fade-up">
-        <h2 class="lineas-laterales">Encuéntranos Aquí</h2>
-        <div class="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.025703262303!2d-54.96562992370957!3d-34.90580447351586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x957511920fbb2a45%3A0x214855002a65043!2sCortinas%20%26%20Sofas!5e0!3m2!1ses-419!2suy!4v1740417685035!5m2!1ses-419!2suy" 
-            allowfullscreen="" loading="lazy"></iframe>
+  <main>
+    <!-- CATEGORÍA: CORTINAS -->
+    <section class="category-section section-padding">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="subtitle">Elegancia y Control Lumínico</span>
+          <h2>Colección de Cortinas</h2>
+          <div class="divider"></div>
         </div>
+        <div class="category-grid">
+          <a href="cortinas.html#detalle16" class="category-card fade-up">
+            <img src="images/SUNSCREEN1.1.jpg" alt="Cortinas Rollers">
+            <div class="card-overlay">
+              <h3>Rollers Sunscreen</h3>
+              <span class="explore-text">Ver Detalles &rarr;</span>
+            </div>
+          </a>
+          <a href="cortinas.html#detalle17" class="category-card fade-up delay-1">
+            <img src="images/Juliettepinzaamericanadoble1.jpg" alt="Cortinas Blackout">
+            <div class="card-overlay">
+              <h3>Rollers Blackout</h3>
+              <span class="explore-text">Ver Detalles &rarr;</span>
+            </div>
+          </a>
+          <a href="cortinas.html#detalle15" class="category-card fade-up delay-2">
+            <img src="images/PENT1.jpg" alt="Cortinas Tradicionales">
+            <div class="card-overlay">
+              <h3>Línea Tradicional</h3>
+              <span class="explore-text">Ver Detalles &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- ================= ICONOS FLOTANTES ================= -->
-    <div class="whatsapp-icon">
-        <a href="https://wa.me/598099696563" target="_blank" title="Contactar por WhatsApp">
-            <img src="images/2.png" alt="WhatsApp">
-        </a>
-    </div>
-    
-    <div class="instagram-icon">
-        <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank" title="Síguenos en Instagram">
-            <img src="images/instagram.png" alt="Instagram">
-        </a>
-    </div>
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3 style="color: white; margin-bottom: 15px; font-family: 'Playfair Display'; font-weight: 600;">Cortinas & Sofás</h3>
-                <p><strong>Showroom:</strong> Maldonado / Calle Joaquin De Viana Esq Dr Edye</p>
-                <p><strong>Atención al cliente:</strong> 099 696 610</p>
-                <p><a href="mailto:Cortinas&Sofas@gmail.com" class="footer-email">Cortinas&Sofas@gmail.com</a></p>
+    <!-- CATEGORÍA: SOFÁS -->
+    <section class="category-section section-padding bg-light">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="subtitle">Confort a Medida</span>
+          <h2>Nuestros Sofás</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="category-grid grid-5">
+          <a href="sofas.html#detalle23" class="category-card fade-up">
+            <img src="images/Ibérico.jpg" alt="Sofá tres cuerpos">
+            <div class="card-overlay">
+              <h3>Tres Cuerpos</h3>
             </div>
-            
-            <div class="footer-whatsapp">
-                <img src="images/2.png" alt="WhatsApp"> 
-                <div>
-                    <p>SOLICITA TU PRESUPUESTO</p>
-                    <p>099 696 610</p>
+          </a>
+          <a href="sofas.html#detalle22" class="category-card fade-up delay-1">
+            <img src="images/Boston-2.10-de-Luxe-1.jpg" alt="Sofá dos cuerpos">
+            <div class="card-overlay">
+              <h3>Dos Cuerpos</h3>
+            </div>
+          </a>
+          <a href="sofas.html#detalle21" class="category-card fade-up delay-2">
+            <img src="images/Boston-1-cuerpo.jpg" alt="Sofá un cuerpo">
+            <div class="card-overlay">
+              <h3>Individuales</h3>
+            </div>
+          </a>
+          <a href="sofas.html#detalle37" class="category-card fade-up delay-3">
+            <img src="images/esquinero.jpg" alt="Chaise Longue">
+            <div class="card-overlay">
+              <h3>Chaise Longue</h3>
+            </div>
+          </a>
+          <a href="sofas.html#detalle24" class="category-card fade-up delay-4">
+            <img src="images/SofaCamaEasyClean1.jpg" alt="Sofá cama">
+            <div class="card-overlay">
+              <h3>Sofás Cama</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORÍA: PISOS -->
+    <section class="category-section section-padding">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="subtitle">Bases Sólidas y Estéticas</span>
+          <h2>Pisos Elegantes</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="category-grid grid-2 max-w-800">
+          <a href="Pisos.html#detalle30" class="category-card fade-up">
+            <img src="images/cortina1.jpg" alt="Piso flotante"> 
+            <div class="card-overlay">
+              <h3>Pisos Flotantes</h3>
+              <span class="explore-text">Ver Catálogo &rarr;</span>
+            </div>
+          </a>
+          <a href="Pisos.html#detalle31" class="category-card fade-up delay-1">
+            <img src="images/cortina1.jpg" alt="Piso Vinílico">
+            <div class="card-overlay">
+              <h3>Pisos Vinílicos</h3>
+              <span class="explore-text">Ver Catálogo &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <section id="contacto" class="contact-section section-padding bg-dark text-white">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info fade-up">
+            <h2>Hablemos de tu Proyecto</h2>
+            <p>Déjanos tus datos y nos pondremos en contacto contigo a la brevedad para asesorarte.</p>
+            <div class="contact-details">
+              <p><strong>Teléfono:</strong> 099 696 610</p>
+              <p><strong>Email:</strong> Cortinas&Sofas@gmail.com</p>
+              <p><strong>Showroom:</strong> Maldonado / Calle Joaquin De Viana Esq Dr Edye</p>
+            </div>
+          </div>
+          <div class="contact-form-container fade-up delay-1">
+            <form id="contactForm" action="contact.php" method="POST">
+              <!-- Honeypot para evitar Spam -->
+              <input type="text" name="website_hp" class="hidden-honeypot" tabindex="-1" autocomplete="off">
+              
+              <div class="form-group-row">
+                <div class="form-group">
+                  <input type="text" id="nombre" name="nombre" required placeholder=" ">
+                  <label for="nombre">Nombre y Apellido</label>
                 </div>
-            </div>
+                <div class="form-group">
+                  <input type="tel" id="telefono" name="telefono" required placeholder=" " pattern="[0-9\s\-\+]{8,15}">
+                  <label for="telefono">Teléfono / WhatsApp</label>
+                </div>
+              </div>
+              <div class="form-group-row">
+                <div class="form-group">
+                  <input type="email" id="email" name="email" required placeholder=" ">
+                  <label for="email">Correo Electrónico</label>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="asunto" name="asunto" required placeholder=" ">
+                  <label for="asunto">Asunto</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea id="mensaje" name="mensaje" rows="4" required placeholder=" "></textarea>
+                <label for="mensaje">Tu Consulta</label>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Enviar Consulta</button>
+              <div id="formStatus" class="form-status"></div>
+            </form>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- ================= SCRIPTS ================= -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <!-- UBICACIÓN Y MAPA -->
+    <section class="ubicacion section-padding">
+      <div class="container">
+        <div class="section-header fade-up">
+          <h2>Encuéntranos Aquí</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="mapa fade-up delay-1">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.025703262303!2d-54.96562992370957!3d-34.90580447351586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x957511920fbb2a45%3A0x214855002a65043!2sCortinas%20%26%20Sofas!5e0!3m2!1ses-419!2suy!4v1740417685035!5m2!1ses-419!2suy" 
+          allowfullscreen="" loading="lazy" title="Mapa de ubicación"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ICONOS FLOTANTES -->
+  <div class="floating-socials">
+    <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram">
+      <img src="images/instagram.png" alt="Instagram">
+    </a>
+    <a href="https://wa.me/598099696610" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp" aria-label="WhatsApp">
+      <img src="images/2.png" alt="WhatsApp">
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Cortinas & Sofás</h3>
+          <p>Diseño de interiores, confección a medida y excelencia desde 1982.</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Contacto</h4>
+          <ul>
+            <li><strong>Showroom:</strong> Maldonado / Calle Joaquin De Viana Esq Dr Edye</li>
+            <li><strong>Atención al cliente:</strong> 099 696 610</li>
+            <li><a href="mailto:Cortinas&Sofas@gmail.com">Cortinas&Sofas@gmail.com</a></li>
+          </ul>
+        </div>
+        <div class="footer-action">
+          <h4>Solicita tu Presupuesto</h4>
+          <a href="https://wa.me/598099696610" target="_blank" rel="noopener noreferrer" class="btn-footer-wa">
+            <img src="images/2.png" alt="WhatsApp Icon">
+            <span>099 696 610</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
