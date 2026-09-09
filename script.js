@@ -32,13 +32,14 @@ function initHeaderScroll() {
 /* ==================================================
    2. LÓGICA DEL MENÚ MÓVIL OVERLAY
 ================================================== */
+/* ==================================================
+   2. LÓGICA DEL MENÚ MÓVIL OVERLAY (ACTUALIZADA)
+================================================== */
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    const menuItems = document.querySelectorAll(".nav-menu > ul > li > a");
-    const submenuItems = document.querySelectorAll(".submenu > li > a");
-
-    // Abrir/Cerrar menú hamburguesa y evitar scroll de fondo
+    
+    // Abrir/Cerrar menú hamburguesa
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('is-active');
@@ -46,6 +47,31 @@ function initMobileMenu() {
             document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
         });
     }
+
+    // Lógica de acordeón multinivel perfecta para móvil
+    const dropdownLinks = document.querySelectorAll('.has-dropdown > a');
+    
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault(); // Evita navegar y recargar la página si tiene submenú
+                
+                const parentLi = this.parentElement;
+                
+                // Cierra los menús hermanos del MISMO nivel sin afectar a los padres
+                const siblings = parentLi.parentElement.children;
+                for (let sibling of siblings) {
+                    if (sibling !== parentLi && sibling.classList.contains('active-mobile')) {
+                        sibling.classList.remove('active-mobile');
+                    }
+                }
+                
+                // Abre/Cierra el menú actual
+                parentLi.classList.toggle('active-mobile');
+            }
+        });
+    });
+}
 
     function isMobile() {
         return window.innerWidth <= 768;
