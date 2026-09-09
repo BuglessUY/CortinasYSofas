@@ -667,19 +667,26 @@ h2.lineas-laterales::after {
         border: none;
         display: none;
         padding: 0;
-        margin: 10px 0 0 0;
+        margin: 0;
         animation: none;
     }
     
     .submenu li a, .submenu-categorias li a {
         font-size: 14px;
-        color: #aaaaaa !important;
-        padding: 8px;
+        color: #cccccc !important;
+        padding: 15px;
         text-transform: uppercase;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
     }
-    
-    nav li:hover > .submenu, .submenu li:hover > .submenu-categorias { display: none; }
-    nav li.active-mobile > .submenu, .submenu li.active-mobile > .submenu-categorias { display: block; }
+  nav li:hover > .submenu, .submenu li:hover > .submenu-categorias { display: none; }       /* Mostrar menús activos al hacer clic */
+   
+    nav li.active-mobile > .submenu, 
+    .submenu li.active-mobile > .submenu-categorias { 
+        display: block; 
+    } nav li.active-mobile > a .arrow {
+        transform: rotate(180deg);
+    }
+
 
     .hero-content h1 { font-size: 2.5rem; }
     .hero-content p { font-size: 1rem; }
