@@ -15,58 +15,101 @@
 <body class="inner-page">
   
   <!-- HEADER -->
-  <header class="header solid-bg">
-    <div class="header-container">
-      <div class="logo">
-        <a href="index.html">
-          <img src="images/imagen_2025-05-29_234235197.png" alt="Logo Cortinas y Sofás">
-        </a>
+   <header class="header-modern">
+    <!-- Overlay oscuro para menú móvil -->
+    <div class="mobile-overlay"></div>
+
+    <div class="header-container-modern">
+      <!-- Logo -->
+      <a href="index.html" class="logo-modern">
+        <img src="images/imagen_2025-05-29_234235197.png" alt="Cortinas & Sofás">
+      </a>
+      
+      <!-- Navegación -->
+      <div class="nav-wrapper">
+        <!-- Header interno solo para móvil -->
+        <div class="mobile-nav-header">
+          <img src="images/imagen_2025-05-29_234235197.png" alt="Cortinas & Sofás" class="mobile-logo-img">
+          <button class="close-menu-btn" aria-label="Cerrar menú">&times;</button>
+        </div>
+
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+            <li class="nav-item"><a href="sobre_Nosotros.html" class="nav-link">Sobre Nosotros</a></li>
+            
+            <!-- MEGA MENÚ: PRODUCTOS -->
+            <li class="nav-item has-mega-menu">
+              <a href="#" class="nav-link">
+                Productos 
+                <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </a>
+              
+              <div class="mega-menu-panel">
+                <div class="mega-menu-grid">
+                  
+                  <!-- Columna 1 -->
+                  <div class="mega-col">
+                    <h4 class="mega-title">Cortinas</h4>
+                    <ul class="mega-links accordion-content">
+                      <li><a href="cortinas.html#detalle15">Tradicionales</a></li>
+                      <li><a href="cortinas.html#detalle16">Rollers Sunscreen</a></li>
+                      <li><a href="cortinas.html#detalle17">Rollers Blackout</a></li>
+                    </ul>
+                    <h4 class="mega-title mt-top">Pisos</h4>
+                    <ul class="mega-links accordion-content">
+                      <li><a href="Pisos.html#detalle30">Flotantes</a></li>
+                      <li><a href="Pisos.html#detalle31">Vinílicos</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- Columna 2 -->
+                  <div class="mega-col">
+                    <h4 class="mega-title">Sofás</h4>
+                    <ul class="mega-links accordion-content">
+                      <li><a href="sofas.html#detalle20">Chaiselongue / Esquineros</a></li>
+                      <li><a href="sofas.html#detalle21">Sofá de Un Cuerpo</a></li>
+                      <li><a href="sofas.html#detalle22">Sofá de Dos Cuerpos</a></li>
+                      <li><a href="sofas.html#detalle23">Sofá de Tres Cuerpos</a></li>
+                      <li><a href="sofas.html#detalle24">Sofá Cama</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- Columna 3 -->
+                  <div class="mega-col">
+                    <h4 class="mega-title">Complementos</h4>
+                    <ul class="mega-links accordion-content">
+                      <li><a href="tapizados.html">Tapizados</a></li>
+                      <li><a href="persianas.html">Persianas</a></li>
+                      <li><a href="sillasybutacas.html">Sillas / Butacas</a></li>
+                      <li><a href="fundas.html">Fundas / Telas / Colchonetas</a></li>
+                      <li><a href="Alfombras.html">Alfombras / Moquettes</a></li>
+                      <li><a href="MotorizacionesYAutomatizmos.html">Motorizaciones / Automatismos</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- Columna 4: Banner Visual -->
+                  <div class="mega-col mega-banner">
+                    <img src="images/top.jpg" alt="Interiorismo a medida">
+                    <div class="mega-banner-overlay">
+                      <span>Diseño y Confort</span>
+                      <p>Transforma tus espacios</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <button class="menu-toggle" aria-label="Abrir menú">
-        <span class="hamburger"></span>
+
+      <!-- Botón Hamburguesa Moderno (Móvil) -->
+      <button class="hamburger-modern" aria-label="Abrir menú">
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
       </button>
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="index.html">INICIO</a></li>
-          <li><a href="sobre_Nosotros.html">SOBRE NOSOTROS</a></li>
-          <li class="has-dropdown">
-            <a href="#" class="active-link">PRODUCTOS <span class="arrow">▼</span></a>
-            <ul class="submenu">
-              <li class="has-dropdown">
-                <a href="#">CORTINAS <span class="arrow">▼</span></a>
-                <ul class="submenu-categorias">
-                  <li><a href="cortinas.html#detalle15">TRADICIONALES</a></li>
-                  <li><a href="cortinas.html#detalle16">ROLLERS SUNSCREEN</a></li>
-                  <li><a href="cortinas.html#detalle17">ROLLERS BLACKOUT</a></li>
-                </ul> 
-              </li>
-              <li class="has-dropdown">
-                <a href="#">SOFÁS <span class="arrow">▼</span></a>
-                <ul class="submenu-categorias">
-                  <li><a href="sofas.html#detalle20">CHAISELONGUE / ESQUINEROS</a></li>
-                  <li><a href="sofas.html#detalle21">SOFÁ DE UN CUERPO</a></li>
-                  <li><a href="sofas.html#detalle22">SOFÁ DE DOS CUERPOS</a></li>
-                  <li><a href="sofas.html#detalle23">SOFÁ DE TRES CUERPOS</a></li>
-                  <li><a href="sofas.html#detalle24">SOFÁ CAMA</a></li>
-                </ul>
-              </li>
-              <li><a href="tapizados.html">TAPIZADOS</a></li>
-              <li><a href="persianas.html">PERSIANAS</a></li>
-              <li><a href="sillasybutacas.html">SILLAS / BUTACAS</a></li>
-              <li><a href="fundas.html">FUNDAS / TELAS / COLCHONETAS</a></li>
-              <li><a href="Alfombras.html">ALFOMBRAS / MOQUETTES</a></li>
-              <li class="has-dropdown">
-                <a href="#">PISOS <span class="arrow">▼</span></a>
-                <ul class="submenu-categorias">
-                  <li><a href="Pisos.html#detalle30">FLOTANTES</a></li>
-                  <li><a href="Pisos.html#detalle31">VINÍLICOS</a></li>
-                </ul>
-              </li>
-              <li><a href="MotorizacionesYAutomatizmos.html">MOTORIZACIONES / AUTOMATISMOS</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav> 
     </div>
   </header>
 
