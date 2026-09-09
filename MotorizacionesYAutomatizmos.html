@@ -1,820 +1,262 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cortinas Personalizadas</title>
+    <title>Motorizaciones y Automatismos | Cortinas & Sofás</title>
+    <meta name="description" content="Sistemas de motorización para cortinas y persianas, brindando comodidad, tecnología y eficiencia en su hogar.">
+    
+    <!-- Fuentes Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
-</head>
-  <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin-top:  60px;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-            background-color:whitesmoke;
+
+    <!-- Estilos específicos para la sección de Motorizaciones -->
+    <style>
+        .motorization-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 80px;
+            background: var(--surface);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
         }
-       header {
-    padding: 20px 0;
-    box-shadow: none;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent 50%);
-    transition: background-color 2.5s ease; /* Solo la transición de color de fondo */
-}.logo {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding: 20px 20px 20px 20px;
-}.logo img {
-    max-height: 50px;
-}
-
-nav {
-    flex: 2;
-    display: flex;
-    
-    padding: 0 20px;
-    background: transparent;
-    margin-right: 50%;
-    margin-top: 10px;
-    margin-bottom: 20px; /* Espacio debajo del nav */
-
-} 
-.nav-menu {
-    display: none;
-    justify-content: center;
-    flex-direction: column;  /* Vertical */
-    background-color: white;   /* Fondo del menú desplegable */
-    position: absolute;      /* Lo mantenemos en posición absoluta, pero revisaremos los márgenes */
-    top: 100%;               /* Asegura que se coloque justo debajo del nav */
-    right: 0;
-    width: auto;             /* Ajusta el ancho automáticamente */
-    z-index: 10;
-    padding: 10px 0;         /* Espaciado entre los enlaces */
-    margin: 0;               /* Elimina márgenes que puedan interferir */
-    box-sizing: border-box;  /* Asegura que los márgenes y padding no afecten el ancho total */   
-    background-color: rgba(255, 255, 255, 0.8);
-
-}.nav-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-menu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}.menu-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-
-
-nav li {
-    position: relative;
-    margin: 0 10px; /* Espacio entre los elementos */
-}
-
-nav a {
-    text-decoration: none;
-    color: #000;
-    font-size: 13px;
-    padding: 15px 20px;
-    display: block;
-    position: relative; /* Para el pseudo-elemento */
-    overflow: hidden; /* Para ocultar la línea animada fuera del enlace */
-}
-
-nav a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #e20000; /* Color de la línea */
-    transform: scaleX(0); /* Inicialmente oculta */
-    transform-origin: bottom left; /* Cambia el origen de la transformación */
-    transition: transform 1s ease; /* Transición suave */
-}
-nav a:hover::after {
-    transform: scaleX(1); /* Línea completa en hover */
-}
-
-nav a:hover {
-    color: #e20000; /* Cambia el color del texto en hover si lo deseas */
-} .nav-menu.active {
-    display: flex;
-   
-}
-
-/* Estilo específico para pantallas pequeñas (por ejemplo, móviles) */
-@media (max-width: 768px) {
-    nav ul {
-        display: flex;  /* Para hacer que los elementos estén en fila */
-        flex-direction: column; /* Para apilar los elementos verticalmente */
-    }  .nav-menu {
-        
-        background-color: white;
-    }
-   .hamburger {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    display: block;
-    position: relative;
-    margin-right: 30px;
-    
-}.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    left: 0;
-    transition: transform 0.3s ease;
-}
-
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    top: 8px;
-}/* Ocultar submenús por defecto */
-
-
-.submenu{
-    left:-20% ;
-    position: absolute;
-        background-color: white;
-
-}
-.submenu-categorias{
-    left:-100% ;
-    position: absolute;
-    background-color: white;
-}
-.instagram-icon img {
-    width: 40px; /* Ajusta el tamaño a 60px */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.whatsapp-icon img {
-    width: 40px; /* Ajusta el tamaño a 60px */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-}@media (max-width: 768px) {
-    nav ul {
-        display: flex;  /* Para hacer que los elementos estén en fila */
-        flex-direction: column; /* Para apilar los elementos verticalmente */
-    }  .nav-menu {
-        
-        background-color: white;
-    }
-   .hamburger {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    display: block;
-    position: relative;
-    margin-right: 30px;
-    
-}.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    left: 0;
-    transition: transform 0.3s ease;
-}
-
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    top: 8px;
-}/* Ocultar submenús por defecto */
-
-
-.submenu{
-    left:-20% ;
-    position: absolute;
-        background-color: white;
-
-}
-.submenu-categorias{
-    left:-100% ;
-    position: absolute;
-    background-color: white;
-}
-.instagram-icon img {
-    width: 40px; /* Ajusta el tamaño a 60px */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.whatsapp-icon img {
-    width: 40px; /* Ajusta el tamaño a 60px */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-}
-
-/* Estilo específico para pantallas grandes */
-@media (min-width: 769px) {
-    nav ul {
-        display: flex;  /* Deja los elementos en fila */
-        flex-direction: row; /* Para el menú en línea horizontal */
-          #hamburger{
-      
-        display: block;  /* Se muestra como bloque en pantallas pequeñas */
-    
-    }
-    }
-    .nav-menu {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        width: auto;
-        background-color: transparent;
-    }
-    .nav-menu a {
-        color: black;
-        border: none;
-    }  nav ul li {
-        display: inline-block;  /* Los elementos se muestran en línea */
-    }
-}
-
-        section {
-            padding: 20px;
-            text-align: center;
-            background-color: #fff;
+        .motorization-row.reverse {
+            direction: rtl;
         }
-        section h1 {
-            color: red;
+        .motorization-row.reverse > * {
+            direction: ltr;
+        }
+        .motorization-text h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
             font-size: 2rem;
-            margin-bottom: 10px;
         }
-        section p {
-            margin: 10px 0;
-            font-size: 1rem;
+        .motorization-text p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
         }
- .texto-centrado {
-    
-    text-align: center;
-    margin: 0 auto;
-    max-width:800px;
-    line-height: 1.6;
-    padding-top: 90px;
-}
-
-.galeria {
-    display: flex;
-    justify-content: center; /* Centra las imágenes horizontalmente */
-    gap: 20px; /* Espaciado entre las imágenes */
-    flex-wrap: wrap; /* Asegura que las imágenes se ajusten en pantallas pequeñas */
-}
-#detalle1, #detalle2, #detalle3,#detalle4, #detalle5, #detalle6 {
-    margin-bottom: 240px; /* Agrega más espacio entre las secciones */
-}
-.galeria img {
-    max-width: 200px; /* Ajusta el tamaño máximo de las imágenes */
-    height: auto;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-        footer {
-            text-align: center;
-            padding: 10px 20px;
-            background-color: #222;
-            color: #fff;
-            margin-top: 20px;
+        .motorization-video {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            background: #000;
+        }
+        .motorization-video video, .motorization-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: none;
         }
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    letter-spacing: 0.03em;
-    line-height: 1.3;
-}
-
-p{
-    padding: 5px;
-}
-
-img{
-    border-radius: 4px;
-}
-
-.button{
-    background:#009900;
-    text-decoration: none;
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 5px;
-    color:  #f2f2f2;
-    font-weight: 700;
-}
-.button:hover{
-    cursor: pointer;
-    text-decoration: none;
-    background-color: #00cc00;
-    color: white;
-}
-
-/*productos-card*/
-.container-productos{
-    width: 100%;
-    max-width: 1200px;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-}
-.container-productos .card{
-    width: 260px;
-    height: 390px;
-    background: whitesmoke;
-    color:#black;
-    border-radius: 8px;
-    border:1px solid  white;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
-    overflow: hidden;
-    margin: 50px;
-    text-align: center;
-    align-items: center;
-    transition: all 0.25s;
-}
-.container-productos .card:hover{
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0,0,0,0.2);
-}
-.container-productos .card img{
-    width: 300px;
-    height: 290px;
-    cursor: pointer;
-}
-.container-productos .card h5{
-    font-weight: 600;
-    padding: 5px;
-}
-.container-productos .card p{
-    padding-top: 5px;
-}
-.container-productos .card a{
-    padding:10px;
-    display: block;
-    width: 50%;
-    margin: 0 auto;
-}
-
-
-
-
-
-
-
-@media (max-width: 769px) {
-
-    /*menu*/
-    .menu-icon{
-        display: block;
-        cursor: pointer;
-        padding: 0.5rem 1rem;
-    }
-    .navigation{
-        width: 100%;
-        margin-top: 1rem;
-    }
-    .navigation ul{
-        display: none;
-    }
-    .navigation ul.show{
-        display: block;
-    }
-    .navigation ul li{
-        display: block;
-    }
-    .navigation ul li a{
-        display: block;
-        padding: 0.5rem 0;
-    }
-    .navigation ul li a:hover{
-        color: #f2f2f2;
-    }
-
-   
-
-
- 
-
-
-
-
-
-
-  
-}
-
-.search-container{
-  width: 10%;
-  display: block;
-  margin: 0 auto;
-  
-}
-
-input#search-bar{
-  margin: 0 auto;
-  width: 100%;
-  height: 45px;
-  padding: 0 20px;
-  font-size: 1rem;
-  border: 1px solid aqua;
-  outline: none;
-  &:focus{
-    border: 1px solid aqua;
-    transition: 0.35s ease;
-    color: #008ABF;
-    &::-webkit-input-placeholder{
-      transition: opacity 0.45s ease; 
-  	  opacity: 0;
-     }
-    &::-moz-placeholder {
-      transition: opacity 0.45s ease; 
-  	  opacity: 0;
-     }
-    &:-ms-placeholder {
-     transition: opacity 0.45s ease; 
-  	 opacity: 0;
-     }    
-   }
- }
-
-.search-icon{
-  position: relative;
-  float: right;
-  width: 75px;
-  height: 75px;
-  top: -62px;
-  right: -45px;
-}
-
-
-* ,*::after, *::before{
- box-sizing:border-box;
-}
-
-.contenedor-caja-video{
- width: 80%;
- justify-content: center;
- margin-left: 10%;
-}
-
-.caja-video  {
- position:relative;
- background-color:red;
-  width: 100%;
- padding-bottom:56.25%;
- justify-content: center;
-}
-
-.caja-video::before {
- position: absolute;
- content:'';
- 
- display:block;
- padding-bottom:56.25%;
-}
-
-.video{
- position:absolute;
- width: 100%;
- height: 100%;
- justify-content: center;
-}
-
-
+        @media (max-width: 992px) {
+            .motorization-row {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px 20px;
+            }
+            .motorization-row.reverse {
+                direction: ltr;
+            }
+        }
     </style>
-<body>
-                      <header>
-<div class="logo">
-    <a href="index.html">
-        <img src="images/imagen_2025-05-29_234235197.png" alt="Logo">
-    </a>
-</div>
-      
-
-  <button class="menu-toggle" aria-label="Abrir menú">
-    <span class="hamburger"></span>
-  </button>
-         
-  <nav class="nav-menu">
- 
-    <ul>
-        
-      <li><a href="index.html">INICIO</a></li>
-      <li><a href="sobre_Nosotros.html">SOBRE NOSOTROS</a></li>
-          <li>
-        <a href="#products">PRODUCTOS</a>
-        <ul class="submenu">
-          <li>
-            <a href="#products">CORTINAS</a>
-            <ul class="submenu-categorias">
-                    <li><a href="cortinas.html#detalle15">TRADICIONALES</a></li>
-              <li><a href="cortinas.html#detalle16">ROLLERS
-                      SUNSCREEN</a></li>
-                    <li><a href="cortinas.html#detalle17">ROLLERS
-                            BLACKOUT</a></li>
-              
-            </ul> 
-          </li>
-           <li>
-            <a href="#products">SOFÁS</a>
-            <ul class="submenu-categorias">
-              <li><a href="sofas.html#detalle20">CHASELONGUE/
-                      ESQUINEROS</a></li>
-               <li><a href="sofas.html#detalle21">SOFÁ DE UN CUERPO</a></li>
-                 <li><a href="sofas.html#detalle22">SOFÁ DE DOS CUERPOS</a></li>
-                   <li><a href="sofas.html#detalle23">SOFÁ DE TRES CUERPOS</a></li>
-                <li><a href="sofas.html#detalle24">SOFÁ CAMA</a></li>
-            </ul>
-          </li>
-            <li><a href="tapizados.html">TAPIZADOS</a></li>
-            <li><a href="persianas.html">PERSIANAS</a></li>
-            <li><a href="sillasybutacas.html">SILLAS /BUTACAS</a></li>
-            <li><a href="fundas.html">FUNDAS</a></li>
-            <li><a href="telas.html">TELAS</a></li>
-            <li><a href="respaldoCama.html">RESPALDOS DE CAMA</a></li>
-            <li><a href="colchonetas.html">COLCHONETAS </a></li>
-
-
-            <li><a href="Alfombras.html">ALFOMBRAS /
-                     MOQUETTES</a></li>
-           <li>
-            <a href="#products">PISOS</a>
-            <ul class="submenu-categorias">
-              <li><a href="Pisos.html#detalle30">FLOTANTES</a></li>
-              <li><a href="Pisos.html#detalle31">VILINICOS</a></li>
-            </ul>
-          </li>
-<li>
-            <a href="MotorizacionesYAutomatizmos.html">MOTORIZACIONES /
-              AUTOMATIZMOS</a>
-           
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav> 
-         
-         
-</header>       
- 
- <div class="titulo-estatico">
-        <h1>MOTORIZACIONES Y AUTOMATIZMOS</h1>
-    </div>
-    <div class="texto-centrado fade-in">
-         <div id="detalle15">
-        <h1>MOTORIZACIONES EN CORTINA ROLLER  </h1>
-Ofrecemos sistemas de motorización para cortinas roller, brindando comodidad, tecnología y eficiencia en la gestión de luz y privacidad. Adaptamos cada sistema a las necesidades de tu hogar, oficina o comercio, permitiéndote controlar las cortinas de forma sencilla. Disponibles en diferentes modelos y tecnologías, nuestros motores garantizan un funcionamiento silencioso, preciso y de larga duración. Fabricados con materiales de alta calidad, optimizan el uso de las cortinas roller, prolongando su vida útil y ofreciendo una experiencia más práctica y moderna. 
-   
-         
-
-</div>
-        </div> 
-<h2> CORTINAS ROLLER MOTORIZADAS </h2>
-
-
-      <div class="contenedor-caja-video">
-<div class="caja-video">
-<iframe class="video" src="Videos/video-output-441AC0BF-BC1B-4DFA-BF7D-BF49F6DEDAC9-1.mp4"></iframe>
-</div>
-</div>
+</head>
+<body class="inner-page">
     
- 
-    <div class="texto-centrado fade-in">
-         <div id="detalle15">
-        <h1>MOTORIZACIONES EN CORTINA TRADICIONAL  </h1>
-    <p>Ofrecemos sistemas de motorización para cortinas tradicionales, ideales para llevar comodidad y tecnología a tus espacios. Estos sistemas permiten abrir y cerrar las cortinas de manera automática, adaptándose a las necesidades de tu hogar, oficina o comercio. Disponibles en distintos modelos y tecnologías, garantizan un movimiento suave, silencioso y preciso. Fabricados con materiales resistentes y de alta calidad, nuestros motores prolongan la vida útil de las cortinas tradicionales, facilitando su uso diario y ofreciendo una experiencia más práctica, moderna y eficiente en la gestión de la luz y la privacidad.</p>
-    <p><strong>Conozca nuestras opciones más populares:</strong></p>
-   
-</div>
-        </div> 
-<h2> CORTINA TRADICIONAL MOTORIZADA</h2>
-     <div class="contenedor-caja-video">
-<div class="caja-video">
-<iframe class="video" src="Videos/WhatsApp Video 2025-02-22 at 5.19.54 PM.mp4"></iframe>
-</div>
-</div>  
-    
-    <div class="texto-centrado fade-in">
-         <div id="detalle15">
-        <h1>MOTORIZACIONES EN PERSIANA  </h1>
-    <p>Ofrecemos sistemas de motorización para persianas, diseñados para brindar confort, eficiencia y un manejo moderno de la luz y la ventilación. Adaptables a diferentes tipos de persianas (horizontales, verticales o de aluminio), estos sistemas permiten su apertura y cierre automática con solo presionar un botón. Nuestros motores son silenciosos, duraderos y precisos, fabricados con materiales de alta calidad para asegurar un funcionamiento óptimo. Ideales para hogares, oficinas o comercios, mejoran la experiencia de uso diario, aportando una solución práctica, segura y estéticamente integrada a tus espacios.</p>
-   
-</div>
-        </div> 
-<h2> PERSIANA MOTORIZADA </h2>
-    <div class="contenedor-caja-video">
-<div class="caja-video">
-<iframe class="video" src="Videos/VID-20210408-WA0004.mp4"></iframe>
-</div>
-</div>
-
-  
-
-    <h2>UBICACIÓN</h2>
-  <!-- Ubicación Google Maps -->
-  <section class="ubicacion fade-in">
-
-   
-   
-    
-     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.025703262303!2d-54.96562992370957!3d-34.90580447351586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x957511920fbb2a45%3A0x214855002a65043!2sCortinas%20%26%20Sofas!5e0!3m2!1ses-419!2suy!4v1740417685035!5m2!1ses-419!2suy" 
-         width="100%" height="100" style="border:0;" allowfullscreen="" loading="lazy">
-</iframe>
-
-
-</section>
-
-
-
-   <!-- Icono de WhatsApp con Tooltip -->
-     <div class="tooltip">
-        <a href="https://wa.me/598099696563" target="_blank" class="whatsapp-icon">
-            <img src="images/2.png" alt="WhatsApp">
-            <span class="tooltiptext">¡Contáctanos por WhatsApp!</span>
-        </a>
-    </div>
- <div class="tooltip">
-        <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank" class="instagram-icon">
-            <img src="images/instagram.png" alt="Instagram">
-            <span class="tooltiptext">¡Contáctanos por Instagram!</span>
-        </a>
-    </div>
-     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <p><strong>Maldonado:</strong> Calle Joaquin De Viana Esq Dr Edye - Cel: 099 696 610</p>
-                <p><a href="mailto:Cortinas&Sofas@gmail.com" class="footer-email">Cortinas&Sofas@gmail.com</a></p>
+    <!-- ================= HEADER Y NAVEGACIÓN ================= -->
+    <header class="header-modern solid">
+        <div class="mobile-overlay"></div>
+        <div class="header-container-modern">
+            <a href="index.html" class="logo-modern">
+                <img src="images/imagen_2025-05-29_234235197.png" alt="Cortinas & Sofás">
+            </a>
+            
+            <div class="nav-wrapper">
+                <div class="mobile-nav-header">
+                    <img src="images/imagen_2025-05-29_234235197.png" alt="Cortinas & Sofás" class="mobile-logo-img">
+                    <button class="close-menu-btn" aria-label="Cerrar menú">&times;</button>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                        <li class="nav-item"><a href="sobre_Nosotros.html" class="nav-link">Sobre Nosotros</a></li>
+                        <li class="nav-item has-mega-menu">
+                            <a href="#" class="nav-link active-link">
+                                Productos 
+                                <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </a>
+                            <div class="mega-menu-panel">
+                                <div class="mega-menu-grid">
+                                    <div class="mega-col">
+                                        <h4 class="mega-title">Cortinas</h4>
+                                        <ul class="mega-links accordion-content">
+                                            <li><a href="cortinas.html#detalle15">Tradicionales</a></li>
+                                            <li><a href="cortinas.html#detalle16">Rollers Sunscreen</a></li>
+                                            <li><a href="cortinas.html#detalle17">Rollers Blackout</a></li>
+                                        </ul>
+                                        <h4 class="mega-title mt-top">Pisos</h4>
+                                        <ul class="mega-links accordion-content">
+                                            <li><a href="Pisos.html#detalle30">Flotantes</a></li>
+                                            <li><a href="Pisos.html#detalle31">Vinílicos</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-col">
+                                        <h4 class="mega-title">Sofás</h4>
+                                        <ul class="mega-links accordion-content">
+                                            <li><a href="sofas.html#detalle20">Chaiselongue / Esquineros</a></li>
+                                            <li><a href="sofas.html#detalle21">Sofá de Un Cuerpo</a></li>
+                                            <li><a href="sofas.html#detalle22">Sofá de Dos Cuerpos</a></li>
+                                            <li><a href="sofas.html#detalle23">Sofá de Tres Cuerpos</a></li>
+                                            <li><a href="sofas.html#detalle24">Sofá Cama</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-col">
+                                        <h4 class="mega-title">Complementos</h4>
+                                        <ul class="mega-links accordion-content">
+                                            <li><a href="tapizados.html">Tapizados</a></li>
+                                            <li><a href="persianas.html">Persianas</a></li>
+                                            <li><a href="sillasybutacas.html">Sillas / Butacas</a></li>
+                                            <li><a href="fundas.html">Fundas / Telas / Colchonetas</a></li>
+                                            <li><a href="Alfombras.html">Alfombras / Moquettes</a></li>
+                                            <li><a href="MotorizacionesYAutomatizmos.html">Motorizaciones / Automatismos</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-col mega-banner">
+                                        <img src="images/top.jpg" alt="Interiorismo a medida">
+                                        <div class="mega-banner-overlay">
+                                            <span>Diseño y Confort</span>
+                                            <p>Transforma tus espacios</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <div class="footer-whatsapp">
-                <img src="2.png" alt="WhatsApp">
-                <div>
-                    <p>SOLICITA PRESUPUESTO VIA WHATSAPP</p>
-                    <p>099 696 610</p>
+            <button class="hamburger-modern" aria-label="Abrir menú">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- TÍTULO DE PÁGINA -->
+        <section class="page-title fade-up">
+            <div class="container">
+                <h1>Motorizaciones y Automatismos</h1>
+                <p>Tecnología, confort y eficiencia al alcance de un botón.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE SISTEMAS -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                
+                <!-- 1. Motorización en Cortina Roller -->
+                <div class="motorization-row fade-up" id="detalle15">
+                    <div class="motorization-text">
+                        <h2 class="titulo-elegante">Cortinas Roller Motorizadas</h2>
+                        <p>Ofrecemos sistemas de motorización para cortinas roller, brindando comodidad, tecnología y eficiencia en la gestión de luz y privacidad. Adaptamos cada sistema a las necesidades de tu hogar, oficina o comercio, permitiéndote controlar las cortinas de forma sencilla.</p>
+                        <p>Disponibles en diferentes modelos y tecnologías, nuestros motores garantizan un funcionamiento silencioso, preciso y de larga duración. Fabricados con materiales de alta calidad, optimizan el uso de las cortinas roller, prolongando su vida útil y ofreciendo una experiencia más práctica y moderna.</p>
+                        <a href="https://wa.me/598099696610?text=Hola,%20me%20interesa%20consultar%20por%20la%20motorización%20de%20cortinas%20roller." target="_blank" class="btn btn-primary" style="margin-top: 10px;">
+                            <img src="images/2.png" alt="WhatsApp" style="display:inline-block; width:20px; vertical-align:middle; filter:brightness(0) invert(1); margin-right:8px;"> Consultar Sistema
+                        </a>
+                    </div>
+                    <div class="motorization-video">
+                        <!-- Usamos la etiqueta video nativa en lugar de iframe para mp4, lo cual es mucho más limpio y profesional -->
+                        <video controls playsinline autoplay muted loop>
+                            <source src="Videos/video-output-441AC0BF-BC1B-4DFA-BF7D-BF49F6DEDAC9-1.mp4" type="video/mp4">
+                            Tu navegador no soporta el reproductor de video.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- 2. Motorización en Cortina Tradicional -->
+                <div class="motorization-row reverse fade-up">
+                    <div class="motorization-text">
+                        <h2 class="titulo-elegante">Cortina Tradicional Motorizada</h2>
+                        <p>Ofrecemos sistemas de motorización para cortinas tradicionales, ideales para llevar comodidad y tecnología a tus espacios. Estos sistemas permiten abrir y cerrar las cortinas de manera automática, adaptándose a las necesidades de tu hogar, oficina o comercio.</p>
+                        <p>Disponibles en distintos modelos y tecnologías, garantizan un movimiento suave, silencioso y preciso. Fabricados con materiales resistentes y de alta calidad, nuestros motores prolongan la vida útil de las cortinas tradicionales, facilitando su uso diario y ofreciendo una experiencia más práctica, moderna y eficiente en la gestión de la luz y la privacidad.</p>
+                        <a href="https://wa.me/598099696610?text=Hola,%20me%20interesa%20consultar%20por%20la%20motorización%20de%20cortinas%20tradicionales." target="_blank" class="btn btn-primary" style="margin-top: 10px;">
+                            <img src="images/2.png" alt="WhatsApp" style="display:inline-block; width:20px; vertical-align:middle; filter:brightness(0) invert(1); margin-right:8px;"> Consultar Sistema
+                        </a>
+                    </div>
+                    <div class="motorization-video">
+                        <video controls playsinline autoplay muted loop>
+                            <source src="Videos/WhatsApp Video 2025-02-22 at 5.19.54 PM.mp4" type="video/mp4">
+                            Tu navegador no soporta el reproductor de video.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- 3. Motorización en Persianas -->
+                <div class="motorization-row fade-up">
+                    <div class="motorization-text">
+                        <h2 class="titulo-elegante">Persianas Motorizadas</h2>
+                        <p>Ofrecemos sistemas de motorización para persianas, diseñados para brindar confort, eficiencia y un manejo moderno de la luz y la ventilación. Adaptables a diferentes tipos de persianas (horizontales, verticales o de aluminio), estos sistemas permiten su apertura y cierre automática con solo presionar un botón.</p>
+                        <p>Nuestros motores son silenciosos, duraderos y precisos, fabricados con materiales de alta calidad para asegurar un funcionamiento óptimo. Ideales para hogares, oficinas o comercios, mejoran la experiencia de uso diario, aportando una solución práctica, segura y estéticamente integrada a tus espacios.</p>
+                        <a href="https://wa.me/598099696610?text=Hola,%20me%20interesa%20consultar%20por%20la%20motorización%20de%20persianas." target="_blank" class="btn btn-primary" style="margin-top: 10px;">
+                            <img src="images/2.png" alt="WhatsApp" style="display:inline-block; width:20px; vertical-align:middle; filter:brightness(0) invert(1); margin-right:8px;"> Consultar Sistema
+                        </a>
+                    </div>
+                    <div class="motorization-video">
+                        <video controls playsinline autoplay muted loop>
+                            <source src="Videos/VID-20210408-WA0004.mp4" type="video/mp4">
+                            Tu navegador no soporta el reproductor de video.
+                        </video>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ICONOS Y FOOTER -->
+    <div class="floating-socials">
+        <a href="https://www.instagram.com/cortinas_sofas_tapizados_/" target="_blank" class="social-icon instagram"><img src="images/instagram.png" alt="Instagram"></a>
+        <a href="https://wa.me/598099696610" target="_blank" class="social-icon whatsapp"><img src="images/2.png" alt="WhatsApp"></a>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Cortinas & Sofás</h3>
+                    <p>Diseño de interiores, confección a medida y excelencia desde 1982.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><strong>Showroom:</strong> Maldonado / Calle Joaquin De Viana Esq Dr Edye</li>
+                        <li><strong>Atención al cliente:</strong> 099 696 610</li>
+                        <li><a href="mailto:Cortinas&Sofas@gmail.com">Cortinas&Sofas@gmail.com</a></li>
+                    </ul>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
+            </div>
         </div>
-       
-            <p>&copy; 2024 Cortinas & Sofás. Todos los derechos reservados.</p>
-       
     </footer>
-       <script src="script.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const menuItems = document.querySelectorAll(".nav-menu > ul > li > a");
-  let lastClickedItem = null;
-  let lastClickTime = 0;
-  const doubleClickDelay = 300; // Tiempo en milisegundos para detectar doble clic
 
-  // Función para detectar si es un dispositivo móvil
-  function isMobile() {
-    return window.matchMedia("only screen and (max-width: 768px)").matches;
-  }
-
-  menuItems.forEach((item) => {
-    item.addEventListener("click", function (event) {
-      if (!isMobile()) return; // Solo se ejecuta en dispositivos móviles
-      
-      const parentLi = this.parentElement;
-      const hasSubmenu = parentLi.querySelector(".submenu");
-      const currentTime = new Date().getTime();
-
-      if (hasSubmenu) {
-        event.preventDefault(); // Evita la redirección inmediata
-
-        // Si el mismo elemento se toca dos veces dentro del tiempo límite, redirigir
-        if (lastClickedItem === this && currentTime - lastClickTime < doubleClickDelay) {
-          window.location.href = this.href; // Redirige a la categoría principal
-          return;
-        }
-
-        // Cerrar todos los submenús antes de abrir uno nuevo
-        document.querySelectorAll(".nav-menu > ul > li").forEach((li) => {
-          li.classList.remove("active");
-        });
-
-        // Abrir el submenú del elemento actual
-        parentLi.classList.add("active");
-
-        lastClickedItem = this;
-        lastClickTime = currentTime;
-      }
-    });
-  });
-
-  // Mantener el submenú abierto si la URL coincide con una subcategoría
-  const currentURL = window.location.href;
-
-  document.querySelectorAll(".submenu a, .submenu-categorias a").forEach((subItem) => {
-    if (currentURL.includes(subItem.href)) {
-      const parentLi = subItem.closest("li");
-      if (parentLi) {
-        parentLi.classList.add("active");
-
-        // También abrir el menú padre si es una subcategoría
-        const grandParentLi = parentLi.closest(".submenu");
-        if (grandParentLi) {
-          grandParentLi.parentElement.classList.add("active");
-        }
-      }
-    }
-
-    // Cerrar el menú cuando se selecciona una opción
-    subItem.addEventListener("click", function () {
-      document.querySelectorAll(".nav-menu > ul > li").forEach((li) => {
-        li.classList.remove("active");
-      });
-    });
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    var swipers = document.querySelectorAll('.mySwiper');
-
-    swipers.forEach(function(swiperElement) {
-        new Swiper(swiperElement, {
-            loop: true, // Hace que el slider sea infinito
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            }
-         
-        });
-    });
-});
-document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll(".agregar-carrito").forEach(boton => { 
-        boton.addEventListener("click", function(event) {
-            event.preventDefault();
-
-            let card = this.closest(".card");
-            let nombre = card.querySelector(".producto-nombre")?.innerText.trim();
-            let imagen = card.querySelector(".swiper-slide img")?.src;
-
-            if (!nombre || !imagen) {
-                alert("Error: No se encontró el nombre o la imagen del producto.");
-                return;
-            }
-
-            let mensaje = `Hola, me interesa el producto: *${nombre}*.%0A🔹 Imagen: ${imagen}`;
-            let telefono = "598099696563";
-            let url = `https://wa.me/${telefono}?text=${mensaje}`;
-
-            window.location.href = url;
-        });
-    });
-});
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
