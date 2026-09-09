@@ -109,6 +109,28 @@ img { max-width: 100%; display: block; }
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   padding: 40px 0;
+}/* ==========================================================
+   PUENTE INVISIBLE (FIX PARA EL DESPLIEGUE EN PC)
+========================================================== */
+.mega-menu-panel::before {
+  content: '';
+  position: absolute;
+  top: -35px; /* Sube 35px para cubrir el hueco transparente */
+  left: 0;
+  width: 100%;
+  height: 35px;
+  background: transparent; 
+  /* background: rgba(255,0,0,0.2); <-- Descomenta esta línea si quieres ver el puente visualmente para probar */
+}
+
+.has-mega-menu .nav-link::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  background: transparent;
 }
 .has-mega-menu:hover .mega-menu-panel {
   opacity: 1; visibility: visible;
