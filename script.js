@@ -28,13 +28,20 @@ function initHeaderScroll() {
   });
 }
 
+
+¡No te preocupes! Suele pasar. Aquí tienes exactamente la otra solución que combinaba una mejora en la función JavaScript y un ajuste en el CSS para lograr esa apertura súper suave y elegante en el menú móvil (usando cálculos de altura en JS en lugar de cambios bruscos).
+Para aplicarlo, solo tienes que hacer estos dos pasos:
+1. Reemplaza la función en JavaScript
+Ve a tu archivo script.js, busca la función initMobileMenu() y reemplázala completa por este código. Esta versión calcula automáticamente la altura de los menús para que se deslicen de forma muy fluida:
+code
+JavaScript
 function initMobileMenu() {
   const hamburger = document.querySelector('.hamburger-modern');
   const closeBtn = document.querySelector('.close-menu-btn');
   const navWrapper = document.querySelector('.nav-wrapper');
   const overlay = document.querySelector('.mobile-overlay');
 
-  // Abrir y Cerrar Panel Lateral
+  // Función toggleMenu mejorada
   function toggleMenu() {
     const isOpen = navWrapper.classList.contains('open');
     if (isOpen) {
@@ -50,23 +57,33 @@ function initMobileMenu() {
 
   if (hamburger) hamburger.addEventListener('click', toggleMenu);
   if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
-  if (overlay) overlay.addEventListener('click', toggleMenu); // Cerrar al tocar fondo oscuro
+  if (overlay) overlay.addEventListener('click', toggleMenu);
 
-  // Lógica de Acordeones en Móvil
+  // Lógica de Acordeones en Móvil (Animación Suave con JS)
   if (window.innerWidth <= 992) {
     // 1. Acordeón Principal (Productos)
     const megaMenuToggle = document.querySelector('.has-mega-menu > .nav-link');
     const megaMenuPanel = document.querySelector('.mega-menu-panel');
     const chevron = document.querySelector('.chevron-icon');
 
-    if (megaMenuToggle) {
+    if (megaMenuToggle && megaMenuPanel) {
       megaMenuToggle.addEventListener('click', (e) => {
         e.preventDefault();
         megaMenuPanel.classList.toggle('open-accordion');
+        
         if(megaMenuPanel.classList.contains('open-accordion')) {
           chevron.style.transform = 'rotate(180deg)';
+          // Le damos un valor alto dinámico para que la transición CSS funcione suavemente
+          megaMenuPanel.style.maxHeight = megaMenuPanel.scrollHeight + 800 + "px"; 
         } else {
           chevron.style.transform = 'rotate(0deg)';
+          megaMenuPanel.style.maxHeight = null;
+          
+          // Opcional: Cerrar los submenús internos si se cierra el principal
+          document.querySelectorAll('.accordion-content').forEach(content => {
+            content.style.maxHeight = null;
+            content.previousElementSibling.classList.remove('expanded');
+          });
         }
       });
     }
@@ -77,8 +94,18 @@ function initMobileMenu() {
       title.addEventListener('click', function() {
         this.classList.toggle('expanded');
         const content = this.nextElementSibling;
+        
         if (content && content.classList.contains('accordion-content')) {
-          content.classList.toggle('show');
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null; // Cierra el submenú
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px"; // Abre midiendo el alto real
+            
+            // Reajusta el contenedor padre para que no corte el contenido
+            if (megaMenuPanel.style.maxHeight) {
+              megaMenuPanel.style.maxHeight = (megaMenuPanel.scrollHeight + content.scrollHeight) + "px";
+            }
+          }
         }
       });
     });
