@@ -29,12 +29,7 @@ function initHeaderScroll() {
 }
 
 
-¡No te preocupes! Suele pasar. Aquí tienes exactamente la otra solución que combinaba una mejora en la función JavaScript y un ajuste en el CSS para lograr esa apertura súper suave y elegante en el menú móvil (usando cálculos de altura en JS en lugar de cambios bruscos).
-Para aplicarlo, solo tienes que hacer estos dos pasos:
-1. Reemplaza la función en JavaScript
-Ve a tu archivo script.js, busca la función initMobileMenu() y reemplázala completa por este código. Esta versión calcula automáticamente la altura de los menús para que se deslicen de forma muy fluida:
-code
-JavaScript
+
 function initMobileMenu() {
   const hamburger = document.querySelector('.hamburger-modern');
   const closeBtn = document.querySelector('.close-menu-btn');
