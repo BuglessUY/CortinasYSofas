@@ -196,23 +196,25 @@ img { max-width: 100%; display: block; }
 @media (max-width: 992px) {
   .header-container-modern { padding: 0 20px; }
   .hamburger-modern { display: flex; }
+  
+  /* Panel lateral con efecto elegante */
   .nav-wrapper {
     position: fixed; top: 0; right: -100%; width: 320px; max-width: 85vw; height: 100vh;
-    background: #ffffff; box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
     z-index: 10000; overflow-y: auto; transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex; flex-direction: column;
   }
   .nav-wrapper.open { right: 0; }
   
-  /* Mobile Header dentro del panel */
   .mobile-nav-header {
     display: flex; justify-content: space-between; align-items: center;
     padding: 25px 30px; border-bottom: 1px solid var(--border);
   }
   .mobile-logo-img { max-height: 35px; filter: none !important; }
-  .close-menu-btn { font-size: 35px; background: none; border: none; color: var(--text-main); cursor: pointer; line-height: 1; }
+  .close-menu-btn { font-size: 35px; background: none; border: none; color: var(--text-main); cursor: pointer; line-height: 1; transition: 0.3s; }
+  .close-menu-btn:hover { color: var(--primary); transform: rotate(90deg); }
   
-  /* Reset de nav para móvil */
   .main-nav { padding: 20px 0; }
   .nav-list { flex-direction: column; gap: 0; align-items: flex-start; }
   .nav-item { width: 100%; border-bottom: 1px solid #f0f0f0; }
@@ -221,33 +223,49 @@ img { max-width: 100%; display: block; }
   }
   .nav-link::after { display: none; }
   
-  /* Mega menú transformado a Acordeón Móvil */
+  /* --- CAMBIOS CLAVE PARA EL ACORDEÓN --- */
   .mega-menu-panel {
-    position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; pointer-events: auto; padding: 0; border: none;
-    display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s ease; overflow: hidden;
+    position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; 
+    pointer-events: auto; padding: 0; border: none;
+    /* Ocultamos inicialmente con max-height 0 para que JS lo anime */
+    max-height: 0; overflow: hidden; 
+    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .mega-menu-panel.open-accordion { grid-template-rows: 1fr; }
   
-  .mega-menu-grid { padding: 0; display: block; max-height: none; overflow: hidden; background: #fafafa; }
-  .mega-col { padding: 0 30px; margin-bottom: 10px; }
-  .mega-col:first-child { padding-top: 20px; }
+  .mega-menu-grid { padding: 0; display: block; background: rgba(0,0,0,0.02); }
+  .mega-col { padding: 0 30px; }
+  .mega-col:first-child { padding-top: 15px; }
   .mega-col:last-child { padding-bottom: 20px; }
   
+  /* Títulos con flechas geométricas en vez de +/- */
   .mega-title {
-    font-size: 14px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; color: var(--text-main); margin-bottom: 10px; margin-top: 20px; border-bottom: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer;
+    font-size: 14px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; 
+    color: var(--primary); margin: 0; padding: 15px 0; border-bottom: none; 
+    display: flex; justify-content: space-between; align-items: center; cursor: pointer;
   }
-  .mega-title::after { content: '+'; position: static; width: auto; height: auto; background: none; font-size: 18px; font-weight: 300; }
-  .mega-title.expanded::after { content: '-'; }
-  .mt-top { margin-top: 20px; }
+  .mega-title::after { 
+    content: ''; width: 8px; height: 8px; 
+    border-right: 2px solid var(--primary); border-bottom: 2px solid var(--primary); 
+    transform: rotate(45deg); transition: transform 0.4s ease; 
+  }
+  .mega-title.expanded::after { transform: rotate(-135deg); }
+  .mt-top { margin-top: 0; }
   
+  /* Submenús preparados para la animación JS */
   .mega-links.accordion-content {
-    display: none; padding-left: 15px; padding-top: 10px;
+    display: block; /* Se debe mantener en block para que JS pueda calcular su altura */
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.5s ease;
+    padding-left: 15px; margin: 0;
   }
-  .mega-links.accordion-content.show { display: block; }
   .mega-links li { margin-bottom: 15px; }
-  .mega-banner { display: none; } /* Ocultar imagen en móvil para limpiar el diseño */
+  .mega-links li:first-child { margin-top: 10px; }
+  
+  /* Restauramos el banner para darle el toque de diseño */
+  .mega-banner { display: block; height: 150px; margin-top: 20px; border-radius: 8px; }
+  .mega-banner-overlay { padding: 20px; }
+  .mega-banner-overlay span { font-size: 1.2rem; }
 }
-
 /* =========================================
    HERO SECTION
 ========================================= */
